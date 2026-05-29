@@ -25,7 +25,7 @@
 
   --font-heading: "Georgia", "Times New Roman", serif;
   --font-body:    system-ui, -apple-system, sans-serif;
-  --font-mono:    "Courier New", "Courier", monospace;
+  --font-mono:    ui-monospace, 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, monospace;
 }
 
 /* ── Base ────────────────────────────────────────────────────────────── */
@@ -177,6 +177,39 @@ td.dim  { color: var(--text-faint); }
 
 /* ── Two-col grid ────────────────────────────────────────────────────── */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* ── Index grid ──────────────────────────────────────────────────────── */
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.index-card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  background: var(--bg-subtle);
+  transition: border-color 0.12s;
+}
+.index-card:hover { border-color: var(--border-dark); background: var(--bg); }
+.index-card.external { border-style: dashed; }
+
+.index-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.index-card-desc {
+  font-size: 0.75rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
 
 /* ── Flow diagram ────────────────────────────────────────────────────── */
 .flow { display: flex; flex-direction: column; align-items: stretch; }

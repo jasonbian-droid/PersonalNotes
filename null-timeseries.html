@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="src/site.css" />
   <link rel="stylesheet" href="src/nav.css" />
   <style>
-    .chart-controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; align-items: flex-end; }
-    .ctrl-group { display: flex; flex-direction: column; gap: 4px; }
-    .ctrl-group label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); }
-    .ctrl-group select { background: var(--bg); color: var(--text); border: 1px solid var(--border-mid); padding: 5px 9px; font-size: 0.82rem; min-width: 140px; cursor: pointer; font-family: var(--font-mono); }
-    .ctrl-group select:focus { outline: none; border-color: var(--text); }
+    .controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; align-items: flex-end; }
+    .ctrl { display: flex; flex-direction: column; gap: 4px; }
+    .ctrl label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); }
+    .ctrl select { background: var(--bg); color: var(--text); border: 1px solid var(--border-mid); padding: 5px 9px; font-size: 0.82rem; min-width: 140px; cursor: pointer; font-family: var(--font-mono); appearance: none; }
+    .ctrl select:focus { outline: none; border-color: var(--text); }
     #no-data { text-align: center; color: var(--text-faint); padding: 40px; display: none; font-style: italic; }
   </style>
 </head>
@@ -30,20 +30,22 @@
 
   <div class="page page-wide">
     <h1>Null % Time-Series</h1>
-    <p class="page-subtitle">Daily null rate per column in INBOUND_INTERACTION_EVENTS, segmented by building and org</p>
+    <p class="page-subtitle">Daily null rate per column · INBOUND_INTERACTION_EVENTS · segmented by building &amp; org</p>
 
-    <div class="chart-controls">
-      <div class="ctrl-group"><label>Building</label><select id="sel-building"><option value="">All buildings</option></select></div>
-      <div class="ctrl-group"><label>Org</label><select id="sel-org"><option value="">All orgs</option></select></div>
-      <div class="ctrl-group"><label>Column</label><select id="sel-col"><option value="">All columns</option></select></div>
+    <div class="controls">
+      <div class="ctrl"><label>Building</label><select id="sel-building"><option value="">All buildings</option></select></div>
+      <div class="ctrl"><label>Org</label><select id="sel-org"><option value="">All orgs</option></select></div>
+      <div class="ctrl"><label>Column</label><select id="sel-col"><option value="">All columns</option></select></div>
     </div>
 
     <div class="card">
-      <canvas id="null-chart" height="340"></canvas>
+      <div class="card-title">Null % over time</div>
+      <canvas id="null-chart" height="320"></canvas>
       <div id="no-data">No data for this combination.</div>
     </div>
-    <div class="card">
-      <canvas id="volume-chart" height="160"></canvas>
+    <div class="card" style="margin-top:12px">
+      <div class="card-title">Row volume</div>
+      <canvas id="volume-chart" height="140"></canvas>
     </div>
   </div>
 
@@ -54,7 +56,9 @@
   const res = await fetch('data/null-timeseries.json');
   const db  = await res.json();
 
+  // palette: dark muted tones that read well on white
   const PALETTE = ['#1e40af','#166534','#92400e','#b91c1c','#6b21a8','#0e7490','#854d0e','#065f46'];
+
   const selBld = document.getElementById('sel-building');
   const selOrg = document.getElementById('sel-org');
   const selCol = document.getElementById('sel-col');
@@ -65,7 +69,10 @@
 
   function filtered() {
     const bld = selBld.value, org = selOrg.value;
-    return db.data.filter(r => (!bld || r.building_id === bld) && (!org || r.org_id === org));
+    return db.data.filter(r =>
+      (!bld || String(r.building_id) === String(bld)) &&
+      (!org || String(r.org_id) === String(org))
+    );
   }
 
   function aggregate(rows) {
@@ -73,58 +80,102 @@
     rows.forEach(r => {
       if (!byDay[r.day]) byDay[r.day] = { total_rows: 0, counts: {}, n: 0 };
       const d = byDay[r.day];
-      d.total_rows += r.total_rows; d.n += 1;
-      db.columns.forEach(c => { d.counts[c] = (d.counts[c] || 0) + r[c.toLowerCase() + '_null_pct']; });
+      d.total_rows += (r.total_rows || 0);
+      d.n += 1;
+      db.columns.forEach(c => {
+        const key = c.toLowerCase() + '_null_pct';
+        d.counts[c] = (d.counts[c] || 0) + (r[key] || 0);
+      });
     });
-    return Object.entries(byDay).sort(([a],[b]) => a.localeCompare(b)).map(([day, d]) => ({
-      day, total_rows: d.total_rows,
-      ...Object.fromEntries(db.columns.map(c => [c, +(d.counts[c] / d.n).toFixed(2)])),
-    }));
+    return Object.entries(byDay)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([day, d]) => ({
+        day,
+        total_rows: d.total_rows,
+        ...Object.fromEntries(db.columns.map(c => [c, +(d.counts[c] / d.n).toFixed(2)])),
+      }));
   }
 
-  const TT = { backgroundColor: '#fff', borderColor: '#ccc', borderWidth: 1, titleColor: '#111', bodyColor: '#555' };
-  const xScale = { type: 'time', time: { unit: 'day', tooltipFormat: 'MMM d' }, grid: { color: '#e2e0db' }, ticks: { color: '#999' } };
+  const GRID = '#e8e6e1';
+  const TICK = { color: '#999', font: { family: 'ui-monospace, monospace', size: 11 } };
+  const TT   = { backgroundColor: '#fff', borderColor: '#ccc', borderWidth: 1, titleColor: '#111', bodyColor: '#555', padding: 8 };
+  const xScale = {
+    type: 'time',
+    time: { unit: 'day', tooltipFormat: 'MMM d' },
+    grid: { color: GRID },
+    ticks: TICK,
+  };
 
   const nullChart = new Chart(document.getElementById('null-chart').getContext('2d'), {
-    type: 'line', data: { datasets: [] },
+    type: 'line',
+    data: { datasets: [] },
     options: {
-      responsive: true, animation: false, interaction: { mode: 'index', intersect: false },
+      responsive: true, animation: false,
+      interaction: { mode: 'index', intersect: false },
       plugins: {
-        legend: { labels: { color: '#555', boxWidth: 12 } },
+        legend: { labels: { color: '#333', boxWidth: 12, font: { family: 'ui-monospace, monospace', size: 11 } } },
         tooltip: { ...TT, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%` } },
       },
       scales: {
         x: xScale,
-        y: { min: 0, max: 100, grid: { color: '#e2e0db' }, ticks: { color: '#999', callback: v => v + '%' }, title: { display: true, text: 'Null %', color: '#999' } },
+        y: {
+          min: 0, max: 100,
+          grid: { color: GRID },
+          ticks: { ...TICK, callback: v => v + '%' },
+          title: { display: true, text: 'Null %', color: '#999', font: { size: 11 } },
+        },
       },
     },
   });
 
   const volumeChart = new Chart(document.getElementById('volume-chart').getContext('2d'), {
-    type: 'bar', data: { datasets: [] },
+    type: 'bar',
+    data: { datasets: [] },
     options: {
       responsive: true, animation: false,
-      plugins: { legend: { display: false }, tooltip: { ...TT, callbacks: { label: ctx => ` Rows: ${ctx.parsed.y.toLocaleString()}` } } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { ...TT, callbacks: { label: ctx => ` Rows: ${ctx.parsed.y.toLocaleString()}` } },
+      },
       scales: {
         x: xScale,
-        y: { grid: { color: '#e2e0db' }, ticks: { color: '#999' }, title: { display: true, text: 'Row count', color: '#999' } },
+        y: {
+          grid: { color: GRID },
+          ticks: TICK,
+          title: { display: true, text: 'Row count', color: '#999', font: { size: 11 } },
+        },
       },
     },
   });
 
   function render() {
-    const agg = aggregate(filtered());
+    const agg    = aggregate(filtered());
     const noData = document.getElementById('no-data');
-    if (!agg.length) { noData.style.display = 'block'; nullChart.data.datasets = []; nullChart.update(); return; }
+    if (!agg.length) {
+      noData.style.display = 'block';
+      nullChart.data.datasets = [];
+      nullChart.update();
+      return;
+    }
     noData.style.display = 'none';
-    const colFilter = selCol.value ? [selCol.value] : db.columns;
-    nullChart.data.datasets = colFilter.map((col, i) => ({
-      label: col, data: agg.map(r => ({ x: r.day, y: r[col] })),
-      borderColor: PALETTE[i % PALETTE.length], backgroundColor: PALETTE[i % PALETTE.length] + '18',
-      borderWidth: 1.5, pointRadius: 2, tension: 0.3, fill: false,
+
+    const cols = selCol.value ? [selCol.value] : db.columns;
+    nullChart.data.datasets = cols.map((col, i) => ({
+      label: col,
+      data: agg.map(r => ({ x: r.day, y: r[col] })),
+      borderColor: PALETTE[i % PALETTE.length],
+      backgroundColor: PALETTE[i % PALETTE.length] + '15',
+      borderWidth: 1.5, pointRadius: 3, pointHoverRadius: 5,
+      tension: 0.25, fill: false,
     }));
     nullChart.update();
-    volumeChart.data.datasets = [{ label: 'Rows', data: agg.map(r => ({ x: r.day, y: r.total_rows })), backgroundColor: '#1e40af22', borderColor: '#1e40af', borderWidth: 1 }];
+
+    volumeChart.data.datasets = [{
+      data: agg.map(r => ({ x: r.day, y: r.total_rows })),
+      backgroundColor: '#1e40af18',
+      borderColor: '#1e40af',
+      borderWidth: 1,
+    }];
     volumeChart.update();
   }
 

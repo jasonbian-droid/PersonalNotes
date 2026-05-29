@@ -154,8 +154,28 @@ function renderOutput(o) {
     </div>`
 }
 
+const pages = [
+  { title: 'Pipeline',      href: 'index.html',                  desc: 'Full Event API call chain — webhook → SQS → EventApi → StateIO → Snowflake.' },
+  { title: 'Email Flow',    href: 'email-flow.html',              desc: 'Original 5-step inbound flow from SES receipt to state resolution.' },
+  { title: 'Action Models', href: 'event-api-actions.html',       desc: 'All action types that flow through RequestHandler — inbound, agent, resident, AI.' },
+  { title: 'Null %',        href: 'null-timeseries.html',         desc: 'Daily null rate per column in INBOUND_INTERACTION_EVENTS, by building and org.' },
+  { title: 'Email Nulls',   href: 'null-emails/index.html',       desc: 'Full null analysis from email_null_analysis.ipynb — funnel, audit, drop-off.' },
+  { title: 'Notebook',      href: 'http://localhost:8888/lab/tree/snowflake/notebooks/email_null_analysis.ipynb', desc: 'email_null_analysis.ipynb — live Snowflake queries (local only).', external: true },
+]
+
 document.querySelector('#app').innerHTML = `
   <h1>Inbound Email → INBOUND_INTERACTION_EVENTS</h1>
+  <p class="page-subtitle">EliseAI · Email tracking infrastructure &amp; data quality</p>
+
+  <div class="index-grid">
+    ${pages.map(p => `
+      <a href="${p.href}" class="index-card${p.external ? ' external' : ''}" ${p.external ? 'target="_blank"' : ''}>
+        <div class="index-card-title">${p.title}${p.external ? ' ↗' : ''}</div>
+        <div class="index-card-desc">${p.desc}</div>
+      </a>`).join('')}
+  </div>
+
+  <div class="section-title" style="margin-top:2rem">Pipeline Trace</div>
 
   <div class="flow">
     ${pipeline.map((p, i) => {
