@@ -4,165 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Event API — Action Object Model</title>
-    <link rel="stylesheet" href="src/nav.css" />
+    <link rel="stylesheet" href="src/site.css" />
+  <link rel="stylesheet" href="src/nav.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-heading); max-width: 960px; }
 
-    body {
-      font-family: "Georgia", "Times New Roman", serif;
-      background: #fff;
-      color: #111;
-      min-height: 100vh;
-      padding: 48px 40px 72px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .site-nav { background: #f5f5f5; border-bottom: 1px solid #ddd; }
-    .site-nav a { color: #555; }
-    .site-nav a:hover { color: #111; background: #e8e8e8; }
-    .site-nav a.active { color: #111; background: #e0e0e0; }
-    .nav-sep { color: #ccc; }
-
-    h1 {
-      font-family: "Georgia", serif;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #111;
-      text-transform: none;
-      margin-bottom: 6px;
-      border-bottom: 2px solid #111;
-      padding-bottom: 12px;
-    }
-
-    .subtitle {
-      text-align: center;
-      font-size: 0.82rem;
-      color: #555;
-      font-style: italic;
-      margin-bottom: 40px;
-      margin-top: 8px;
-    }
-
-    code {
-      font-family: "Courier New", monospace;
-      font-size: 0.82em;
-      background: #f4f4f4;
-      border: 1px solid #ddd;
-      padding: 0 4px;
-      color: #333;
-    }
-
-    .base-wrap { display: flex; flex-direction: column; align-items: center; margin-bottom: 0; }
-
-    .base-card {
-      background: #fafafa;
-      border: 2px solid #111;
-      padding: 16px 24px;
-      max-width: 480px;
-      width: 100%;
-    }
-
-    .base-card .class-name {
-      font-family: "Courier New", monospace;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 4px;
-    }
-
-    .base-card .class-label {
-      font-size: 0.68rem;
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 10px;
-    }
-
+    .base-card { background: var(--bg-subtle); border: 2px solid var(--text); padding: 16px 24px; max-width: 480px; width: 100%; }
+    .base-card .class-label { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
+    .base-card .class-name { font-family: var(--font-mono); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
     .field-list { display: flex; flex-wrap: wrap; gap: 5px; }
-
-    .field {
-      font-family: "Courier New", monospace;
-      font-size: 0.7rem;
-      padding: 2px 7px;
-      background: #f0f0f0;
-      color: #333;
-      border: 1px solid #ccc;
-    }
+    .field { font-family: var(--font-mono); font-size: 0.7rem; padding: 2px 7px; background: var(--bg-code); color: var(--text-mid); border: 1px solid var(--border); }
 
     .connector { display: flex; flex-direction: column; align-items: center; }
-    .connector-line { width: 1px; height: 28px; background: #999; }
-    .connector-arrow { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #999; }
+    .connector-line { width: 1px; height: 28px; background: var(--border-dark); }
+    .connector-arrow { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid var(--border-dark); }
 
     .group { margin-bottom: 36px; }
-
     .group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
     .group-dot { display: none; }
+    .group-title { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text); }
+    .group-line { flex: 1; height: 1px; background: var(--border); }
 
-    .group-title {
-      font-family: "Georgia", serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #111;
-    }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
 
-    .group-line { flex: 1; height: 1px; background: #ccc; }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 10px;
-    }
-
-    .action-card {
-      background: #fafafa;
-      border: 1px solid #ccc;
-      padding: 12px 14px;
-      transition: border-color 0.1s;
-    }
-
-    .action-card:hover { border-color: #111; background: #f5f5f5; }
-
-    .action-card .type-badge {
-      font-family: "Courier New", monospace;
-      font-size: 0.62rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: #555;
-    }
-
-    .action-card .class-name {
-      font-family: "Georgia", serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 8px;
-    }
-
+    .action-card { background: var(--bg-subtle); border: 1px solid var(--border); padding: 12px 14px; transition: border-color 0.1s; }
+    .action-card:hover { border-color: var(--text); }
+    .action-card .type-badge { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; margin-bottom: 4px; color: var(--text-faint); }
+    .action-card .class-name { font-family: var(--font-heading); font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
     .action-card .fields { display: flex; flex-wrap: wrap; gap: 4px; }
     .action-card .field { font-size: 0.65rem; padding: 1px 5px; }
 
-    /* All groups use b&w */
     .g-lead .group-title, .g-agent .group-title, .g-resident .group-title,
-    .g-convo .group-title, .g-ai .group-title, .g-track .group-title { color: #111; }
-
+    .g-convo .group-title, .g-ai .group-title, .g-track .group-title { color: var(--text); }
     .g-lead .group-line, .g-agent .group-line, .g-resident .group-line,
-    .g-convo .group-line, .g-ai .group-line, .g-track .group-line { background: #ccc; }
-
+    .g-convo .group-line, .g-ai .group-line, .g-track .group-line { background: var(--border); }
     .g-lead .action-card, .g-agent .action-card, .g-resident .action-card,
-    .g-convo .action-card, .g-ai .action-card, .g-track .action-card { border-color: #ccc; }
-
-    .g-lead .action-card:hover, .g-agent .action-card:hover, .g-resident .action-card:hover,
-    .g-convo .action-card:hover, .g-ai .action-card:hover, .g-track .action-card:hover { border-color: #111; }
-
+    .g-convo .action-card, .g-ai .action-card, .g-track .action-card { border-color: var(--border); }
     .g-lead .type-badge, .g-agent .type-badge, .g-resident .type-badge,
-    .g-convo .type-badge, .g-ai .type-badge, .g-track .type-badge { color: #555; }
-
+    .g-convo .type-badge, .g-ai .type-badge, .g-track .type-badge { color: var(--text-faint); }
     .g-lead .field, .g-agent .field, .g-resident .field,
-    .g-convo .field, .g-ai .field, .g-track .field { background: #f0f0f0; color: #333; border-color: #ccc; }
+    .g-convo .field, .g-ai .field, .g-track .field { background: var(--bg-code); color: var(--text-mid); border-color: var(--border); }
   </style>
   <link rel="stylesheet" href="src/nav.css" />
 </head>

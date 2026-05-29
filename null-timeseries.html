@@ -4,21 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Null % Time-Series — INBOUND_INTERACTION_EVENTS</title>
+  <link rel="stylesheet" href="src/site.css" />
   <link rel="stylesheet" href="src/nav.css" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; padding: 48px 24px 72px; }
-    h1 { text-align: center; font-size: 1.1rem; font-weight: 600; color: #94a3b8; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
-    .subtitle { text-align: center; font-size: 0.78rem; color: #475569; margin-bottom: 32px; }
-    .content { max-width: 860px; margin: 0 auto; }
-    .chart-controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; align-items: flex-end; }
+    .chart-controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; align-items: flex-end; }
     .ctrl-group { display: flex; flex-direction: column; gap: 4px; }
-    .ctrl-group label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; }
-    .ctrl-group select { background: #1e2330; color: #e2e8f0; border: 1px solid #2d3448; border-radius: 6px; padding: 6px 10px; font-size: 0.85rem; min-width: 150px; cursor: pointer; }
-    .ctrl-group select:focus { outline: none; border-color: #4a5568; }
-    .chart-wrap { background: #1e2330; border: 1px solid #2d3448; border-radius: 12px; padding: 20px; margin-bottom: 24px; }
-    .chart-wrap canvas { width: 100% !important; }
-    #no-data { text-align: center; color: #94a3b8; padding: 40px; display: none; }
+    .ctrl-group label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); }
+    .ctrl-group select { background: var(--bg); color: var(--text); border: 1px solid var(--border-mid); padding: 5px 9px; font-size: 0.82rem; min-width: 140px; cursor: pointer; font-family: var(--font-mono); }
+    .ctrl-group select:focus { outline: none; border-color: var(--text); }
+    #no-data { text-align: center; color: var(--text-faint); padding: 40px; display: none; font-style: italic; }
   </style>
 </head>
 <body>
@@ -30,33 +24,26 @@
     <a href="event-api-actions.html">Action Models</a>
     <span class="nav-sep">·</span>
     <a href="null-timeseries.html" class="active">Null %</a>
+    <span class="nav-sep">·</span>
+    <a href="null-emails/index.html">Email Nulls</a>
   </nav>
 
-  <h1>Null % Time-Series</h1>
-  <p class="subtitle">Daily null rate per column in INBOUND_INTERACTION_EVENTS, segmented by BUILDING_ID and ORG_ID</p>
+  <div class="page page-wide">
+    <h1>Null % Time-Series</h1>
+    <p class="page-subtitle">Daily null rate per column in INBOUND_INTERACTION_EVENTS, segmented by building and org</p>
 
-  <div class="content">
     <div class="chart-controls">
-      <div class="ctrl-group">
-        <label>Building</label>
-        <select id="sel-building"><option value="">All buildings</option></select>
-      </div>
-      <div class="ctrl-group">
-        <label>Org</label>
-        <select id="sel-org"><option value="">All orgs</option></select>
-      </div>
-      <div class="ctrl-group">
-        <label>Column</label>
-        <select id="sel-col"><option value="">All columns</option></select>
-      </div>
+      <div class="ctrl-group"><label>Building</label><select id="sel-building"><option value="">All buildings</option></select></div>
+      <div class="ctrl-group"><label>Org</label><select id="sel-org"><option value="">All orgs</option></select></div>
+      <div class="ctrl-group"><label>Column</label><select id="sel-col"><option value="">All columns</option></select></div>
     </div>
 
-    <div class="chart-wrap">
-      <canvas id="null-chart" height="380"></canvas>
+    <div class="card">
+      <canvas id="null-chart" height="340"></canvas>
       <div id="no-data">No data for this combination.</div>
     </div>
-    <div class="chart-wrap">
-      <canvas id="volume-chart" height="180"></canvas>
+    <div class="card">
+      <canvas id="volume-chart" height="160"></canvas>
     </div>
   </div>
 
@@ -67,8 +54,7 @@
   const res = await fetch('data/null-timeseries.json');
   const db  = await res.json();
 
-  const PALETTE = ['#60a5fa','#34d399','#f59e0b','#f87171','#a78bfa','#fb923c','#38bdf8','#4ade80'];
-
+  const PALETTE = ['#1e40af','#166534','#92400e','#b91c1c','#6b21a8','#0e7490','#854d0e','#065f46'];
   const selBld = document.getElementById('sel-building');
   const selOrg = document.getElementById('sel-org');
   const selCol = document.getElementById('sel-col');
@@ -87,8 +73,7 @@
     rows.forEach(r => {
       if (!byDay[r.day]) byDay[r.day] = { total_rows: 0, counts: {}, n: 0 };
       const d = byDay[r.day];
-      d.total_rows += r.total_rows;
-      d.n += 1;
+      d.total_rows += r.total_rows; d.n += 1;
       db.columns.forEach(c => { d.counts[c] = (d.counts[c] || 0) + r[c.toLowerCase() + '_null_pct']; });
     });
     return Object.entries(byDay).sort(([a],[b]) => a.localeCompare(b)).map(([day, d]) => ({
@@ -97,17 +82,21 @@
     }));
   }
 
-  const commonScales = {
-    x: { type: 'time', time: { unit: 'day', tooltipFormat: 'MMM d' }, grid: { color: '#2d3448' }, ticks: { color: '#64748b' } },
-  };
-  const tooltipDefaults = { backgroundColor: '#1e2330', borderColor: '#2d3448', borderWidth: 1, titleColor: '#e2e8f0', bodyColor: '#94a3b8' };
+  const TT = { backgroundColor: '#fff', borderColor: '#ccc', borderWidth: 1, titleColor: '#111', bodyColor: '#555' };
+  const xScale = { type: 'time', time: { unit: 'day', tooltipFormat: 'MMM d' }, grid: { color: '#e2e0db' }, ticks: { color: '#999' } };
 
   const nullChart = new Chart(document.getElementById('null-chart').getContext('2d'), {
     type: 'line', data: { datasets: [] },
     options: {
       responsive: true, animation: false, interaction: { mode: 'index', intersect: false },
-      plugins: { legend: { labels: { color: '#94a3b8', boxWidth: 12 } }, tooltip: { ...tooltipDefaults, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%` } } },
-      scales: { ...commonScales, y: { min: 0, max: 100, grid: { color: '#2d3448' }, ticks: { color: '#64748b', callback: v => v + '%' }, title: { display: true, text: 'Null %', color: '#64748b' } } },
+      plugins: {
+        legend: { labels: { color: '#555', boxWidth: 12 } },
+        tooltip: { ...TT, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%` } },
+      },
+      scales: {
+        x: xScale,
+        y: { min: 0, max: 100, grid: { color: '#e2e0db' }, ticks: { color: '#999', callback: v => v + '%' }, title: { display: true, text: 'Null %', color: '#999' } },
+      },
     },
   });
 
@@ -115,8 +104,11 @@
     type: 'bar', data: { datasets: [] },
     options: {
       responsive: true, animation: false,
-      plugins: { legend: { display: false }, tooltip: { ...tooltipDefaults, callbacks: { label: ctx => ` Rows: ${ctx.parsed.y.toLocaleString()}` } } },
-      scales: { ...commonScales, y: { grid: { color: '#2d3448' }, ticks: { color: '#64748b' }, title: { display: true, text: 'Row count', color: '#64748b' } } },
+      plugins: { legend: { display: false }, tooltip: { ...TT, callbacks: { label: ctx => ` Rows: ${ctx.parsed.y.toLocaleString()}` } } },
+      scales: {
+        x: xScale,
+        y: { grid: { color: '#e2e0db' }, ticks: { color: '#999' }, title: { display: true, text: 'Row count', color: '#999' } },
+      },
     },
   });
 
@@ -128,11 +120,11 @@
     const colFilter = selCol.value ? [selCol.value] : db.columns;
     nullChart.data.datasets = colFilter.map((col, i) => ({
       label: col, data: agg.map(r => ({ x: r.day, y: r[col] })),
-      borderColor: PALETTE[i % PALETTE.length], backgroundColor: PALETTE[i % PALETTE.length] + '22',
-      borderWidth: 2, pointRadius: 2, tension: 0.3, fill: false,
+      borderColor: PALETTE[i % PALETTE.length], backgroundColor: PALETTE[i % PALETTE.length] + '18',
+      borderWidth: 1.5, pointRadius: 2, tension: 0.3, fill: false,
     }));
     nullChart.update();
-    volumeChart.data.datasets = [{ label: 'Rows', data: agg.map(r => ({ x: r.day, y: r.total_rows })), backgroundColor: '#3b82f633', borderColor: '#3b82f6', borderWidth: 1 }];
+    volumeChart.data.datasets = [{ label: 'Rows', data: agg.map(r => ({ x: r.day, y: r.total_rows })), backgroundColor: '#1e40af22', borderColor: '#1e40af', borderWidth: 1 }];
     volumeChart.update();
   }
 

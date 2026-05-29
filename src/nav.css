@@ -7,21 +7,20 @@
   gap: 2px;
   padding: 0 20px;
   height: 40px;
-  background: #0a0d14;
-  border-bottom: 1px solid #1e2535;
+  background: #fff;
+  border-bottom: 2px solid #1a1a1a;
 }
 .site-nav a {
-  font-size: 0.68rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #475569;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #888;
   text-decoration: none;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 3px 9px;
   white-space: nowrap;
+  letter-spacing: 0.02em;
 }
-.site-nav a:hover { color: #94a3b8; background: #1a1f2e; }
-.site-nav a.active { color: #93c5fd; background: #0c1a2e; }
-.nav-sep { color: #1e2535; padding: 0 2px; font-size: 0.7rem; }
-body { padding-top: 60px !important; }
+.site-nav a:hover { color: #1a1a1a; }
+.site-nav a.active { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; margin-bottom: -2px; }
+.nav-sep { color: #ccc; font-size: 0.7rem; padding: 0 1px; }
+body { padding-top: calc(40px + 2.5rem); }

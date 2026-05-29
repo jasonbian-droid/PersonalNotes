@@ -4,67 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Email Null Analysis — INBOUND_INTERACTION_EVENTS</title>
+  <link rel="stylesheet" href="../src/site.css" />
   <link rel="stylesheet" href="../src/nav.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; padding: 3rem 1.5rem 5rem; }
-    .page { max-width: 900px; margin: 0 auto; }
-
-    h1 { font-size: 1rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: 4px; }
-    .subtitle { text-align: center; font-size: 0.78rem; color: #475569; margin-bottom: 2rem; }
-
-    /* KPI strip */
-    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 2.5rem; }
-    .kpi { background: #161b28; border: 1px solid #232d3f; border-radius: 8px; padding: 14px 16px; }
-    .kpi-val { font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; color: #e2e8f0; }
-    .kpi-val.warn { color: #f87171; }
-    .kpi-val.ok { color: #4ade80; }
-    .kpi-label { font-size: 0.65rem; color: #475569; text-transform: uppercase; letter-spacing: 0.07em; margin-top: 3px; }
-
-    /* Section */
-    .section { margin-bottom: 2.5rem; }
-    .section-title { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #475569; border-bottom: 1px solid #1e2535; padding-bottom: 6px; margin-bottom: 14px; }
-
-    /* Chart card */
-    .card { background: #161b28; border: 1px solid #232d3f; border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
-    .card-title { font-size: 0.7rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
-
-    /* Table */
-    table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
-    th { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #475569; padding: 6px 10px; border-bottom: 1px solid #1e2535; text-align: left; white-space: nowrap; }
-    td { padding: 6px 10px; border-bottom: 1px solid #141824; color: #94a3b8; font-family: ui-monospace, monospace; font-size: 0.75rem; }
-    tr:last-child td { border-bottom: none; }
-    td.num { text-align: right; }
-    td.pct-high { color: #f87171; }
-    td.pct-med { color: #fbbf24; }
-    td.pct-low { color: #4ade80; }
-    td.pct-zero { color: #334155; }
-    td.provider { color: #93c5fd; }
-    td.status { color: #c4b5fd; }
-
-    /* Two-col grid */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-    /* Reach rate bar */
-    .reach-bar { display: flex; align-items: center; gap: 8px; }
-    .reach-fill { height: 6px; border-radius: 3px; background: #4ade80; }
-    .reach-empty { height: 6px; border-radius: 3px; background: #1e2535; flex: 1; }
-
-    /* Insight callout */
-    .insight { display: flex; gap: 10px; padding: 10px 14px; background: #0c1a2e; border: 1px solid #1d4ed8; border-left: 3px solid #3b82f6; border-radius: 6px; margin-bottom: 10px; }
-    .insight.warn { background: #1a0a0a; border-color: #7f1d1d; border-left-color: #ef4444; }
-    .insight-icon { font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
-    .insight-text { font-size: 0.77rem; color: #64748b; line-height: 1.5; }
-    .insight-text strong { color: #e2e8f0; }
-
-    code { font-family: ui-monospace, monospace; font-size: 0.8em; background: #1a1f2e; border-radius: 3px; padding: 1px 4px; color: #94a3b8; }
-
-    @media (max-width: 600px) {
-      .kpis { grid-template-columns: repeat(2, 1fr); }
-      .two-col { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
   <nav class="site-nav">
@@ -81,162 +23,150 @@
 
   <div class="page">
     <h1>Email Null Analysis</h1>
-    <p class="subtitle">ELISE.PUBLIC.INBOUND_INTERACTION_EVENTS &nbsp;·&nbsp; Last 7 days &nbsp;·&nbsp; 3,847,446 rows</p>
+    <p class="page-subtitle">ELISE.PUBLIC.INBOUND_INTERACTION_EVENTS &nbsp;·&nbsp; Last 7 days &nbsp;·&nbsp; 3,847,446 rows</p>
 
-    <!-- KPIs -->
     <div class="kpis">
-      <div class="kpi"><div class="kpi-val warn">99.7%</div><div class="kpi-label">RECEIVED_AT null</div></div>
-      <div class="kpi"><div class="kpi-val warn">32.8%</div><div class="kpi-label">STATE_ID null</div></div>
-      <div class="kpi"><div class="kpi-val warn">14.7%</div><div class="kpi-label">EMAIL_TYPE null</div></div>
-      <div class="kpi"><div class="kpi-val ok">0%</div><div class="kpi-label">INTERACTION_ID null</div></div>
+      <div class="kpi"><div class="kpi-val bad">99.7%</div><div class="kpi-label">RECEIVED_AT null</div></div>
+      <div class="kpi"><div class="kpi-val bad">32.8%</div><div class="kpi-label">STATE_ID null</div></div>
+      <div class="kpi"><div class="kpi-val bad">14.7%</div><div class="kpi-label">EMAIL_TYPE null</div></div>
+      <div class="kpi"><div class="kpi-val good">0%</div><div class="kpi-label">INTERACTION_ID null</div></div>
     </div>
 
     <!-- §2 Null Analysis -->
-    <div class="section">
-      <div class="section-title">§2 — Null Rates per Column (last 7d, 3,847,446 rows)</div>
+    <div class="section-title">§2 — Null Rates per Column</div>
 
-      <div class="insight warn">
-        <span class="insight-icon">⚠</span>
-        <div class="insight-text"><strong>RECEIVED_AT is 99.72% null.</strong> The email Date header is not being parsed and passed to <code>InboundInteractionLogger.send_email_event()</code> at most call sites. <code>parse_timestamp()</code> was added in the latest logger update but callers still need to be wired up.</div>
-      </div>
-      <div class="insight warn">
-        <span class="insight-icon">⚠</span>
-        <div class="insight-text"><strong>EMAIL_TYPE is 14.71% null</strong> (565,995 rows). PR #92038 normalises <code>CRM_INBOUND → INBOUND</code> and adds <code>OUTBOUND</code> coverage — but rows emitted before merge will remain null/CRM_INBOUND.</div>
-      </div>
+    <div class="callout warn">
+      <span class="callout-icon">⚠</span>
+      <div><strong>RECEIVED_AT is 99.72% null.</strong> The email Date header is not being passed to <code>InboundInteractionLogger.send_email_event()</code> at most call sites. <code>parse_timestamp()</code> was added in the latest logger update but callers still need wiring.</div>
+    </div>
+    <div class="callout warn">
+      <span class="callout-icon">⚠</span>
+      <div><strong>EMAIL_TYPE is 14.71% null</strong> (565,995 rows). PR #92038 normalises <code>CRM_INBOUND → INBOUND</code> and adds <code>OUTBOUND</code> — rows emitted before merge remain null or CRM_INBOUND.</div>
+    </div>
 
+    <div class="card">
+      <div class="card-title">Null % by column</div>
+      <canvas id="null-bar" height="240"></canvas>
+    </div>
+
+    <div class="two-col">
       <div class="card">
-        <div class="card-title">Null % by column</div>
-        <canvas id="null-bar" height="260"></canvas>
+        <div class="card-title">All columns</div>
+        <table>
+          <thead><tr><th>Column</th><th class="num">Null count</th><th class="num">Null %</th></tr></thead>
+          <tbody id="null-table"></tbody>
+        </table>
       </div>
-
-      <div class="two-col">
-        <div class="card">
-          <div class="card-title">All columns — null count &amp; %</div>
-          <table>
-            <thead><tr><th>Column</th><th class="num">Null count</th><th class="num">Null %</th></tr></thead>
-            <tbody id="null-table"></tbody>
-          </table>
-        </div>
-        <div class="card">
-          <div class="card-title">EMAIL_TYPE distribution</div>
-          <canvas id="email-type-chart" height="220"></canvas>
-          <table style="margin-top:14px">
-            <thead><tr><th>EMAIL_TYPE</th><th class="num">Row count</th></tr></thead>
-            <tbody>
-              <tr><td>OUTBOUND</td><td class="num">1,881,332</td></tr>
-              <tr><td>CRM_INBOUND</td><td class="num">1,051,105</td></tr>
-              <tr><td class="pct-high">null</td><td class="num">565,995</td></tr>
-              <tr><td>INBOUND</td><td class="num">347,967</td></tr>
-              <tr><td>AP_INVOICE</td><td class="num">1,047</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card">
+        <div class="card-title">EMAIL_TYPE distribution</div>
+        <canvas id="email-type-chart" height="200"></canvas>
+        <table style="margin-top:12px">
+          <thead><tr><th>VALUE</th><th class="num">Rows</th></tr></thead>
+          <tbody>
+            <tr><td>OUTBOUND</td><td class="num">1,881,332</td></tr>
+            <tr><td>CRM_INBOUND</td><td class="num">1,051,105</td></tr>
+            <tr><td class="high">null</td><td class="num">565,995</td></tr>
+            <tr><td>INBOUND</td><td class="num">347,967</td></tr>
+            <tr><td>AP_INVOICE</td><td class="num">1,047</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <!-- §3 Traffic -->
-    <div class="section">
-      <div class="section-title">§3 — Traffic (last 7d)</div>
+    <div class="section-title" style="margin-top:2rem">§3 — Traffic</div>
 
-      <div class="insight">
-        <span class="insight-icon">ℹ</span>
-        <div class="insight-text"><strong>Only 2 days of data</strong> are present (May 28–29). Table appears recently created or backfill is incomplete for earlier dates.</div>
+    <div class="callout info">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>Only 2 days of data</strong> present (May 28–29). Table appears recently created or backfill is incomplete.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Unique messages per day by provider</div>
+        <table>
+          <thead><tr><th>Provider</th><th class="num">May 28</th><th class="num">May 29</th></tr></thead>
+          <tbody>
+            <tr><td>sendgrid</td><td class="num">640,977</td><td class="num">588,748</td></tr>
+            <tr><td>gmail</td><td class="num">79,477</td><td class="num">81,182</td></tr>
+            <tr><td>outlook</td><td class="num">59,021</td><td class="num">70,497</td></tr>
+            <tr><td>inbound_email</td><td class="num">62,625</td><td class="num">66,735</td></tr>
+          </tbody>
+        </table>
       </div>
-
-      <div class="two-col">
-        <div class="card">
-          <div class="card-title">Unique messages per day by provider</div>
-          <table>
-            <thead><tr><th>Provider</th><th class="num">May 28</th><th class="num">May 29</th></tr></thead>
-            <tbody>
-              <tr><td class="provider">sendgrid</td><td class="num">640,977</td><td class="num">588,748</td></tr>
-              <tr><td class="provider">gmail</td><td class="num">79,477</td><td class="num">81,182</td></tr>
-              <tr><td class="provider">outlook</td><td class="num">59,021</td><td class="num">70,497</td></tr>
-              <tr><td class="provider">inbound_email</td><td class="num">62,625</td><td class="num">66,735</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="card">
-          <div class="card-title">Single-event interactions (potential drops)</div>
-          <p style="font-size:0.75rem;color:#475569;margin-bottom:10px;">354 of 5,000 sampled &nbsp;(7.1%)</p>
-          <table>
-            <thead><tr><th>Provider</th><th>Last status</th><th class="num">Count</th></tr></thead>
-            <tbody>
-              <tr><td class="provider">outlook</td><td class="status">SCANNED</td><td class="num">294</td></tr>
-              <tr><td class="provider">inbound_email</td><td class="status">RECEIVED_BY_EVENTAPI</td><td class="num">48</td></tr>
-              <tr><td class="provider">sendgrid</td><td class="status">REPLY_GENERATING</td><td class="num">6</td></tr>
-              <tr><td class="provider">sendgrid</td><td class="status">SCANNED</td><td class="num">3</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card">
+        <div class="card-title">Single-event interactions — potential drops (7.1% of 5K sampled)</div>
+        <table>
+          <thead><tr><th>Provider</th><th>Last status</th><th class="num">Count</th></tr></thead>
+          <tbody>
+            <tr><td>outlook</td><td>SCANNED</td><td class="num">294</td></tr>
+            <tr><td>inbound_email</td><td>RECEIVED_BY_EVENTAPI</td><td class="num">48</td></tr>
+            <tr><td>sendgrid</td><td>REPLY_GENERATING</td><td class="num">6</td></tr>
+            <tr><td>sendgrid</td><td>SCANNED</td><td class="num">3</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <!-- §4 Funnel -->
-    <div class="section">
-      <div class="section-title">§4 — Pipeline Funnel &amp; Drop-off (last 7d)</div>
+    <div class="section-title" style="margin-top:2rem">§4 — Pipeline Funnel &amp; Drop-off</div>
 
-      <div class="card">
-        <div class="card-title">Unique messages per recon_status step (all providers)</div>
-        <canvas id="funnel-chart" height="280"></canvas>
-      </div>
+    <div class="card">
+      <div class="card-title">Unique messages per recon_status (all providers)</div>
+      <canvas id="funnel-chart" height="260"></canvas>
+    </div>
 
-      <div class="card">
-        <div class="card-title">Full funnel — events by recon_status × provider</div>
-        <table>
-          <thead><tr><th>RECON_STATUS</th><th>PROVIDER</th><th class="num">Events</th><th class="num">Unique msgs</th></tr></thead>
-          <tbody id="funnel-table"></tbody>
-        </table>
-      </div>
+    <div class="card">
+      <div class="card-title">Full funnel — recon_status × provider</div>
+      <table>
+        <thead><tr><th>RECON_STATUS</th><th>PROVIDER</th><th class="num">Events</th><th class="num">Unique msgs</th></tr></thead>
+        <tbody id="funnel-table"></tbody>
+      </table>
     </div>
 
     <!-- §4.2 Audit -->
-    <div class="section">
-      <div class="section-title">§4.2 — Audit: Lifecycle reach rates by provider</div>
+    <div class="section-title" style="margin-top:2rem">§4.2 — Lifecycle Reach Rates by Provider</div>
 
-      <div class="insight warn">
-        <span class="insight-icon">⚠</span>
-        <div class="insight-text"><strong>gmail and outlook reach state_id 0% of the time.</strong> 158,777 gmail messages stall at QUEUED with no downstream record. These providers are emitting to the table but not routing through EventApi state resolution.</div>
-      </div>
+    <div class="callout warn">
+      <span class="callout-icon">⚠</span>
+      <div><strong>gmail and outlook reach state_id 0% of the time.</strong> 158,777 gmail messages stall at QUEUED. These providers emit to the table but do not route through EventApi state resolution.</div>
+    </div>
 
-      <div class="card">
-        <div class="card-title">Reach rates by provider</div>
-        <table>
-          <thead><tr><th>Provider</th><th class="num">Total msgs</th><th class="num">Reached state</th><th class="num">% reached</th><th class="num">Had gap</th><th class="num">Dropped unknown</th><th class="num">% dropped</th></tr></thead>
-          <tbody id="audit-table"></tbody>
-        </table>
-      </div>
+    <div class="card">
+      <div class="card-title">Reach rates by provider</div>
+      <table>
+        <thead><tr><th>Provider</th><th class="num">Total</th><th class="num">Reached state</th><th class="num">% reached</th><th class="num">Dropped unknown</th><th class="num">% dropped</th></tr></thead>
+        <tbody id="audit-table"></tbody>
+      </table>
+    </div>
 
-      <div class="card">
-        <div class="card-title">Last recon_status before unknown drop (no state, no gap_reason)</div>
-        <table>
-          <thead><tr><th>Provider</th><th>Last status</th><th class="num">Dropped count</th></tr></thead>
-          <tbody id="lastdrop-table"></tbody>
-        </table>
-      </div>
+    <div class="card">
+      <div class="card-title">Last recon_status before unknown drop (no state, no gap_reason)</div>
+      <table>
+        <thead><tr><th>Provider</th><th>Last status</th><th class="num">Dropped</th></tr></thead>
+        <tbody id="lastdrop-table"></tbody>
+      </table>
     </div>
   </div>
 
   <script>
-  // ── Data ──────────────────────────────────────────────────────────────────
-
   const nullData = [
-    { col: 'RECEIVED_AT',   null_count: 3836754, null_pct: 99.72 },
-    { col: 'GAP_REASON',    null_count: 3743317, null_pct: 97.29 },
-    { col: 'STATE_ID',      null_count: 1261937, null_pct: 32.80 },
-    { col: 'BUILDING_ID',   null_count:  732604, null_pct: 19.04 },
-    { col: 'EMAIL_TYPE',    null_count:  565995, null_pct: 14.71 },
-    { col: 'ORG_ID',        null_count:  431801, null_pct: 11.22 },
-    { col: 'PROVIDER',      null_count:  385898, null_pct: 10.03 },
-    { col: 'SUBJECT',       null_count:   73720, null_pct:  1.92 },
-    { col: 'SENDER',        null_count:   45114, null_pct:  1.17 },
-    { col: 'RECIPIENT',     null_count:     254, null_pct:  0.01 },
-    { col: 'ID',            null_count:       0, null_pct:  0.00 },
-    { col: 'INTERACTION_ID',null_count:       0, null_pct:  0.00 },
-    { col: 'CHANNEL',       null_count:       0, null_pct:  0.00 },
-    { col: 'MESSAGE_ID',    null_count:       0, null_pct:  0.00 },
-    { col: 'RECON_STATUS',  null_count:       0, null_pct:  0.00 },
-    { col: 'EMITTED_AT',    null_count:       0, null_pct:  0.00 },
+    { col: 'RECEIVED_AT',    null_count: 3836754, null_pct: 99.72 },
+    { col: 'GAP_REASON',     null_count: 3743317, null_pct: 97.29 },
+    { col: 'STATE_ID',       null_count: 1261937, null_pct: 32.80 },
+    { col: 'BUILDING_ID',    null_count:  732604, null_pct: 19.04 },
+    { col: 'EMAIL_TYPE',     null_count:  565995, null_pct: 14.71 },
+    { col: 'ORG_ID',         null_count:  431801, null_pct: 11.22 },
+    { col: 'PROVIDER',       null_count:  385898, null_pct: 10.03 },
+    { col: 'SUBJECT',        null_count:   73720, null_pct:  1.92 },
+    { col: 'SENDER',         null_count:   45114, null_pct:  1.17 },
+    { col: 'RECIPIENT',      null_count:     254, null_pct:  0.01 },
+    { col: 'ID',             null_count:       0, null_pct:  0.00 },
+    { col: 'INTERACTION_ID', null_count:       0, null_pct:  0.00 },
+    { col: 'CHANNEL',        null_count:       0, null_pct:  0.00 },
+    { col: 'MESSAGE_ID',     null_count:       0, null_pct:  0.00 },
+    { col: 'RECON_STATUS',   null_count:       0, null_pct:  0.00 },
+    { col: 'EMITTED_AT',     null_count:       0, null_pct:  0.00 },
   ]
 
   const funnelData = [
@@ -276,11 +206,11 @@
   ]
 
   const auditData = [
-    { provider: 'sendgrid',     total: 1229718, reached: 1229295, gap: 3579,  dropped: 3,      pct_reached: 99.97, pct_dropped: 0.00 },
-    { provider: 'gmail',        total:  159924, reached:       0, gap: 196,   dropped: 159728, pct_reached:  0.00, pct_dropped: 99.88 },
-    { provider: null,           total:  158932, reached:      31, gap: 50990, dropped: 107942, pct_reached:  0.02, pct_dropped: 67.92 },
-    { provider: 'outlook',      total:  128741, reached:       0, gap: 15141, dropped: 113600, pct_reached:  0.00, pct_dropped: 88.24 },
-    { provider: 'inbound_email',total:  128602, reached: 116980, gap: 0,      dropped: 11622,  pct_reached: 90.96, pct_dropped:  9.04 },
+    { provider: 'sendgrid',     total: 1229718, reached: 1229295, dropped:       3, pct_reached: 99.97, pct_dropped:  0.00 },
+    { provider: 'gmail',        total:  159924, reached:       0, dropped:  159728, pct_reached:  0.00, pct_dropped: 99.88 },
+    { provider: null,           total:  158932, reached:      31, dropped:  107942, pct_reached:  0.02, pct_dropped: 67.92 },
+    { provider: 'outlook',      total:  128741, reached:       0, dropped:  113600, pct_reached:  0.00, pct_dropped: 88.24 },
+    { provider: 'inbound_email',total:  128602, reached:  116980, dropped:   11622, pct_reached: 90.96, pct_dropped:  9.04 },
   ]
 
   const lastDropData = [
@@ -295,67 +225,55 @@
     { provider: 'sendgrid',     status: 'SCANNED',              count:      3 },
   ]
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
   const fmt = n => n.toLocaleString()
-  const PALETTE = { sendgrid: '#60a5fa', gmail: '#f87171', outlook: '#fbbf24', inbound_email: '#34d399', null: '#64748b' }
-  const BASE = { backgroundColor: '#1a1f2e', borderColor: '#2d3448', titleColor: '#e2e8f0', bodyColor: '#94a3b8', borderWidth: 1 }
+  const TT = { backgroundColor: '#fff', borderColor: '#ccc', borderWidth: 1, titleColor: '#111', bodyColor: '#555' }
 
   function pctClass(p) {
-    if (p >= 50) return 'pct-high'
-    if (p >= 10) return 'pct-med'
-    if (p > 0)  return 'pct-low'
-    return 'pct-zero'
+    if (p >= 50) return 'high'; if (p >= 10) return 'mid'; if (p > 0) return 'low'; return 'dim'
   }
 
-  // ── Null bar chart ────────────────────────────────────────────────────────
+  // Null bar
   new Chart(document.getElementById('null-bar'), {
     type: 'bar',
     data: {
       labels: nullData.map(d => d.col),
-      datasets: [{
-        data: nullData.map(d => d.null_pct),
-        backgroundColor: nullData.map(d => d.null_pct >= 50 ? '#f8717166' : d.null_pct >= 10 ? '#fbbf2466' : '#34d39966'),
-        borderColor:     nullData.map(d => d.null_pct >= 50 ? '#f87171'   : d.null_pct >= 10 ? '#fbbf24'   : '#34d399'),
-        borderWidth: 1,
-      }],
+      datasets: [{ data: nullData.map(d => d.null_pct),
+        backgroundColor: nullData.map(d => d.null_pct >= 50 ? '#b91c1c22' : d.null_pct >= 10 ? '#92400e22' : '#16653422'),
+        borderColor:     nullData.map(d => d.null_pct >= 50 ? '#b91c1c'   : d.null_pct >= 10 ? '#92400e'   : '#166534'),
+        borderWidth: 1 }],
     },
     options: {
       responsive: true, animation: false,
-      plugins: { legend: { display: false }, tooltip: { ...BASE, callbacks: { label: ctx => ` ${ctx.parsed.y}%` } } },
+      plugins: { legend: { display: false }, tooltip: { ...TT, callbacks: { label: ctx => ` ${ctx.parsed.y}%` } } },
       scales: {
-        x: { grid: { color: '#1e2535' }, ticks: { color: '#475569', font: { size: 10 }, maxRotation: 45 } },
-        y: { min: 0, max: 100, grid: { color: '#1e2535' }, ticks: { color: '#475569', callback: v => v + '%' } },
+        x: { grid: { color: '#e2e0db' }, ticks: { color: '#999', font: { size: 10 }, maxRotation: 45 } },
+        y: { min: 0, max: 100, grid: { color: '#e2e0db' }, ticks: { color: '#999', callback: v => v + '%' } },
       },
     },
   })
 
-  // ── Null table ────────────────────────────────────────────────────────────
-  document.getElementById('null-table').innerHTML = nullData.map(d => `
-    <tr>
-      <td>${d.col}</td>
-      <td class="num">${fmt(d.null_count)}</td>
-      <td class="num ${pctClass(d.null_pct)}">${d.null_pct}%</td>
-    </tr>`).join('')
+  // Null table
+  document.getElementById('null-table').innerHTML = nullData.map(d =>
+    `<tr><td>${d.col}</td><td class="num">${fmt(d.null_count)}</td><td class="num ${pctClass(d.null_pct)}">${d.null_pct}%</td></tr>`
+  ).join('')
 
-  // ── EMAIL_TYPE donut ──────────────────────────────────────────────────────
+  // EMAIL_TYPE donut
   new Chart(document.getElementById('email-type-chart'), {
     type: 'doughnut',
     data: {
       labels: ['OUTBOUND', 'CRM_INBOUND', 'null', 'INBOUND', 'AP_INVOICE'],
-      datasets: [{
-        data: [1881332, 1051105, 565995, 347967, 1047],
-        backgroundColor: ['#3b82f6aa', '#8b5cf6aa', '#ef444466', '#10b981aa', '#64748b66'],
-        borderColor:     ['#3b82f6',   '#8b5cf6',   '#ef4444',   '#10b981',   '#64748b'],
-        borderWidth: 1,
-      }],
+      datasets: [{ data: [1881332, 1051105, 565995, 347967, 1047],
+        backgroundColor: ['#1e40af33','#6b21a833','#b91c1c33','#16653433','#88888833'],
+        borderColor:     ['#1e40af',  '#6b21a8',  '#b91c1c',  '#166534',  '#888'],
+        borderWidth: 1 }],
     },
     options: {
       responsive: true, animation: false,
-      plugins: { legend: { labels: { color: '#94a3b8', boxWidth: 12, font: { size: 11 } } }, tooltip: { ...BASE, callbacks: { label: ctx => ` ${ctx.label}: ${fmt(ctx.parsed)}` } } },
+      plugins: { legend: { labels: { color: '#555', boxWidth: 12, font: { size: 11 } } }, tooltip: { ...TT, callbacks: { label: ctx => ` ${ctx.label}: ${fmt(ctx.parsed)}` } } },
     },
   })
 
-  // ── Funnel chart ──────────────────────────────────────────────────────────
+  // Funnel chart
   const stepTotals = {}
   funnelData.forEach(d => { stepTotals[d.status] = (stepTotals[d.status] || 0) + d.msgs })
   const sortedSteps = Object.entries(stepTotals).sort((a, b) => b[1] - a[1])
@@ -364,54 +282,35 @@
     type: 'bar',
     data: {
       labels: sortedSteps.map(([s]) => s),
-      datasets: [{
-        data: sortedSteps.map(([, v]) => v),
-        backgroundColor: '#3b82f644',
-        borderColor: '#3b82f6',
-        borderWidth: 1,
-      }],
+      datasets: [{ data: sortedSteps.map(([, v]) => v), backgroundColor: '#1e40af22', borderColor: '#1e40af', borderWidth: 1 }],
     },
     options: {
       responsive: true, animation: false,
-      plugins: { legend: { display: false }, tooltip: { ...BASE, callbacks: { label: ctx => ` ${fmt(ctx.parsed.y)} unique msgs` } } },
+      plugins: { legend: { display: false }, tooltip: { ...TT, callbacks: { label: ctx => ` ${fmt(ctx.parsed.y)} unique msgs` } } },
       scales: {
-        x: { grid: { color: '#1e2535' }, ticks: { color: '#475569', font: { size: 10 }, maxRotation: 45 } },
-        y: { grid: { color: '#1e2535' }, ticks: { color: '#475569', callback: v => v >= 1e6 ? (v/1e6).toFixed(1)+'M' : v >= 1e3 ? (v/1e3).toFixed(0)+'K' : v } },
+        x: { grid: { color: '#e2e0db' }, ticks: { color: '#999', font: { size: 10 }, maxRotation: 45 } },
+        y: { grid: { color: '#e2e0db' }, ticks: { color: '#999', callback: v => v >= 1e6 ? (v/1e6).toFixed(1)+'M' : v >= 1e3 ? (v/1e3).toFixed(0)+'K' : v } },
       },
     },
   })
 
-  // ── Funnel table ──────────────────────────────────────────────────────────
-  document.getElementById('funnel-table').innerHTML = funnelData.map(d => `
-    <tr>
-      <td class="status">${d.status}</td>
-      <td class="provider">${d.provider ?? '<null>'}</td>
-      <td class="num">${fmt(d.events)}</td>
-      <td class="num">${fmt(d.msgs)}</td>
-    </tr>`).join('')
+  // Funnel table
+  document.getElementById('funnel-table').innerHTML = funnelData.map(d =>
+    `<tr><td>${d.status}</td><td>${d.provider ?? '—'}</td><td class="num">${fmt(d.events)}</td><td class="num">${fmt(d.msgs)}</td></tr>`
+  ).join('')
 
-  // ── Audit table ───────────────────────────────────────────────────────────
-  document.getElementById('audit-table').innerHTML = auditData.map(d => {
-    const rc = d.pct_reached >= 90 ? 'pct-low' : d.pct_reached >= 50 ? 'pct-med' : 'pct-high'
-    const dc = d.pct_dropped >= 50 ? 'pct-high' : d.pct_dropped >= 10 ? 'pct-med' : 'pct-zero'
-    return `<tr>
-      <td class="provider">${d.provider ?? '<null>'}</td>
-      <td class="num">${fmt(d.total)}</td>
-      <td class="num">${fmt(d.reached)}</td>
-      <td class="num ${rc}">${d.pct_reached}%</td>
-      <td class="num">${fmt(d.gap)}</td>
-      <td class="num">${fmt(d.dropped)}</td>
-      <td class="num ${dc}">${d.pct_dropped}%</td>
-    </tr>`
-  }).join('')
+  // Audit table
+  document.getElementById('audit-table').innerHTML = auditData.map(d =>
+    `<tr><td>${d.provider ?? '—'}</td><td class="num">${fmt(d.total)}</td><td class="num">${fmt(d.reached)}</td>
+     <td class="num ${d.pct_reached >= 90 ? 'low' : d.pct_reached >= 50 ? 'mid' : 'high'}">${d.pct_reached}%</td>
+     <td class="num">${fmt(d.dropped)}</td>
+     <td class="num ${d.pct_dropped >= 50 ? 'high' : d.pct_dropped >= 10 ? 'mid' : 'dim'}">${d.pct_dropped}%</td></tr>`
+  ).join('')
 
-  // ── Last-drop table ───────────────────────────────────────────────────────
-  document.getElementById('lastdrop-table').innerHTML = lastDropData.map(d => `
-    <tr>
-      <td class="provider">${d.provider}</td>
-      <td class="status">${d.status}</td>
-      <td class="num">${fmt(d.count)}</td>
-    </tr>`).join('')
+  // Last-drop table
+  document.getElementById('lastdrop-table').innerHTML = lastDropData.map(d =>
+    `<tr><td>${d.provider}</td><td>${d.status}</td><td class="num">${fmt(d.count)}</td></tr>`
+  ).join('')
   </script>
 </body>
 </html>
