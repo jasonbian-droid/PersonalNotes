@@ -1,0 +1,27 @@
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 20px;
+  height: 40px;
+  background: #0a0d14;
+  border-bottom: 1px solid #1e2535;
+}
+.site-nav a {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #475569;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.site-nav a:hover { color: #94a3b8; background: #1a1f2e; }
+.site-nav a.active { color: #93c5fd; background: #0c1a2e; }
+.nav-sep { color: #1e2535; padding: 0 2px; font-size: 0.7rem; }
+body { padding-top: 60px !important; }

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event API — Action Object Model</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 48px 32px 72px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #94a3b8;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #475569;
+      margin-bottom: 48px;
+    }
+
+    code {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 0.78rem;
+      background: #0f1117;
+      border: 1px solid #2d3448;
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: #e2e8f0;
+    }
+
+    /* ── Base class ───────────────────────────────────────── */
+    .base-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    .base-card {
+      background: #1e2330;
+      border: 2px solid #334155;
+      border-radius: 12px;
+      padding: 18px 28px;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .base-card .class-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+
+    .base-card .class-label {
+      font-size: 0.7rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .field-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .field {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+      background: #0f111722;
+      color: #94a3b8;
+      border: 1px solid #2d3448;
+    }
+
+    /* ── Connector from base down ─────────────────────────── */
+    .connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .connector-line {
+      width: 2px;
+      height: 32px;
+      background: linear-gradient(to bottom, #334155, #1e293b);
+    }
+
+    .connector-arrow {
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid #334155;
+    }
+
+    /* ── Group section ────────────────────────────────────── */
+    .group {
+      margin-bottom: 40px;
+    }
+
+    .group-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .group-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .group-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .group-line {
+      flex: 1;
+      height: 1px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    /* ── Action card ──────────────────────────────────────── */
+    .action-card {
+      background: #1e2330;
+      border: 1px solid #2d3448;
+      border-radius: 10px;
+      padding: 14px 16px;
+      transition: border-color 0.15s;
+    }
+
+    .action-card:hover { border-color: #475569; }
+
+    .action-card .type-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .action-card .class-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 10px;
+    }
+
+    .action-card .fields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .action-card .field {
+      font-size: 0.68rem;
+      padding: 2px 7px;
+    }
+
+    /* ── Group color themes ───────────────────────────────── */
+
+    /* Inbound Lead — blue */
+    .g-lead .group-dot   { background: #3b82f6; }
+    .g-lead .group-title { color: #93c5fd; }
+    .g-lead .group-line  { background: #1e3a8a44; }
+    .g-lead .action-card { border-color: #1e3a8a55; }
+    .g-lead .action-card:hover { border-color: #3b82f6; }
+    .g-lead .type-badge  { color: #60a5fa; }
+    .g-lead .field       { background: #1e3a8a22; color: #93c5fd; border-color: #1e3a8a66; }
+
+    /* Agent / Escalation — amber */
+    .g-agent .group-dot   { background: #f59e0b; }
+    .g-agent .group-title { color: #fcd34d; }
+    .g-agent .group-line  { background: #92400e44; }
+    .g-agent .action-card { border-color: #92400e55; }
+    .g-agent .action-card:hover { border-color: #f59e0b; }
+    .g-agent .type-badge  { color: #fbbf24; }
+    .g-agent .field       { background: #92400e22; color: #fcd34d; border-color: #92400e66; }
+
+    /* Resident / Collections — rose */
+    .g-resident .group-dot   { background: #f43f5e; }
+    .g-resident .group-title { color: #fda4af; }
+    .g-resident .group-line  { background: #9f123a44; }
+    .g-resident .action-card { border-color: #9f123a55; }
+    .g-resident .action-card:hover { border-color: #f43f5e; }
+    .g-resident .type-badge  { color: #fb7185; }
+    .g-resident .field       { background: #9f123a22; color: #fda4af; border-color: #9f123a66; }
+
+    /* Conversation Control — purple */
+    .g-convo .group-dot   { background: #8b5cf6; }
+    .g-convo .group-title { color: #c4b5fd; }
+    .g-convo .group-line  { background: #6d28d944; }
+    .g-convo .action-card { border-color: #6d28d955; }
+    .g-convo .action-card:hover { border-color: #8b5cf6; }
+    .g-convo .type-badge  { color: #a78bfa; }
+    .g-convo .field       { background: #6d28d922; color: #c4b5fd; border-color: #6d28d966; }
+
+    /* Knowledge / AI — emerald */
+    .g-ai .group-dot   { background: #10b981; }
+    .g-ai .group-title { color: #6ee7b7; }
+    .g-ai .group-line  { background: #06503644; }
+    .g-ai .action-card { border-color: #06503655; }
+    .g-ai .action-card:hover { border-color: #10b981; }
+    .g-ai .type-badge  { color: #34d399; }
+    .g-ai .field       { background: #06503622; color: #6ee7b7; border-color: #06503666; }
+
+    /* Tracking / Notifications — slate */
+    .g-track .group-dot   { background: #64748b; }
+    .g-track .group-title { color: #94a3b8; }
+    .g-track .group-line  { background: #33415544; }
+    .g-track .action-card { border-color: #33415555; }
+    .g-track .action-card:hover { border-color: #64748b; }
+    .g-track .type-badge  { color: #94a3b8; }
+    .g-track .field       { background: #33415522; color: #cbd5e1; border-color: #33415566; }
+  </style>
+  <link rel="stylesheet" href="src/nav.css" />
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html">Pipeline</a>
+    <span class="nav-sep">·</span>
+    <a href="email-flow.html">Email Flow</a>
+    <span class="nav-sep">·</span>
+    <a href="event-api-actions.html" class="active">Action Models</a>
+    <span class="nav-sep">·</span>
+    <a href="null-timeseries.html">Null %</a>
+  </nav>
+
+  <h1>Event API — Action Object Model</h1>
+  <p class="subtitle">All action types that flow through <code>RequestHandler.handle()</code> → <code>EventApi.handle_action()</code></p>
+
+  <!-- Base class -->
+  <div class="base-wrap">
+    <div class="base-card">
+      <div class="class-label">Abstract Base</div>
+      <div class="class-name">Action</div>
+      <div class="field-list">
+        <span class="field">type: str</span>
+        <span class="field">id: IdString</span>
+        <span class="field">building_id: int?</span>
+        <span class="field">org_id: int?</span>
+        <span class="field">force: bool</span>
+        <span class="field">prospect_id: str?</span>
+        <span class="field">event_api_sent_time: datetime?</span>
+        <span class="field">event_api_queue_name: str?</span>
+      </div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-line"></div>
+      <div class="connector-arrow"></div>
+    </div>
+  </div>
+
+  <!-- ── Group 1: Inbound Lead ───────────────────────────── -->
+  <div class="group g-lead">
+    <div class="group-header">
+      <div class="group-dot"></div>
+      <div class="group-title">Inbound Lead Events</div>
+      <div class="group-line"></div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="action-card">
+        <div class="type-badge">InboundEmailAction</div>
+        <div class="class-name">Inbound Email</div>
+        <div class="fields">
+          <span class="field">from_address</span>
+          <span class="field">to_addresses</span>
+          <span class="field">subject</span>
+          <span class="field">body_ref</span>
+          <span class="field">thread_id</span>
+          <span class="field">message_id</span>
+          <span class="field">is_new_thread</span>
+          <span class="field">classifier_output</span>
+          <span class="field">reply_to</span>
+          <span class="field">inbound_source</span>
+          <span class="field">state_id?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">InboundSmsAction</div>
+        <div class="class-name">Inbound SMS</div>
+        <div class="fields">
+          <span class="field">to_number</span>
+          <span class="field">from_number</span>
+          <span class="field">body</span>
+          <span class="field">time_sent</span>
+          <span class="field">lead_source?</span>
+          <span class="field">media_info_list?</span>
+          <span class="field">upcoming_tours?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">InboundIvrAction</div>
+        <div class="class-name">Inbound IVR Call</div>
+        <div class="fields">
+          <span class="field">to_number</span>
+          <span class="field">from_number</span>
+          <span class="field">time_sent</span>
+          <span class="field">building_group_id?</span>
+          <span class="field">lead_source?</span>
+          <span class="field">call_technology?</span>
+          <span class="field">is_building_pool_number</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">VoiceCallAction</div>
+        <div class="class-name">Voice Call</div>
+        <div class="fields">
+          <span class="field">to_number</span>
+          <span class="field">from_number</span>
+          <span class="field">dial_path</span>
+          <span class="field">transcript_link?</span>
+          <span class="field">audio_url?</span>
+          <span class="field">handoff_status?</span>
+          <span class="field">call_identifier</span>
+          <span class="field">call_technology?</span>
+          <span class="field">lead_information?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">AiCallAction</div>
+        <div class="class-name">AI Outbound Call</div>
+        <div class="fields">
+          <span class="field">to_number</span>
+          <span class="field">from_number</span>
+          <span class="field">dial_path</span>
+          <span class="field">resident_id?</span>
+          <span class="field">transcript_link?</span>
+          <span class="field">audio_url?</span>
+          <span class="field">handoff_status?</span>
+          <span class="field">call_identifier</span>
+          <span class="field">originating_phone_number?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">InboundPmsAction</div>
+        <div class="class-name">Inbound PMS Lead</div>
+        <div class="fields">
+          <span class="field">lead_information</span>
+          <span class="field">conversation_information</span>
+          <span class="field">updates?</span>
+          <span class="field">lease?</span>
+          <span class="field">occupants?</span>
+          <span class="field">contact_owner?</span>
+          <span class="field">first_contact_type?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">InboundIlsAction</div>
+        <div class="class-name">Inbound ILS Lead</div>
+        <div class="fields">
+          <span class="field">ils_name</span>
+          <span class="field">time_sent</span>
+          <span class="field">lead_information</span>
+          <span class="field">conversation_information</span>
+          <span class="field">listing_contact_email?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">InboundHylyPmsAction</div>
+        <div class="class-name">Inbound Hyly PMS Lead</div>
+        <div class="fields">
+          <span class="field">lead_information</span>
+          <span class="field">conversation_information</span>
+          <span class="field">updates?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">InboundReminderAction</div>
+        <div class="class-name">Inbound Reminder</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">reminder_event?</span>
+          <span class="field">reminder_type?</span>
+          <span class="field">reminder_data?</span>
+          <span class="field">fast_track</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Group 2: Agent / Escalation ────────────────────── -->
+  <div class="group g-agent">
+    <div class="group-header">
+      <div class="group-dot"></div>
+      <div class="group-title">Agent &amp; Escalation Events</div>
+      <div class="group-line"></div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="action-card">
+        <div class="type-badge">AgentEscalationResponseAction</div>
+        <div class="class-name">Agent Escalation Response</div>
+        <div class="fields">
+          <span class="field">mc_id</span>
+          <span class="field">state_id?</span>
+          <span class="field">body</span>
+          <span class="field">user_id</span>
+          <span class="field">medium</span>
+          <span class="field">agent_action_type</span>
+          <span class="field">actions</span>
+          <span class="field">media?</span>
+          <span class="field">source?</span>
+          <span class="field">resident_id?</span>
+          <span class="field">quote_id?</span>
+          <span class="field">signature_id?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">AgentAlertAcknowledgementAction</div>
+        <div class="class-name">Agent Alert Ack</div>
+        <div class="fields">
+          <span class="field">mc_id</span>
+          <span class="field">user_id</span>
+          <span class="field">reason</span>
+          <span class="field">reactivate_elise</span>
+          <span class="field">source?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">IgnoreEscalationAction</div>
+        <div class="class-name">Ignore Escalation</div>
+        <div class="fields">
+          <span class="field">mc_id</span>
+          <span class="field">agent_email</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ProtocolEscalationAckAction</div>
+        <div class="class-name">Protocol Escalation Ack</div>
+        <div class="fields">
+          <span class="field">escalation_id</span>
+          <span class="field">accepted_by</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Group 3: Resident / Collections ────────────────── -->
+  <div class="group g-resident">
+    <div class="group-header">
+      <div class="group-dot"></div>
+      <div class="group-title">Resident &amp; Collections Events</div>
+      <div class="group-line"></div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="action-card">
+        <div class="type-badge">OverduePaymentAction</div>
+        <div class="class-name">Overdue Payment</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">resident</span>
+          <span class="field">charges</span>
+          <span class="field">pms_name</span>
+          <span class="field">payment_notification?</span>
+          <span class="field">payment_plan_notification?</span>
+          <span class="field">promise_to_pay_date?</span>
+          <span class="field">agent_message?</span>
+          <span class="field">force_new_state?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ResidentInfoUpdateAction</div>
+        <div class="class-name">Resident Info Update</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">updates</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">EvictionRiskAction</div>
+        <div class="class-name">Eviction Risk</div>
+        <div class="fields">
+          <span class="field">mc_id</span>
+          <span class="field">user_id</span>
+          <span class="field">is_under_eviction</span>
+          <span class="field">communication_preference</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">EvictionRiskCheckupTriggerAction</div>
+        <div class="class-name">Eviction Risk Checkup</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">resident_id</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ProactiveResidentOutreachAction</div>
+        <div class="class-name">Proactive Resident Outreach</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">resident</span>
+          <span class="field">pms_name</span>
+          <span class="field">scope_name</span>
+          <span class="field">elise_content_type?</span>
+          <span class="field">elise_content_data?</span>
+          <span class="field">resident_notifications?</span>
+          <span class="field">media?</span>
+          <span class="field">force_new_state?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">WorkOrderAction</div>
+        <div class="class-name">Work Order</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">source_state_id?</span>
+          <span class="field">permission_to_enter</span>
+          <span class="field">data</span>
+          <span class="field">summary</span>
+          <span class="field">source?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">NoticeToVacateAction</div>
+        <div class="class-name">Notice to Vacate</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">mc_id?</span>
+          <span class="field">resident_id</span>
+          <span class="field">source</span>
+          <span class="field">current_lease_uuid?</span>
+          <span class="field">renewing_lease_uuid?</span>
+          <span class="field">for_partial_renewal</span>
+          <span class="field">modification_id?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">SendSodaRevisionAction</div>
+        <div class="class-name">Send SODA Revision</div>
+        <div class="fields">
+          <span class="field">soda_id</span>
+          <span class="field">revision_id</span>
+          <span class="field">resident_id</span>
+          <span class="field">revision_type</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Group 4: Conversation Control ──────────────────── -->
+  <div class="group g-convo">
+    <div class="group-header">
+      <div class="group-dot"></div>
+      <div class="group-title">Conversation Control Events</div>
+      <div class="group-line"></div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="action-card">
+        <div class="type-badge">BulkOutreachAction</div>
+        <div class="class-name">Bulk Outreach</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">message</span>
+          <span class="field">subject?</span>
+          <span class="field">campaign_id</span>
+          <span class="field">incentives</span>
+          <span class="field">channels?</span>
+          <span class="field">media?</span>
+          <span class="field">header_html?</span>
+          <span class="field">footer_html?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ContactAction</div>
+        <div class="class-name">Contact / Initiate</div>
+        <div class="fields">
+          <span class="field">scope_name</span>
+          <span class="field">internal_source</span>
+          <span class="field">lead_properties?</span>
+          <span class="field">first_message?</span>
+          <span class="field">state_id?</span>
+          <span class="field">lead_sources?</span>
+          <span class="field">tour_type?</span>
+          <span class="field">tour_time?</span>
+          <span class="field">prospect_id?</span>
+          <span class="field">mc_id?</span>
+          <span class="field">force_new_state?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ConsentAction</div>
+        <div class="class-name">Consent Update</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">opt_ins?</span>
+          <span class="field">scope?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ReplayActionType</div>
+        <div class="class-name">Replay</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">action_ids?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ReprocessActionType</div>
+        <div class="class-name">Reprocess</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">action_ids?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">RefreshDataAction</div>
+        <div class="class-name">Refresh Data</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">SandboxAction</div>
+        <div class="class-name">Sandbox / Test</div>
+        <div class="fields">
+          <span class="field">state_id?</span>
+          <span class="field">(testing harness only)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Group 5: Knowledge / AI ────────────────────────── -->
+  <div class="group g-ai">
+    <div class="group-header">
+      <div class="group-dot"></div>
+      <div class="group-title">Knowledge &amp; AI Events</div>
+      <div class="group-line"></div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="action-card">
+        <div class="type-badge">GoalAgentAction</div>
+        <div class="class-name">Goal Agent Conversation</div>
+        <div class="fields">
+          <span class="field">goal_agent_key</span>
+          <span class="field">resident_id</span>
+          <span class="field">title</span>
+          <span class="field">description</span>
+          <span class="field">agent_mode</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">ExtractConversationKnowledgeAction</div>
+        <div class="class-name">Extract Knowledge</div>
+        <div class="fields">
+          <span class="field">mc_id</span>
+          <span class="field">state_id?</span>
+          <span class="field">email</span>
+          <span class="field">source?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">EliseCrmMetadataAction</div>
+        <div class="class-name">CRM Metadata Update</div>
+        <div class="fields">
+          <span class="field">mc_id</span>
+          <span class="field">notes</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">EliseContentAction</div>
+        <div class="class-name">Elise Content Send</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">resident_id?</span>
+          <span class="field">content_type</span>
+          <span class="field">content_data</span>
+          <span class="field">additional_data?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">CreateTask</div>
+        <div class="class-name">Create Task</div>
+        <div class="fields">
+          <span class="field">task_type</span>
+          <span class="field">chat_id</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">VoiceQAAction</div>
+        <div class="class-name">Voice QA</div>
+        <div class="fields">
+          <span class="field">(voice call QA testing)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Group 6: Tracking / Notifications ──────────────── -->
+  <div class="group g-track">
+    <div class="group-header">
+      <div class="group-dot"></div>
+      <div class="group-title">Tracking &amp; Notification Events</div>
+      <div class="group-line"></div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="action-card">
+        <div class="type-badge">TrackingAction</div>
+        <div class="class-name">Email Tracking</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">email</span>
+          <span class="field">tracking_event_type</span>
+          <span class="field">campaign_id?</span>
+          <span class="field">related_event_id?</span>
+          <span class="field">resident_id?</span>
+          <span class="field">contact_id?</span>
+          <span class="field">source?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">BounceAction</div>
+        <div class="class-name">Email Bounce</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">failed_address</span>
+          <span class="field">bad_event_id</span>
+          <span class="field">bounce_type</span>
+          <span class="field">reason?</span>
+          <span class="field">source?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">UnsubscribeAction</div>
+        <div class="class-name">Unsubscribe</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">medium</span>
+          <span class="field">reason?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">NotificationAction</div>
+        <div class="class-name">Notification</div>
+        <div class="fields">
+          <span class="field">notification_id</span>
+          <span class="field">notification_type</span>
+          <span class="field">recipient_id</span>
+          <span class="field">recipient_type</span>
+          <span class="field">state_id?</span>
+          <span class="field">domain</span>
+          <span class="field">follow_up_id?</span>
+          <span class="field">follow_up_number?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">SurveySubmittedAction</div>
+        <div class="class-name">Survey Submitted</div>
+        <div class="fields">
+          <span class="field">jotform_survey_id</span>
+          <span class="field">customer_id</span>
+          <span class="field">community_name</span>
+          <span class="field">submission_id?</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">SurveyNotificationAction</div>
+        <div class="class-name">Survey Notification</div>
+        <div class="fields">
+          <span class="field">survey_id</span>
+          <span class="field">survey_entry_id</span>
+          <span class="field">state_id?</span>
+          <span class="field">resident_id?</span>
+          <span class="field">prospect_id?</span>
+          <span class="field">domain</span>
+          <span class="field">email_subject</span>
+          <span class="field">email_message</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">VerificationRequestAction</div>
+        <div class="class-name">Verification Request</div>
+        <div class="fields">
+          <span class="field">mc_id</span>
+          <span class="field">prospect_id?</span>
+          <span class="field">verification_type</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="type-badge">VendorAction</div>
+        <div class="class-name">Vendor Communication</div>
+        <div class="fields">
+          <span class="field">state_id</span>
+          <span class="field">user_id</span>
+          <span class="field">vendor_contact_ids</span>
+          <span class="field">message</span>
+          <span class="field">subject?</span>
+          <span class="field">action_subtype</span>
+          <span class="field">work_order_request?</span>
+          <span class="field">media?</span>
+          <span class="field">sender_id?</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
