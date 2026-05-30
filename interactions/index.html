@@ -15,6 +15,11 @@
     .src-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-mid); }
     .src-pill.live .src-dot { background: var(--green); }
     .src-pill.live { color: var(--green); }
+    .search-row { display: flex; gap: 6px; }
+    .search-row input { flex: 1; min-width: 0; }
+    .fetch-btn { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; padding: 0 10px; border: 1px solid var(--text); background: var(--text); color: var(--bg); cursor: pointer; white-space: nowrap; }
+    .fetch-btn:hover { background: var(--bg); color: var(--text); }
+    .fetch-btn:disabled { border-color: var(--border-mid); background: var(--bg-code); color: var(--text-faint); cursor: not-allowed; }
     .search-hint { font-family: var(--font-mono); font-size: 0.58rem; color: var(--text-faint); }
     .searching { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-faint); padding: 7px 11px; }
     .list-controls input, .list-controls select { font-family: var(--font-mono); font-size: 0.74rem; padding: 6px 8px; border: 1px solid var(--border-mid); background: var(--bg); color: var(--text); width: 100%; }
@@ -88,7 +93,10 @@
       <div class="list-panel">
         <div class="list-controls">
           <div class="src-pill" id="src-pill"><span class="src-dot"></span><span id="src-text">cached snapshot</span></div>
-          <input id="search" type="text" placeholder="search id / message_id / sender…" />
+          <div class="search-row">
+            <input id="search" type="text" placeholder="search id / message_id / sender…" />
+            <button id="fetch-btn" class="fetch-btn" disabled>Fetch</button>
+          </div>
           <span class="search-hint" id="search-hint"></span>
           <select id="filter-term"><option value="">All terminal statuses</option></select>
         </div>
@@ -141,6 +149,8 @@
     terms.forEach(t => sel.insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`));
 
     document.getElementById('search').addEventListener('input', onSearchInput);
+    document.getElementById('search').addEventListener('keydown', e => { if (e.key === 'Enter') doFetch(); });
+    document.getElementById('fetch-btn').addEventListener('click', doFetch);
     sel.addEventListener('change', renderList);
 
     renderList();
@@ -160,9 +170,18 @@
         const pill = document.getElementById('src-pill');
         pill.classList.add('live');
         document.getElementById('src-text').textContent = 'live · ' + h.source;
-        document.getElementById('search-hint').textContent = 'any interaction_id, message_id, state_id, sender or recipient';
+        document.getElementById('fetch-btn').disabled = false;
+        document.getElementById('search-hint').textContent = 'Fetch any interaction_id, message_id, state_id, sender or recipient';
       }
     } catch (e) { /* stay cached */ }
+  }
+
+  function doFetch() {
+    const term = document.getElementById('search').value.trim();
+    if (!term) return;
+    if (!LIVE) { document.getElementById('search-hint').textContent = 'backend offline — start the local server to fetch live'; return; }
+    clearTimeout(searchTimer);
+    liveSearch(term);
   }
 
   function upsert(traceLike) {
@@ -182,7 +201,9 @@
 
   async function liveSearch(term) {
     const hint = document.getElementById('search-hint');
+    const btn = document.getElementById('fetch-btn');
     hint.textContent = 'searching live…';
+    btn.disabled = true; btn.textContent = '…';
     try {
       const r = await fetch(API + '/api/search?q=' + encodeURIComponent(term));
       const { results } = await r.json();
@@ -191,12 +212,15 @@
         terminal_recon_status: s.TERMINAL_RECON_STATUS, lifecycle_steps: s.LIFECYCLE_STEPS,
         resident_resolved: !!s.RESIDENT_RESOLVED, duration_s: s.DURATION_S,
       }));
-      hint.textContent = `${(results || []).length} live result${(results || []).length === 1 ? '' : 's'}`;
+      const n = (results || []).length;
+      hint.textContent = n ? `${n} live result${n === 1 ? '' : 's'}` : 'no match in live data';
       renderList();
       const first = visible()[0];
       if (first) select(first);
     } catch (e) {
-      hint.textContent = 'live search failed';
+      hint.textContent = 'live fetch failed';
+    } finally {
+      btn.disabled = false; btn.textContent = 'Fetch';
     }
   }
 
