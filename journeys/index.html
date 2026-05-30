@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Journeys — Graph</title>
+  <link rel="stylesheet" href="../src/site.css" />
+  <link rel="stylesheet" href="../src/nav.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <style>
+    .meta-strip { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .meta-cell { flex: 1; min-width: 130px; padding: 12px 16px; border-right: 1px solid var(--border); }
+    .meta-cell:last-child { border-right: none; }
+    .meta-val { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--text); }
+    .meta-label { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-faint); margin-top: 2px; }
+
+    .graph-wrap { border: 1px solid var(--border); background: var(--bg); overflow-x: auto; }
+    .band-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; fill: var(--text-faint); }
+    .node-rect { stroke-width: 1.5; cursor: default; transition: opacity 0.12s; }
+    .node-name { font-family: var(--font-body); font-weight: 600; font-size: 11px; fill: #fff; pointer-events: none; }
+    .node-count { font-family: var(--font-mono); font-size: 9.5px; fill: #fff; opacity: 0.85; pointer-events: none; }
+    .edge { fill: none; transition: opacity 0.12s, stroke-width 0.12s; }
+    .dim { opacity: 0.08 !important; }
+
+    .legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; padding: 0 4px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--text-mid); }
+    .legend-swatch { width: 12px; height: 12px; border-radius: 2px; }
+    .legend-line { width: 18px; height: 0; border-top-width: 2px; border-top-style: solid; }
+
+    .gtip { position: fixed; pointer-events: none; background: #1a1a1a; color: #fff; font-family: var(--font-mono); font-size: 0.7rem; padding: 6px 9px; border-radius: 3px; opacity: 0; transition: opacity 0.1s; z-index: 200; max-width: 260px; line-height: 1.5; }
+    .gtip strong { color: #fff; }
+    .gtip .tip-sub { color: #aaa; }
+
+    .bars { display: flex; flex-direction: column; gap: 4px; }
+    .bar-row { display: grid; grid-template-columns: 170px 1fr 96px; align-items: center; gap: 10px; font-size: 0.74rem; }
+    .bar-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-mid); text-align: right; }
+    .bar-track { background: var(--bg-code); height: 16px; position: relative; }
+    .bar-fill { height: 100%; }
+    .bar-num { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-mid); }
+
+    .funnel { display: flex; flex-direction: column; gap: 6px; }
+    .funnel-step { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 12px; }
+    .funnel-name { font-size: 0.78rem; color: var(--text-mid); }
+    .funnel-bar-wrap { display: flex; align-items: center; gap: 8px; }
+    .funnel-bar { height: 22px; background: var(--blue); display: flex; align-items: center; padding-left: 8px; }
+    .funnel-bar-num { font-family: var(--font-mono); font-size: 0.72rem; color: #fff; }
+    .funnel-pct { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-faint); }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html">Pipeline</a>
+    <span class="nav-sep">·</span>
+    <a href="../email-flow.html">Email Flow</a>
+    <span class="nav-sep">·</span>
+    <a href="../event-api-actions.html">Action Models</a>
+    <span class="nav-sep">·</span>
+    <a href="index.html" class="active">Journeys</a>
+    <span class="nav-sep">·</span>
+    <a href="../null-timeseries.html">Null %</a>
+    <span class="nav-sep">·</span>
+    <a href="../null-emails/index.html">Email Nulls</a>
+  </nav>
+
+  <div class="page page-wide">
+    <h1>Email Journeys</h1>
+    <p class="page-subtitle">Per-interaction lifecycle graph derived from raw INBOUND_INTERACTION_EVENTS · grain = interaction_id</p>
+
+    <div class="meta-strip" id="meta-strip"></div>
+
+    <div class="section-title">Journey State Graph</div>
+    <p style="font-size:0.78rem;color:var(--text-mid);margin-bottom:12px;line-height:1.55">
+      Nodes are <code>recon_status</code> steps; box size ∝ journeys touching that status. Edges are observed transitions between consecutive steps within a journey; width ∝ transition count. Dashed edges run backward against pipeline order (retries / re-emission).
+    </p>
+
+    <div class="graph-wrap"><svg id="graph"></svg></div>
+    <div class="legend" id="legend"></div>
+
+    <div class="section-title" style="margin-top:2rem">Daily Journey Volume by Outcome</div>
+    <div class="card"><canvas id="timeline" height="150"></canvas></div>
+
+    <div class="two-col" style="margin-top:1.5rem">
+      <div>
+        <div class="section-title">Terminal Status</div>
+        <div class="card"><div class="bars" id="terminal-bars"></div></div>
+      </div>
+      <div>
+        <div class="section-title">Milestone Funnel</div>
+        <div class="card"><div class="funnel" id="funnel"></div></div>
+        <div class="section-title" style="margin-top:1.2rem">Provider Split</div>
+        <div class="card">
+          <table>
+            <thead><tr><th>Provider</th><th class="num">Journeys</th><th class="num">Share</th></tr></thead>
+            <tbody id="provider-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gtip" id="gtip"></div>
+
+  <script>
+  const CAT = {
+    ingest:  '#1e40af',
+    success: '#166534',
+    warn:    '#92400e',
+    fail:    '#b91c1c',
+    reply:   '#6b21a8',
+  };
+
+  const META = {
+    REPLY_GENERATING:     { band: 'reply', col: 0, order: 0, cat: 'reply' },
+    REPLIED:              { band: 'reply', col: 1, order: 0, cat: 'success' },
+    FAILED_REPLY:         { band: 'reply', col: 1, order: 1, cat: 'fail' },
+
+    SCANNED:              { band: 'main', col: 0, order: 0, cat: 'ingest' },
+    QUEUED:               { band: 'main', col: 1, order: 0, cat: 'ingest' },
+    CLASSIFIED:           { band: 'main', col: 2, order: 0, cat: 'ingest' },
+    FAILED_CLASSIFY:      { band: 'main', col: 2, order: 1, cat: 'fail' },
+    SENT_TO_EVENTAPI:     { band: 'main', col: 3, order: 0, cat: 'ingest' },
+    UNMATCHED:            { band: 'main', col: 3, order: 1, cat: 'fail' },
+    RECEIVED_BY_EVENTAPI: { band: 'main', col: 4, order: 0, cat: 'ingest' },
+    PROCESSED:            { band: 'main', col: 4, order: 1, cat: 'success' },
+    EVENTAPI_PROCESSED:   { band: 'main', col: 5, order: 0, cat: 'success' },
+    EVENTAPI_DELAYED:     { band: 'main', col: 5, order: 1, cat: 'warn' },
+    EVENTAPI_FILTERED:    { band: 'main', col: 5, order: 2, cat: 'warn' },
+    SUPPRESSED:           { band: 'main', col: 5, order: 3, cat: 'warn' },
+    FAILED_PROCESSING:    { band: 'main', col: 5, order: 4, cat: 'fail' },
+  };
+
+  const fmt  = n => n == null ? '—' : Number(n).toLocaleString();
+  const fmtK = n => n >= 1e6 ? (n/1e6).toFixed(2)+'M' : n >= 1e3 ? (n/1e3).toFixed(0)+'K' : String(n);
+
+  function dur(s) {
+    if (s == null) return '—';
+    if (s < 60) return s + 's';
+    if (s < 3600) return (s/60).toFixed(1) + 'm';
+    if (s < 86400) return (s/3600).toFixed(1) + 'h';
+    return (s/86400).toFixed(1) + 'd';
+  }
+
+  (async () => {
+    const db = await (await fetch('journeys.json')).json();
+    const tip = document.getElementById('gtip');
+    const showTip = (html, e) => { tip.innerHTML = html; tip.style.opacity = 1; moveTip(e); };
+    const moveTip = e => { tip.style.left = (e.clientX + 14) + 'px'; tip.style.top = (e.clientY + 14) + 'px'; };
+    const hideTip = () => { tip.style.opacity = 0; };
+
+    renderMeta(db);
+    renderGraph(db, { showTip, moveTip, hideTip });
+    renderLegend();
+    renderTimeline(db);
+    renderTerminal(db);
+    renderFunnel(db);
+    renderProviders(db);
+  })();
+
+  function renderMeta(db) {
+    const t = db.timespan, m = db.milestones;
+    const span = (new Date(t.LAST_EVENT) - new Date(t.FIRST_EVENT)) / 86400000;
+    const fday = new Date(t.FIRST_EVENT).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const lday = new Date(t.LAST_EVENT).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const cells = [
+      { val: fmt(m.JOURNEYS), label: 'journeys' },
+      { val: fday + ' – ' + lday, label: span.toFixed(1) + ' day window' },
+      { val: dur(t.MEDIAN_DURATION_S), label: 'median duration' },
+      { val: dur(t.P95_DURATION_S), label: 'p95 duration' },
+      { val: dur(t.MAX_DURATION_S), label: 'max duration' },
+    ];
+    document.getElementById('meta-strip').innerHTML = cells.map(c =>
+      `<div class="meta-cell"><div class="meta-val">${c.val}</div><div class="meta-label">${c.label}</div></div>`
+    ).join('');
+  }
+
+  function renderGraph(db, { showTip, moveTip, hideTip }) {
+    const W = 980, M = { l: 16, r: 16, t: 30, b: 16 };
+    const NODE_W = 148;
+    const replyTop = 36, replyBot = 150;
+    const mainTop = 210, mainBot = 700;
+    const H = mainBot + M.b;
+
+    const colCount = 6;
+    const colGap = (W - M.l - M.r - NODE_W) / (colCount - 1);
+    const colX = c => M.l + c * colGap;
+
+    const njByStatus = {};
+    db.nodes.forEach(n => { njByStatus[n.RECON_STATUS] = n; });
+
+    const jVals = db.nodes.map(n => n.JOURNEYS);
+    const hScale = d3.scaleSqrt().domain([d3.min(jVals), d3.max(jVals)]).range([28, 60]);
+
+    const nodes = {};
+    db.nodes.forEach(n => {
+      const meta = META[n.RECON_STATUS];
+      if (!meta) return;
+      nodes[n.RECON_STATUS] = {
+        id: n.RECON_STATUS,
+        journeys: n.JOURNEYS,
+        events: n.EVENTS,
+        ...meta,
+        w: NODE_W,
+        h: hScale(n.JOURNEYS),
+        x: colX(meta.col),
+      };
+    });
+
+    function layoutBand(list, yTop, yBot) {
+      const byCol = d3.group(list, n => n.col);
+      byCol.forEach(group => {
+        group.sort((a, b) => a.order - b.order);
+        const gap = 24;
+        const totalH = d3.sum(group, n => n.h) + gap * (group.length - 1);
+        let y = (yTop + yBot) / 2 - totalH / 2;
+        group.forEach(n => { n.y = y; y += n.h + gap; });
+      });
+    }
+    const all = Object.values(nodes);
+    layoutBand(all.filter(n => n.band === 'reply'), replyTop, replyBot);
+    layoutBand(all.filter(n => n.band === 'main'), mainTop, mainBot);
+
+    const edges = db.edges
+      .filter(e => nodes[e.FROM_STATUS] && nodes[e.TO_STATUS])
+      .map(e => ({ s: nodes[e.FROM_STATUS], t: nodes[e.TO_STATUS], n: e.N }))
+      .sort((a, b) => b.n - a.n);
+
+    const wScale = d3.scaleSqrt().domain([d3.min(edges, e => e.n), d3.max(edges, e => e.n)]).range([0.8, 16]);
+
+    const svg = d3.select('#graph').attr('viewBox', `0 0 ${W} ${H}`).attr('width', '100%').attr('height', H);
+    svg.selectAll('*').remove();
+
+    const defs = svg.append('defs');
+    Object.entries(CAT).forEach(([k, c]) => {
+      defs.append('marker')
+        .attr('id', 'arr-' + k).attr('viewBox', '0 0 10 10')
+        .attr('refX', 9).attr('refY', 5).attr('markerWidth', 7).attr('markerHeight', 7)
+        .attr('orient', 'auto-start-reverse')
+        .append('path').attr('d', 'M0,1 L9,5 L0,9 Z').attr('fill', c);
+    });
+
+    svg.append('text').attr('x', M.l).attr('y', 18).attr('class', 'band-label').text('Reply path  ·  sendgrid outbound');
+    svg.append('text').attr('x', M.l).attr('y', mainTop - 24).attr('class', 'band-label').text('Inbound processing pipeline');
+
+    function path(s, t) {
+      const sx = s.x + s.w, sy = s.y + s.h / 2;
+      const tx = t.x, ty = t.y + t.h / 2;
+      if (tx > sx + 6) {
+        const mx = (sx + tx) / 2;
+        return { d: `M${sx},${sy} C${mx},${sy} ${mx},${ty} ${tx},${ty}`, back: false };
+      }
+      const sxr = s.x + s.w, txr = t.x + t.w;
+      const bow = Math.max(sxr, txr) + 46;
+      return { d: `M${sxr},${sy} C${bow},${sy} ${bow},${ty} ${txr},${ty}`, back: true };
+    }
+
+    const edgeG = svg.append('g');
+    const edgeSel = edgeG.selectAll('path').data(edges).join('path')
+      .attr('class', 'edge')
+      .attr('d', e => { const p = path(e.s, e.t); e._back = p.back; return p.d; })
+      .attr('stroke', e => CAT[e.s.cat])
+      .attr('stroke-width', e => wScale(e.n))
+      .attr('stroke-opacity', 0.32)
+      .attr('stroke-dasharray', e => e._back ? '4,3' : null)
+      .attr('marker-end', e => `url(#arr-${e.s.cat})`)
+      .on('mousemove', (ev, e) => { showTip(`<strong>${e.s.id} → ${e.t.id}</strong><br><span class="tip-sub">${fmt(e.n)} transitions</span>`, ev); })
+      .on('mouseleave', hideTip);
+
+    const nodeG = svg.append('g');
+    const g = nodeG.selectAll('g').data(all).join('g')
+      .on('mousemove', (ev, n) => {
+        showTip(`<strong>${n.id}</strong><br><span class="tip-sub">${fmt(n.journeys)} journeys · ${fmt(n.events)} events</span>`, ev);
+        edgeSel.classed('dim', e => e.s !== n && e.t !== n);
+        g.style('opacity', d => (d === n || edges.some(e => (e.s === n && e.t === d) || (e.t === n && e.s === d))) ? 1 : 0.25);
+      })
+      .on('mouseleave', () => { hideTip(); edgeSel.classed('dim', false); g.style('opacity', 1); });
+
+    g.append('rect')
+      .attr('class', 'node-rect')
+      .attr('x', n => n.x).attr('y', n => n.y)
+      .attr('width', n => n.w).attr('height', n => n.h)
+      .attr('rx', 3)
+      .attr('fill', n => CAT[n.cat])
+      .attr('stroke', n => d3.color(CAT[n.cat]).darker(0.6));
+
+    g.append('text')
+      .attr('class', 'node-name')
+      .attr('x', n => n.x + 10).attr('y', n => n.y + n.h / 2 - 1)
+      .text(n => n.id);
+
+    g.append('text')
+      .attr('class', 'node-count')
+      .attr('x', n => n.x + 10).attr('y', n => n.y + n.h / 2 + 12)
+      .text(n => fmtK(n.journeys));
+  }
+
+  function renderLegend() {
+    const cats = [
+      ['ingest', 'in-progress'], ['success', 'success'],
+      ['warn', 'delayed / filtered / suppressed'], ['fail', 'failure'], ['reply', 'reply generation'],
+    ];
+    const swatches = cats.map(([k, label]) =>
+      `<div class="legend-item"><span class="legend-swatch" style="background:${CAT[k]}"></span>${label}</div>`
+    ).join('');
+    const lines = `
+      <div class="legend-item"><span class="legend-line" style="border-color:#555"></span>forward transition</div>
+      <div class="legend-item"><span class="legend-line" style="border-color:#555;border-top-style:dashed"></span>backward (retry / re-emit)</div>`;
+    document.getElementById('legend').innerHTML = swatches + lines;
+  }
+
+  function renderTimeline(db) {
+    const rows = db.daily.map(r => ({ ...r, day: r.JOURNEY_DAY }));
+    const ds = (key, color, label) => ({
+      label, data: rows.map(r => ({ x: r.day, y: r[key] })),
+      backgroundColor: color, borderColor: color, borderWidth: 1, stack: 's',
+    });
+    new Chart(document.getElementById('timeline'), {
+      type: 'bar',
+      data: { datasets: [
+        ds('REPLIED', '#16653488', 'replied'),
+        ds('PROCESSED', '#1e40af88', 'eventapi processed'),
+        ds('SUPPRESSED_FILTERED', '#92400e88', 'suppressed / filtered'),
+        ds('FAILED', '#b91c1c88', 'failed'),
+      ]},
+      options: {
+        responsive: true, animation: false,
+        plugins: {
+          legend: { labels: { color: '#555', boxWidth: 12, font: { size: 11 } } },
+          tooltip: { backgroundColor: '#fff', borderColor: '#ccc', borderWidth: 1, titleColor: '#111', bodyColor: '#555',
+            callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y.toLocaleString()}` } },
+        },
+        scales: {
+          x: { type: 'time', time: { unit: 'day', tooltipFormat: 'MMM d' }, stacked: true, grid: { color: '#e8e6e1' }, ticks: { color: '#999' } },
+          y: { stacked: true, grid: { color: '#e8e6e1' }, ticks: { color: '#999', callback: v => v >= 1e3 ? (v/1e3)+'K' : v } },
+        },
+      },
+    });
+  }
+
+  function renderTerminal(db) {
+    const data = db.terminal.filter(t => t.TERMINAL_RECON_STATUS).slice(0, 12);
+    const max = d3.max(data, d => d.JOURNEYS);
+    const colorFor = s => {
+      const m = META[s];
+      return m ? CAT[m.cat] : '#888';
+    };
+    document.getElementById('terminal-bars').innerHTML = data.map(t => `
+      <div class="bar-row">
+        <div class="bar-label">${t.TERMINAL_RECON_STATUS}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${(t.JOURNEYS/max*100).toFixed(1)}%;background:${colorFor(t.TERMINAL_RECON_STATUS)}"></div></div>
+        <div class="bar-num">${fmt(t.JOURNEYS)} · ${t.PCT}%</div>
+      </div>`).join('');
+  }
+
+  function renderFunnel(db) {
+    const m = db.milestones;
+    const steps = [
+      { name: 'All journeys', val: m.JOURNEYS, color: CAT.ingest },
+      { name: 'Resident resolved', val: m.RESIDENT_RESOLVED, color: CAT.success },
+      { name: 'Reached Event API', val: m.REACHED_EVENT_API, color: CAT.ingest },
+      { name: 'Processed', val: m.PROCESSED, color: CAT.success },
+      { name: 'Had failure', val: m.HAD_FAILURE, color: CAT.fail },
+    ];
+    const max = m.JOURNEYS;
+    document.getElementById('funnel').innerHTML = steps.map(s => `
+      <div class="funnel-step">
+        <div class="funnel-name">${s.name}</div>
+        <div class="funnel-bar-wrap">
+          <div class="funnel-bar" style="width:${Math.max(s.val/max*100, 6).toFixed(1)}%;background:${s.color}"><span class="funnel-bar-num">${fmt(s.val)}</span></div>
+          <span class="funnel-pct">${(s.val/max*100).toFixed(1)}%</span>
+        </div>
+      </div>`).join('');
+  }
+
+  function renderProviders(db) {
+    const total = d3.sum(db.providers, p => p.JOURNEYS);
+    document.getElementById('provider-table').innerHTML = db.providers.map(p => `
+      <tr><td>${p.PROVIDER ?? '—'}</td><td class="num">${fmt(p.JOURNEYS)}</td><td class="num">${(p.JOURNEYS/total*100).toFixed(1)}%</td></tr>`
+    ).join('');
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+{
+  "nodes": [
+    {
+      "RECON_STATUS": "REPLY_GENERATING",
+      "JOURNEYS": 1747534,
+      "EVENTS": 1747534
+    },
+    {
+      "RECON_STATUS": "REPLIED",
+      "JOURNEYS": 1743442,
+      "EVENTS": 1743442
+    },
+    {
+      "RECON_STATUS": "SCANNED",
+      "JOURNEYS": 268845,
+      "EVENTS": 268845
+    },
+    {
+      "RECON_STATUS": "QUEUED",
+      "JOURNEYS": 250891,
+      "EVENTS": 250891
+    },
+    {
+      "RECON_STATUS": "CLASSIFIED",
+      "JOURNEYS": 228227,
+      "EVENTS": 228227
+    },
+    {
+      "RECON_STATUS": "RECEIVED_BY_EVENTAPI",
+      "JOURNEYS": 206159,
+      "EVENTS": 206159
+    },
+    {
+      "RECON_STATUS": "EVENTAPI_PROCESSED",
+      "JOURNEYS": 188659,
+      "EVENTS": 188659
+    },
+    {
+      "RECON_STATUS": "SENT_TO_EVENTAPI",
+      "JOURNEYS": 173989,
+      "EVENTS": 173989
+    },
+    {
+      "RECON_STATUS": "SUPPRESSED",
+      "JOURNEYS": 75243,
+      "EVENTS": 75359
+    },
+    {
+      "RECON_STATUS": "EVENTAPI_FILTERED",
+      "JOURNEYS": 51105,
+      "EVENTS": 51105
+    },
+    {
+      "RECON_STATUS": "EVENTAPI_DELAYED",
+      "JOURNEYS": 27492,
+      "EVENTS": 27492
+    },
+    {
+      "RECON_STATUS": "UNMATCHED",
+      "JOURNEYS": 21263,
+      "EVENTS": 40152
+    },
+    {
+      "RECON_STATUS": "FAILED_CLASSIFY",
+      "JOURNEYS": 18901,
+      "EVENTS": 18901
+    },
+    {
+      "RECON_STATUS": "PROCESSED",
+      "JOURNEYS": 14074,
+      "EVENTS": 14074
+    },
+    {
+      "RECON_STATUS": "FAILED_REPLY",
+      "JOURNEYS": 2272,
+      "EVENTS": 2272
+    },
+    {
+      "RECON_STATUS": "FAILED_PROCESSING",
+      "JOURNEYS": 1416,
+      "EVENTS": 1416
+    }
+  ],
+  "edges": [
+    {
+      "FROM_STATUS": "REPLY_GENERATING",
+      "TO_STATUS": "REPLIED",
+      "N": 1743426
+    },
+    {
+      "FROM_STATUS": "SCANNED",
+      "TO_STATUS": "QUEUED",
+      "N": 250662
+    },
+    {
+      "FROM_STATUS": "QUEUED",
+      "TO_STATUS": "CLASSIFIED",
+      "N": 227593
+    },
+    {
+      "FROM_STATUS": "CLASSIFIED",
+      "TO_STATUS": "SENT_TO_EVENTAPI",
+      "N": 173937
+    },
+    {
+      "FROM_STATUS": "RECEIVED_BY_EVENTAPI",
+      "TO_STATUS": "EVENTAPI_PROCESSED",
+      "N": 155015
+    },
+    {
+      "FROM_STATUS": "CLASSIFIED",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 54222
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_PROCESSED",
+      "TO_STATUS": "EVENTAPI_FILTERED",
+      "N": 28072
+    },
+    {
+      "FROM_STATUS": "RECEIVED_BY_EVENTAPI",
+      "TO_STATUS": "EVENTAPI_DELAYED",
+      "N": 27444
+    },
+    {
+      "FROM_STATUS": "QUEUED",
+      "TO_STATUS": "UNMATCHED",
+      "N": 21175
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_DELAYED",
+      "TO_STATUS": "EVENTAPI_PROCESSED",
+      "N": 19025
+    },
+    {
+      "FROM_STATUS": "UNMATCHED",
+      "TO_STATUS": "FAILED_CLASSIFY",
+      "N": 18901
+    },
+    {
+      "FROM_STATUS": "FAILED_CLASSIFY",
+      "TO_STATUS": "UNMATCHED",
+      "N": 18852
+    },
+    {
+      "FROM_STATUS": "SCANNED",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 17517
+    },
+    {
+      "FROM_STATUS": "RECEIVED_BY_EVENTAPI",
+      "TO_STATUS": "EVENTAPI_FILTERED",
+      "N": 14543
+    },
+    {
+      "FROM_STATUS": "SENT_TO_EVENTAPI",
+      "TO_STATUS": "RECEIVED_BY_EVENTAPI",
+      "N": 8810
+    },
+    {
+      "FROM_STATUS": "RECEIVED_BY_EVENTAPI",
+      "TO_STATUS": "PROCESSED",
+      "N": 8773
+    },
+    {
+      "FROM_STATUS": "PROCESSED",
+      "TO_STATUS": "EVENTAPI_PROCESSED",
+      "N": 8572
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_DELAYED",
+      "TO_STATUS": "EVENTAPI_FILTERED",
+      "N": 8305
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_FILTERED",
+      "TO_STATUS": "EVENTAPI_PROCESSED",
+      "N": 5985
+    },
+    {
+      "FROM_STATUS": "SENT_TO_EVENTAPI",
+      "TO_STATUS": "PROCESSED",
+      "N": 5177
+    },
+    {
+      "FROM_STATUS": "PROCESSED",
+      "TO_STATUS": "RECEIVED_BY_EVENTAPI",
+      "N": 5170
+    },
+    {
+      "FROM_STATUS": "REPLY_GENERATING",
+      "TO_STATUS": "FAILED_REPLY",
+      "N": 2272
+    },
+    {
+      "FROM_STATUS": "REPLY_GENERATING",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 1811
+    },
+    {
+      "FROM_STATUS": "QUEUED",
+      "TO_STATUS": "FAILED_PROCESSING",
+      "N": 1353
+    },
+    {
+      "FROM_STATUS": "SENT_TO_EVENTAPI",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 958
+    },
+    {
+      "FROM_STATUS": "QUEUED",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 475
+    },
+    {
+      "FROM_STATUS": "SUPPRESSED",
+      "TO_STATUS": "CLASSIFIED",
+      "N": 389
+    },
+    {
+      "FROM_STATUS": "UNMATCHED",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 256
+    },
+    {
+      "FROM_STATUS": "QUEUED",
+      "TO_STATUS": "SCANNED",
+      "N": 216
+    },
+    {
+      "FROM_STATUS": "SCANNED",
+      "TO_STATUS": "CLASSIFIED",
+      "N": 211
+    },
+    {
+      "FROM_STATUS": "PROCESSED",
+      "TO_STATUS": "EVENTAPI_FILTERED",
+      "N": 184
+    },
+    {
+      "FROM_STATUS": "SUPPRESSED",
+      "TO_STATUS": "UNMATCHED",
+      "N": 86
+    },
+    {
+      "FROM_STATUS": "QUEUED",
+      "TO_STATUS": "PROCESSED",
+      "N": 79
+    },
+    {
+      "FROM_STATUS": "CLASSIFIED",
+      "TO_STATUS": "FAILED_PROCESSING",
+      "N": 58
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_FILTERED",
+      "TO_STATUS": "EVENTAPI_DELAYED",
+      "N": 47
+    },
+    {
+      "FROM_STATUS": "FAILED_CLASSIFY",
+      "TO_STATUS": "SENT_TO_EVENTAPI",
+      "N": 45
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_FILTERED",
+      "TO_STATUS": "PROCESSED",
+      "N": 37
+    },
+    {
+      "FROM_STATUS": "UNMATCHED",
+      "TO_STATUS": "CLASSIFIED",
+      "N": 30
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_PROCESSED",
+      "TO_STATUS": "RECEIVED_BY_EVENTAPI",
+      "N": 14
+    },
+    {
+      "FROM_STATUS": "SUPPRESSED",
+      "TO_STATUS": "QUEUED",
+      "N": 10
+    },
+    {
+      "FROM_STATUS": "UNMATCHED",
+      "TO_STATUS": "PROCESSED",
+      "N": 8
+    },
+    {
+      "FROM_STATUS": "RECEIVED_BY_EVENTAPI",
+      "TO_STATUS": "SENT_TO_EVENTAPI",
+      "N": 7
+    },
+    {
+      "FROM_STATUS": "CLASSIFIED",
+      "TO_STATUS": "RECEIVED_BY_EVENTAPI",
+      "N": 7
+    },
+    {
+      "FROM_STATUS": "SCANNED",
+      "TO_STATUS": "FAILED_PROCESSING",
+      "N": 5
+    },
+    {
+      "FROM_STATUS": "FAILED_PROCESSING",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 5
+    },
+    {
+      "FROM_STATUS": "FAILED_CLASSIFY",
+      "TO_STATUS": "SUPPRESSED",
+      "N": 4
+    },
+    {
+      "FROM_STATUS": "SENT_TO_EVENTAPI",
+      "TO_STATUS": "CLASSIFIED",
+      "N": 3
+    },
+    {
+      "FROM_STATUS": "SENT_TO_EVENTAPI",
+      "TO_STATUS": "UNMATCHED",
+      "N": 3
+    },
+    {
+      "FROM_STATUS": "PROCESSED",
+      "TO_STATUS": "UNMATCHED",
+      "N": 3
+    },
+    {
+      "FROM_STATUS": "EVENTAPI_PROCESSED",
+      "TO_STATUS": "EVENTAPI_DELAYED",
+      "N": 1
+    },
+    {
+      "FROM_STATUS": "SENT_TO_EVENTAPI",
+      "TO_STATUS": "SCANNED",
+      "N": 1
+    }
+  ],
+  "terminal": [
+    {
+      "TERMINAL_RECON_STATUS": "REPLIED",
+      "JOURNEYS": 1743442,
+      "PCT": 78.94,
+      "AVG_STEPS": 2.0
+    },
+    {
+      "TERMINAL_RECON_STATUS": "EVENTAPI_PROCESSED",
+      "JOURNEYS": 160572,
+      "PCT": 7.27,
+      "AVG_STEPS": 2.58
+    },
+    {
+      "TERMINAL_RECON_STATUS": "SENT_TO_EVENTAPI",
+      "JOURNEYS": 159037,
+      "PCT": 7.2,
+      "AVG_STEPS": 4.0
+    },
+    {
+      "TERMINAL_RECON_STATUS": "SUPPRESSED",
+      "JOURNEYS": 66293,
+      "PCT": 3.0,
+      "AVG_STEPS": 3.7
+    },
+    {
+      "TERMINAL_RECON_STATUS": "EVENTAPI_FILTERED",
+      "JOURNEYS": 45036,
+      "PCT": 2.04,
+      "AVG_STEPS": 2.82
+    },
+    {
+      "TERMINAL_RECON_STATUS": "UNMATCHED",
+      "JOURNEYS": 20924,
+      "PCT": 0.95,
+      "AVG_STEPS": 4.78
+    },
+    {
+      "TERMINAL_RECON_STATUS": "SCANNED",
+      "JOURNEYS": 8920,
+      "PCT": 0.4,
+      "AVG_STEPS": 1.95
+    },
+    {
+      "TERMINAL_RECON_STATUS": "FAILED_REPLY",
+      "JOURNEYS": 2272,
+      "PCT": 0.1,
+      "AVG_STEPS": 2.0
+    },
+    {
+      "TERMINAL_RECON_STATUS": "FAILED_PROCESSING",
+      "JOURNEYS": 1411,
+      "PCT": 0.06,
+      "AVG_STEPS": 3.04
+    },
+    {
+      "TERMINAL_RECON_STATUS": "RECEIVED_BY_EVENTAPI",
+      "JOURNEYS": 377,
+      "PCT": 0.02,
+      "AVG_STEPS": 1.52
+    },
+    {
+      "TERMINAL_RECON_STATUS": "EVENTAPI_DELAYED",
+      "JOURNEYS": 162,
+      "PCT": 0.01,
+      "AVG_STEPS": 2.21
+    },
+    {
+      "TERMINAL_RECON_STATUS": "PROCESSED",
+      "JOURNEYS": 145,
+      "PCT": 0.01,
+      "AVG_STEPS": 4.33
+    },
+    {
+      "TERMINAL_RECON_STATUS": "REPLY_GENERATING",
+      "JOURNEYS": 25,
+      "PCT": 0.0,
+      "AVG_STEPS": 1.0
+    },
+    {
+      "TERMINAL_RECON_STATUS": "CLASSIFIED",
+      "JOURNEYS": 3,
+      "PCT": 0.0,
+      "AVG_STEPS": 6.0
+    }
+  ],
+  "milestones": {
+    "JOURNEYS": 2208619,
+    "RESIDENT_RESOLVED": 1936440,
+    "REACHED_EVENT_API": 173989,
+    "PROCESSED": 14074,
+    "HAD_FAILURE": 22679
+  },
+  "providers": [
+    {
+      "PROVIDER": "sendgrid",
+      "JOURNEYS": 1762104
+    },
+    {
+      "PROVIDER": "gmail",
+      "JOURNEYS": 236156
+    },
+    {
+      "PROVIDER": null,
+      "JOURNEYS": 235395
+    },
+    {
+      "PROVIDER": "inbound_email",
+      "JOURNEYS": 192220
+    },
+    {
+      "PROVIDER": "outlook",
+      "JOURNEYS": 186880
+    }
+  ],
+  "timespan": {
+    "FIRST_EVENT": "2026-05-28T14:18:38.182000",
+    "LAST_EVENT": "2026-05-30T16:26:27.757000",
+    "JOURNEYS": 2209530,
+    "AVG_DURATION_S": 45.4,
+    "MEDIAN_DURATION_S": 1.0,
+    "P95_DURATION_S": 43.0,
+    "MAX_DURATION_S": 171601
+  },
+  "daily": [
+    {
+      "JOURNEY_DAY": "2026-05-28T00:00:00",
+      "JOURNEYS": 785345,
+      "REPLIED": 634201,
+      "PROCESSED": 52216,
+      "FAILED": 8375,
+      "SUPPRESSED_FILTERED": 36096
+    },
+    {
+      "JOURNEY_DAY": "2026-05-29T00:00:00",
+      "JOURNEYS": 1047396,
+      "REPLIED": 823509,
+      "PROCESSED": 76313,
+      "FAILED": 12159,
+      "SUPPRESSED_FILTERED": 53579
+    },
+    {
+      "JOURNEY_DAY": "2026-05-30T00:00:00",
+      "JOURNEYS": 376789,
+      "REPLIED": 286500,
+      "PROCESSED": 32087,
+      "FAILED": 4079,
+      "SUPPRESSED_FILTERED": 21582
+    }
+  ]
+}
