@@ -11,6 +11,12 @@
 
     .list-panel { border: 1px solid var(--border); background: var(--bg); position: sticky; top: 56px; max-height: calc(100vh - 80px); display: flex; flex-direction: column; }
     .list-controls { padding: 10px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .src-pill { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-faint); }
+    .src-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-mid); }
+    .src-pill.live .src-dot { background: var(--green); }
+    .src-pill.live { color: var(--green); }
+    .search-hint { font-family: var(--font-mono); font-size: 0.58rem; color: var(--text-faint); }
+    .searching { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-faint); padding: 7px 11px; }
     .list-controls input, .list-controls select { font-family: var(--font-mono); font-size: 0.74rem; padding: 6px 8px; border: 1px solid var(--border-mid); background: var(--bg); color: var(--text); width: 100%; }
     .list-controls input:focus, .list-controls select:focus { outline: none; border-color: var(--text); }
     .list-scroll { overflow-y: auto; }
@@ -81,7 +87,9 @@
     <div class="layout">
       <div class="list-panel">
         <div class="list-controls">
-          <input id="search" type="text" placeholder="search interaction_id…" />
+          <div class="src-pill" id="src-pill"><span class="src-dot"></span><span id="src-text">cached snapshot</span></div>
+          <input id="search" type="text" placeholder="search id / message_id / sender…" />
+          <span class="search-hint" id="search-hint"></span>
           <select id="filter-term"><option value="">All terminal statuses</option></select>
         </div>
         <div class="list-count" id="list-count"></div>
@@ -118,8 +126,11 @@
   }
   const shortId = id => id.slice(0, 8) + '…' + id.slice(-4);
 
+  const API = 'http://localhost:8899';
   let TRACES = [];
   let active = null;
+  let LIVE = false;
+  let searchTimer = null;
 
   (async () => {
     const db = await (await fetch('traces.json')).json();
@@ -129,20 +140,72 @@
     const sel = document.getElementById('filter-term');
     terms.forEach(t => sel.insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`));
 
-    document.getElementById('search').addEventListener('input', renderList);
+    document.getElementById('search').addEventListener('input', onSearchInput);
     sel.addEventListener('change', renderList);
 
     renderList();
     select(TRACES[0]);
+    probeBackend();
   })();
+
+  async function probeBackend() {
+    try {
+      const ctrl = new AbortController();
+      const to = setTimeout(() => ctrl.abort(), 1200);
+      const r = await fetch(API + '/api/health', { signal: ctrl.signal });
+      clearTimeout(to);
+      const h = await r.json();
+      if (h.ok) {
+        LIVE = true;
+        const pill = document.getElementById('src-pill');
+        pill.classList.add('live');
+        document.getElementById('src-text').textContent = 'live · ' + h.source;
+        document.getElementById('search-hint').textContent = 'any interaction_id, message_id, state_id, sender or recipient';
+      }
+    } catch (e) { /* stay cached */ }
+  }
+
+  function upsert(traceLike) {
+    const i = TRACES.findIndex(t => t.interaction_id === traceLike.interaction_id);
+    if (i === -1) TRACES.unshift(traceLike); else TRACES[i] = { ...TRACES[i], ...traceLike };
+  }
+
+  function onSearchInput() {
+    renderList();
+    if (!LIVE) return;
+    const term = document.getElementById('search').value.trim();
+    clearTimeout(searchTimer);
+    if (term.length < 3) return;
+    if (visible().length > 0) return;
+    searchTimer = setTimeout(() => liveSearch(term), 350);
+  }
+
+  async function liveSearch(term) {
+    const hint = document.getElementById('search-hint');
+    hint.textContent = 'searching live…';
+    try {
+      const r = await fetch(API + '/api/search?q=' + encodeURIComponent(term));
+      const { results } = await r.json();
+      (results || []).forEach(s => upsert({
+        interaction_id: s.INTERACTION_ID, provider: s.PROVIDER,
+        terminal_recon_status: s.TERMINAL_RECON_STATUS, lifecycle_steps: s.LIFECYCLE_STEPS,
+        resident_resolved: !!s.RESIDENT_RESOLVED, duration_s: s.DURATION_S,
+      }));
+      hint.textContent = `${(results || []).length} live result${(results || []).length === 1 ? '' : 's'}`;
+      renderList();
+      const first = visible()[0];
+      if (first) select(first);
+    } catch (e) {
+      hint.textContent = 'live search failed';
+    }
+  }
 
   function visible() {
     const qv = document.getElementById('search').value.trim().toLowerCase();
     const tv = document.getElementById('filter-term').value;
-    return TRACES.filter(t =>
-      (!qv || t.interaction_id.toLowerCase().includes(qv)) &&
-      (!tv || t.terminal_recon_status === tv)
-    );
+    const match = t => !qv || [t.interaction_id, t.message_id, t.sender, t.recipient, t.subject]
+      .some(f => f && String(f).toLowerCase().includes(qv));
+    return TRACES.filter(t => match(t) && (!tv || t.terminal_recon_status === tv));
   }
 
   function renderList() {
@@ -166,11 +229,23 @@
     );
   }
 
-  function select(t) {
+  async function select(t) {
     if (!t) return;
     active = t;
     renderList();
-    renderDetail(t);
+    if (!t.steps && LIVE) {
+      document.getElementById('detail').innerHTML = '<div class="searching">loading trace…</div>';
+      try {
+        const r = await fetch(API + '/api/trace?interaction_id=' + encodeURIComponent(t.interaction_id));
+        const { trace } = await r.json();
+        if (trace) { upsert(trace); active = trace; }
+      } catch (e) { /* fall through */ }
+    }
+    if (!active.steps) {
+      document.getElementById('detail').innerHTML = '<div class="searching">no cached trace for this interaction — start the local backend for live lookups.</div>';
+      return;
+    }
+    renderDetail(active);
   }
 
   function renderDetail(t) {

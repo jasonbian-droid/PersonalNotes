@@ -1,6 +1,62 @@
 {
   "traces": [
     {
+      "interaction_id": "c9416a90-8376-3d27-8239-6069792267e7",
+      "provider": "outlook",
+      "terminal_recon_status": "UNMATCHED",
+      "lifecycle_steps": 5,
+      "resident_resolved": false,
+      "duration_s": 1,
+      "subject": "Domain WeHo: Contact submission",
+      "sender": "leasing@domainweho.com",
+      "recipient": "jamie@sares-regis.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGUxZDM4Mjk1LWI4NGUtNDU5ZC1hNzVhLTFmNDAzMmVjY2JmZQBGAAAAAADgzaqWqoHWQJzEWMk2NYyOBwBpiBiDUCwATK_wPaIJSdJJAAAAAAEMAABpiBiDUCwATK_wPaIJSdJJAAKlW_OyAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-30T01:32:41.819000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 140,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-30T01:32:42.015000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-30T01:32:42.484000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 140,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-30T01:32:42.501000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 140,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-30T01:32:42.572000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 140,
+          "building_id": null
+        }
+      ]
+    },
+    {
       "interaction_id": "176421eb-2746-3d85-8d67-8f79f43b3048",
       "provider": null,
       "terminal_recon_status": "CLASSIFIED",
