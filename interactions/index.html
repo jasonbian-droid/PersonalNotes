@@ -163,13 +163,20 @@
     document.getElementById('fetch-btn').addEventListener('click', doFetch);
     sel.addEventListener('change', renderList);
 
-    // Default the view to the target interaction. No backend probe on load.
-    document.getElementById('search').value = DEFAULT_ID;
-    renderList();
+    // Show the cached case studies by default. No backend probe on load.
+    // Default fetch target is DEFAULT_ID (primed in the box only if it's cached,
+    // otherwise it's offered as a hint so the list still shows cached data).
     const preset = TRACES.find(t => t.interaction_id === DEFAULT_ID);
-    if (preset) select(preset);
-    else document.getElementById('detail').innerHTML =
-      `<div class="searching">Interaction <strong>${DEFAULT_ID}</strong> is not in the cached case studies.<br>Hit <strong>Fetch</strong> to establish a backend connection and load it live.</div>`;
+    if (preset) {
+      document.getElementById('search').value = DEFAULT_ID;
+      renderList();
+      select(preset);
+    } else {
+      renderList();                       // empty filter → all cached traces visible
+      select(TRACES[0]);                  // show a real cached trace, not an empty panel
+      document.getElementById('search-hint').innerHTML =
+        `${TRACES.length} cached interactions · type an id + Fetch for live (default <code>${DEFAULT_ID.slice(0,8)}…</code>)`;
+    }
   })();
 
   async function probeBackend() {
