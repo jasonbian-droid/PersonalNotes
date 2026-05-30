@@ -162,8 +162,8 @@ const pages = [
   { title: 'Interactions',  href: 'interactions/index.html',      desc: 'Drill into a single interaction — its ordered recon_status changes with timing.' },
   { title: 'Null %',        href: 'null-timeseries.html',         desc: 'Daily null rate per column in INBOUND_INTERACTION_EVENTS, by building and org.' },
   { title: 'Email Nulls',   href: 'null-emails/index.html',       desc: 'Full null analysis from email_null_analysis.ipynb — funnel, audit, drop-off.' },
-  { title: 'Recon Matrix',  href: 'events-recon-matrix.html',     desc: 'Ad-hoc matrix of recon_status over the raw lifecycle events (events_recon_matrix.ipynb).' },
-  { title: 'Email Tracking Breakdowns & Monitoring', href: 'step2-coverage-audit.html', desc: 'Step 2 audit — breakdowns, unexpected filtering, classifier failures, alert baselines (step2_coverage_audit.ipynb).' },
+  { title: 'Stage Breakdowns',  href: 'events-recon-matrix.html',     desc: 'Ad-hoc matrix of recon_status over the raw lifecycle events (events_recon_matrix.ipynb).' },
+  { title: 'DBT deep-dive', href: 'step2-coverage-audit.html', desc: 'Step 2 audit — breakdowns, unexpected filtering, classifier failures, alert baselines (step2_coverage_audit.ipynb).' },
   { title: 'Notebook',      href: 'http://localhost:8888/lab/tree/snowflake/notebooks/email_null_analysis.ipynb', desc: 'email_null_analysis.ipynb — live Snowflake queries (local only).', external: true },
 ]
 
