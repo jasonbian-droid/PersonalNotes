@@ -7815,7 +7815,6 @@ a.anchor-link {
 <a href="step2-coverage-audit.html" style="font-size:.72rem;font-weight:700;color:#1a1a1a;text-decoration:none;padding:3px 9px;white-space:nowrap;">DBT deep-dive</a>
 </div>
 <div style="height:52px;"></div>
-
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24895bcd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7891,6 +7890,143 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d9c6719">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="DAT-161-%E2%80%94-Step-1-&amp;-Step-2-spec,-mapped-to-the-dbt-models">DAT-161 — Step 1 &amp; Step 2 spec, mapped to the dbt models<a class="anchor-link" href="#DAT-161-%E2%80%94-Step-1-&amp;-Step-2-spec,-mapped-to-the-dbt-models">¶</a></h2><p><strong>Step 1 — Build Email Tracking.</strong> Every incoming email inquiry should have a clear record of what happened to it. The expected pipeline:</p>
+<p><code>email comes in → first entry recorded → received by Event API → processed into a state</code></p>
+<p>Output = a Snowflake rollup, <strong>one row per inquiry</strong> (grain <code>journey_key</code> = <code>message_id</code>), showing the steps it went through and current status, extensible to PMS inquiries / SMS / other channels later.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step-1 question</th>
+<th>Model · column</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Did the email come into our system?</td>
+<td><code>stg_inbound_interaction_events</code> (any row) → <code>fct_email_journeys.journey_key</code> exists</td>
+<td>Partial — zero-tracking-row emails need <code>fct_email_reconciliation</code> (stretch)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Did we capture the first entry?</td>
+<td><code>fct_email_breakdowns.has_scanned</code> / <code>has_queued</code>; <code>fct_email_journeys.received_at</code>, <code>first_seen_at</code></td>
+<td>Covered (the <code>inbound_email</code> provider legitimately enters at <code>RECEIVED_BY_EVENTAPI</code>)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Did it reach Event API?</td>
+<td><code>fct_email_journeys.reached_event_api</code>; categories <code>never_sent_to_event_api</code> (never forwarded) vs <code>never_reached_event_api</code> (forwarded, not acked)</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Did it make it into a state?</td>
+<td><code>fct_email_journeys.resident_resolved</code> / <code>state_id</code>; categories <code>reached_state</code> vs <code>processed_no_state</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>5</td>
+<td>New thread or reply to an existing thread?</td>
+<td><code>fct_email_journeys.email_direction</code> (INBOUND/OUTBOUND); <code>reply_suppressed</code> category; <code>fct_email_conversations.n_inbound</code> / <code>n_outbound</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>6</td>
+<td>If filtered out, where?</td>
+<td><code>fct_email_breakdowns.breakdown_category</code> ∈ {<code>filtered_expected</code>,<code>filtered_unexpected</code>}; <code>terminal_recon_status = EVENTAPI_FILTERED</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>7</td>
+<td>If filtered out, why?</td>
+<td><code>fct_email_breakdowns.filter_reason</code> (= <code>gap_reason</code> on FILTERED rows)</td>
+<td>Unblocked by the DAT-161 emit fix that populates <code>gap_reason</code> on the FILTERED path</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2 — Analyze breakdowns &amp; add monitoring.</strong> Find emails that came in but never reached Event API, reached Event API but never made a state, were filtered unexpectedly, were misclassified, or are missing tracking steps. Make unexpected filtering easy to spot (expected vs needs-follow-up). Define alerts.</p>
+<table>
+<thead>
+<tr>
+<th>Breakdown to find</th>
+<th>Model · column</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Came in but never reached Event API</td>
+<td><code>fct_email_breakdowns.breakdown_category = 'never_sent_to_event_api'</code></td>
+</tr>
+<tr>
+<td>Reached Event API but no state</td>
+<td><code>'never_reached_event_api'</code> + <code>'processed_no_state'</code></td>
+</tr>
+<tr>
+<td>Filtered out unexpectedly</td>
+<td><code>'filtered_unexpected'</code> (<code>is_unexpected_filter = true</code>)</td>
+</tr>
+<tr>
+<td>Classified incorrectly</td>
+<td>not modeled — needs predicted-class/confidence instrumentation in the raw stream (blocked)</td>
+</tr>
+<tr>
+<td>Missing expected tracking steps</td>
+<td><code>'missing_tracking_steps'</code> (+ <code>fct_email_reconciliation</code> for zero-row emails)</td>
+</tr>
+<tr>
+<td>Expected, no-page filtering</td>
+<td><code>'filtered_expected'</code>, <code>'reply_suppressed'</code> (<code>needs_followup = false</code>)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Alert</th>
+<th>Source · column</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sudden drop in incoming volume</td>
+<td><code>fct_email_daily_anomaly.pct_vs_trailing</code> vs <code>trailing_avg_7d</code></td>
+</tr>
+<tr>
+<td>Spike in filtered-out emails</td>
+<td><code>fct_email_daily_anomaly</code> z-score on <code>pct_filtered_unexpected</code></td>
+</tr>
+<tr>
+<td>Received but not sent to Event API</td>
+<td><code>fct_email_breakdown_daily.never_sent_to_event_api</code></td>
+</tr>
+<tr>
+<td>Sent to Event API but not into states</td>
+<td><code>fct_email_breakdown_daily.processed_no_state</code> + <code>never_reached_event_api</code></td>
+</tr>
+<tr>
+<td>Missing tracking rows</td>
+<td><code>fct_email_breakdown_daily.missing_tracking_steps</code> (+ reconciliation)</td>
+</tr>
+<tr>
+<td>Classifier failure spike</td>
+<td><code>fct_email_breakdown_daily.pct_classifier_failed</code></td>
+</tr>
+</tbody>
+</table>
+<p>The single alerts key is <code>fct_email_breakdowns.needs_followup</code> — expected filtering never pages, unexpected drops always do.</p>
 </div>
 </div>
 </div>
