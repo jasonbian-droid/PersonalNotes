@@ -1,0 +1,2268 @@
+{
+  "traces": [
+    {
+      "interaction_id": "176421eb-2746-3d85-8d67-8f79f43b3048",
+      "provider": null,
+      "terminal_recon_status": "CLASSIFIED",
+      "lifecycle_steps": 6,
+      "resident_resolved": true,
+      "duration_s": 239,
+      "subject": "Turning in Keys",
+      "sender": "k3vin.paz14@gmail.com",
+      "recipient": "lily.b@rtresi-assist.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADdjNDk3ZDk4LTE1MmEtNDFiMy04OGRhLTFlZDk2YWZmZjgzNABGAAAAAABfYiiHaMaQSpgf9n8y3P61BwDsNnFe9HDzTYlGygBcVOj4AAAAAAEMAADsNnFe9HDzTYlGygBcVOj4AAGikGzAAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T23:12:38.925000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 598,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T23:12:39.186000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T23:12:39.497000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 598,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-29T23:12:39.511000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 598,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T23:12:39.590000",
+          "gap_reason": null,
+          "state_id": "34l6utbr083oi8px",
+          "org_id": 598,
+          "building_id": 28798
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T23:16:37.893000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 598,
+          "building_id": 28798
+        }
+      ]
+    },
+    {
+      "interaction_id": "aa068425-d437-3b23-8389-88fe6d290551",
+      "provider": "outlook",
+      "terminal_recon_status": "CLASSIFIED",
+      "lifecycle_steps": 6,
+      "resident_resolved": true,
+      "duration_s": 121,
+      "subject": "Maintenance apt. 211",
+      "sender": "ayeashagraham@yahoo.com",
+      "recipient": "mia.c@liveatlsc-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGZlYjFjM2I0LTViOTAtNGI5ZC04ZmZlLWQ4NTNlM2Q3MTJmNwBGAAAAAACj5OeZD1OcTqmjw5Az0zetBwCJSXnGBpUmTqQEvBhxa9ZOAAAAAAEMAACJSXnGBpUmTqQEvBhxa9ZOAAA2PN04AAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T02:15:27.587000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 526,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T02:15:27.786000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T02:15:28.090000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 526,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-29T02:15:28.105000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 526,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T02:15:28.157000",
+          "gap_reason": null,
+          "state_id": "36d1szgmv7m5xzly",
+          "org_id": 526,
+          "building_id": 920285
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T02:17:28.323000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 526,
+          "building_id": 920285
+        }
+      ]
+    },
+    {
+      "interaction_id": "da35096a-11eb-32df-995e-63437690d092",
+      "provider": null,
+      "terminal_recon_status": "CLASSIFIED",
+      "lifecycle_steps": 6,
+      "resident_resolved": true,
+      "duration_s": 119,
+      "subject": "Quick Questions About Unit/Room and Bedroom",
+      "sender": "ajbuleza@gmail.com",
+      "recipient": "residentfeedback@lark-resident.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGQ5MmQxMjVkLTEzMmMtNDg0ZC1iZjhiLTBiNTQyYTFlZGM2MwBGAAAAAACwM_6czEDGT7L1HOMFGxisBwBLAU9kTc1kQ70akKW0dXUqAAAAAAEMAABLAU9kTc1kQ70akKW0dXUqAAG0L6i_AAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T18:24:53.261000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 444,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T18:24:53.455000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T18:24:53.801000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 444,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-29T18:24:53.818000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 444,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T18:24:53.978000",
+          "gap_reason": null,
+          "state_id": "39e2iaybgf151wm8",
+          "org_id": 444,
+          "building_id": 16219
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T18:26:52.810000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 444,
+          "building_id": 16219
+        }
+      ]
+    },
+    {
+      "interaction_id": "dc1ba26f-8a0e-52c5-8fa9-1c254d349ac9",
+      "provider": "inbound_email",
+      "terminal_recon_status": "EVENTAPI_DELAYED",
+      "lifecycle_steps": 3,
+      "resident_resolved": false,
+      "duration_s": 85,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "<0100019e6ffa5c9c-1390d0a5-0a7e-4ce9-9585-6e7f274f2595-000000@email.amazonses.com>",
+      "steps": [
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T19:05:44.555000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-28T19:05:44.591000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        },
+        {
+          "recon_status": "EVENTAPI_DELAYED",
+          "emitted_at": "2026-05-28T19:07:09.259000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        }
+      ]
+    },
+    {
+      "interaction_id": "c43fb96e-ac51-573d-8d5b-c5f90db73396",
+      "provider": "inbound_email",
+      "terminal_recon_status": "EVENTAPI_DELAYED",
+      "lifecycle_steps": 3,
+      "resident_resolved": false,
+      "duration_s": 19,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "<0100019e6fe875d3-2a7b6fad-98ec-4393-b9ca-423eb0279a31-000000@email.amazonses.com>",
+      "steps": [
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T18:46:09.646000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-28T18:46:09.690000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        },
+        {
+          "recon_status": "EVENTAPI_DELAYED",
+          "emitted_at": "2026-05-28T18:46:28.367000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        }
+      ]
+    },
+    {
+      "interaction_id": "2a1c7156-9284-5b73-be7c-ce8079cda1b7",
+      "provider": "inbound_email",
+      "terminal_recon_status": "EVENTAPI_DELAYED",
+      "lifecycle_steps": 3,
+      "resident_resolved": false,
+      "duration_s": 18,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "<0100019e7970d44a-7363bfa9-8be3-4db4-a360-f977b25a17bd-000000@email.amazonses.com>",
+      "steps": [
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-30T15:12:34.873000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-30T15:12:34.942000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        },
+        {
+          "recon_status": "EVENTAPI_DELAYED",
+          "emitted_at": "2026-05-30T15:12:52.213000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 686,
+          "building_id": 47079
+        }
+      ]
+    },
+    {
+      "interaction_id": "2a76338b-79af-58b1-b3e2-bacd8d34238d",
+      "provider": "sendgrid",
+      "terminal_recon_status": "EVENTAPI_FILTERED",
+      "lifecycle_steps": 7,
+      "resident_resolved": true,
+      "duration_s": 359,
+      "subject": "Re: Message from Lantower Westshore Team",
+      "sender": "Stef B <sbajorek716@gmail.com>",
+      "recipient": "leo <leo@resident-lantowerliving.com>",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "email-sync/20260529220728/email-20260529220728-djXMXFLb",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T22:07:28.212000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T22:13:25.569000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T22:13:26.503000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T22:13:26.679000",
+          "gap_reason": null,
+          "state_id": "2lmeirnopcp918m6",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-29T22:13:26.770000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-29T22:13:27.071000",
+          "gap_reason": null,
+          "state_id": "2lmeirnopcp918m6",
+          "org_id": 133,
+          "building_id": 5077
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-29T22:13:27.271000",
+          "gap_reason": null,
+          "state_id": "2lmeirnopcp918m6",
+          "org_id": 133,
+          "building_id": 5077
+        }
+      ]
+    },
+    {
+      "interaction_id": "91c1a5f2-8349-5465-8610-93fd7697674a",
+      "provider": "sendgrid",
+      "terminal_recon_status": "EVENTAPI_FILTERED",
+      "lifecycle_steps": 7,
+      "resident_resolved": true,
+      "duration_s": 343,
+      "subject": "Re: Message from Park La Brea Team",
+      "sender": "Marie Ramirez <marieramirez2002@yahoo.com>",
+      "recipient": "liv <liv@primegroup-resident.com>",
+      "email_type": null,
+      "channel": "email",
+      "message_id": "email-sync/20260528170803/email-20260528170803-PzxuRQtX",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T17:08:03.325000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T17:08:03.660000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T17:08:04.708000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T17:08:05.059000",
+          "gap_reason": null,
+          "state_id": "2ixb4kooyn34uj6b",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T17:08:05.185000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T17:13:46.604000",
+          "gap_reason": null,
+          "state_id": "2ixb4kooyn34uj6b",
+          "org_id": 928,
+          "building_id": 93436
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-28T17:13:46.950000",
+          "gap_reason": null,
+          "state_id": "2ixb4kooyn34uj6b",
+          "org_id": 928,
+          "building_id": 93436
+        }
+      ]
+    },
+    {
+      "interaction_id": "8847c1cc-9688-5e85-919d-f6cf0ae80c69",
+      "provider": "sendgrid",
+      "terminal_recon_status": "EVENTAPI_FILTERED",
+      "lifecycle_steps": 7,
+      "resident_resolved": true,
+      "duration_s": 227,
+      "subject": "Regarding lease amount",
+      "sender": "Krisha Elle <krisharelle@gmail.com>",
+      "recipient": "Hoosier Court Leasing <hc.leasing@hunterbloomington.com>, hunter <hunter@hunter-resident.com>",
+      "email_type": null,
+      "channel": "email",
+      "message_id": "email-sync/20260528170627/email-20260528170627-nThbbAPI",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T17:06:27.766000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T17:06:27.786000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T17:06:29.002000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T17:06:29.173000",
+          "gap_reason": null,
+          "state_id": "2yywyuc17u2q8ioo",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T17:06:29.240000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T17:10:14.819000",
+          "gap_reason": null,
+          "state_id": "2yywyuc17u2q8ioo",
+          "org_id": 2324,
+          "building_id": 422669
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-28T17:10:14.890000",
+          "gap_reason": null,
+          "state_id": "2yywyuc17u2q8ioo",
+          "org_id": 2324,
+          "building_id": 422669
+        }
+      ]
+    },
+    {
+      "interaction_id": "08a467f3-1842-5412-aec1-6221d6b02f25",
+      "provider": "sendgrid",
+      "terminal_recon_status": "EVENTAPI_PROCESSED",
+      "lifecycle_steps": 8,
+      "resident_resolved": true,
+      "duration_s": 485,
+      "subject": "Re: Message from Your Progress Residential Team",
+      "sender": "Rob Rasor <robertrasor@gmail.com>",
+      "recipient": "Progress Residential <Riley@rentprogress-resident.com>",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "email-sync/20260529172222/email-20260529172222-rme4K0Sz",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T17:22:22.612000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T17:22:22.626000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T17:22:23.497000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T17:22:23.677000",
+          "gap_reason": null,
+          "state_id": "354n0cm1qwdz5aht",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-29T17:22:23.749000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-29T17:26:41.662000",
+          "gap_reason": null,
+          "state_id": "354n0cm1qwdz5aht",
+          "org_id": 958,
+          "building_id": 339411
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-29T17:26:41.745000",
+          "gap_reason": null,
+          "state_id": "354n0cm1qwdz5aht",
+          "org_id": 958,
+          "building_id": 339411
+        },
+        {
+          "recon_status": "EVENTAPI_PROCESSED",
+          "emitted_at": "2026-05-29T17:30:27.308000",
+          "gap_reason": null,
+          "state_id": "354n0cm1qwdz5aht",
+          "org_id": 958,
+          "building_id": 339411
+        }
+      ]
+    },
+    {
+      "interaction_id": "9e8f4e8b-f336-5e86-aeab-9685fb3c8ff5",
+      "provider": "sendgrid",
+      "terminal_recon_status": "EVENTAPI_PROCESSED",
+      "lifecycle_steps": 8,
+      "resident_resolved": true,
+      "duration_s": 410,
+      "subject": "Re: Message from Your Progress Residential Team",
+      "sender": "Marc Henry Raymond <marcraymond1985@yahoo.com>",
+      "recipient": "Progress Residential <Riley@rentprogress-resident.com>",
+      "email_type": null,
+      "channel": "email",
+      "message_id": "email-sync/20260528170804/email-20260528170804-9zXqNpL0",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T17:08:05.055000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T17:08:05.224000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T17:08:05.987000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T17:08:06.172000",
+          "gap_reason": null,
+          "state_id": "385hutvlm7ffooqc",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T17:08:06.251000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T17:12:00.742000",
+          "gap_reason": null,
+          "state_id": "385hutvlm7ffooqc",
+          "org_id": 958,
+          "building_id": 312684
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-28T17:12:00.785000",
+          "gap_reason": null,
+          "state_id": "385hutvlm7ffooqc",
+          "org_id": 958,
+          "building_id": 312684
+        },
+        {
+          "recon_status": "EVENTAPI_PROCESSED",
+          "emitted_at": "2026-05-28T17:14:55.002000",
+          "gap_reason": null,
+          "state_id": "385hutvlm7ffooqc",
+          "org_id": 958,
+          "building_id": 312684
+        }
+      ]
+    },
+    {
+      "interaction_id": "986cbf25-a3bb-5b3a-a26c-0d31521a746d",
+      "provider": "sendgrid",
+      "terminal_recon_status": "EVENTAPI_PROCESSED",
+      "lifecycle_steps": 8,
+      "resident_resolved": true,
+      "duration_s": 385,
+      "subject": "Re: Message from Your Progress Residential Team",
+      "sender": "Mary Lou Croisetiere <maryloucroisetiere@yahoo.com>",
+      "recipient": "Progress Residential <Riley@rentprogress-resident.com>",
+      "email_type": null,
+      "channel": "email",
+      "message_id": "email-sync/20260528170221/email-20260528170221-R2m8aNWJ",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T17:02:21.460000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T17:02:21.473000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T17:02:23.243000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T17:02:25.722000",
+          "gap_reason": null,
+          "state_id": "39rb0l5i9hw17kkp",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T17:02:25.800000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T17:06:40.944000",
+          "gap_reason": null,
+          "state_id": "39rb0l5i9hw17kkp",
+          "org_id": 958,
+          "building_id": 348437
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-28T17:06:40.981000",
+          "gap_reason": null,
+          "state_id": "39rb0l5i9hw17kkp",
+          "org_id": 958,
+          "building_id": 348437
+        },
+        {
+          "recon_status": "EVENTAPI_PROCESSED",
+          "emitted_at": "2026-05-28T17:08:46.424000",
+          "gap_reason": null,
+          "state_id": "39rb0l5i9hw17kkp",
+          "org_id": 958,
+          "building_id": 348437
+        }
+      ]
+    },
+    {
+      "interaction_id": "c11d908f-0a2d-3707-9546-dc969ae0422d",
+      "provider": null,
+      "terminal_recon_status": "FAILED_PROCESSING",
+      "lifecycle_steps": 4,
+      "resident_resolved": false,
+      "duration_s": 3,
+      "subject": "New Lead for Bentley Green Apartments from Makayla Campbell - Apartment List",
+      "sender": "interests@apartmentlist.com",
+      "recipient": "mark@highmark-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGUwYWY4ZTNiLTBkNDUtNGE0Zi04MWRiLTdlNzM5MjI2ODU4MwBGAAAAAACayqbBQ8_kRq4rqJBGQaWSBwD9iy55I4_kRrYnuJtRp2ExAAAAAAEMAAD9iy55I4_kRrYnuJtRp2ExAAMd7zDBAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T14:30:58.889000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T14:30:59.164000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T14:31:01.095000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": 481778
+        },
+        {
+          "recon_status": "FAILED_PROCESSING",
+          "emitted_at": "2026-05-28T14:31:01.120000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": 481778
+        }
+      ]
+    },
+    {
+      "interaction_id": "4b35f292-7f67-3d04-aff7-85cf133d342f",
+      "provider": null,
+      "terminal_recon_status": "FAILED_PROCESSING",
+      "lifecycle_steps": 4,
+      "resident_resolved": false,
+      "duration_s": 3,
+      "subject": "New Lead for Bentley Green Apartments from Emari Williams - Apartment List",
+      "sender": "interests@apartmentlist.com",
+      "recipient": "mark@highmark-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGUwYWY4ZTNiLTBkNDUtNGE0Zi04MWRiLTdlNzM5MjI2ODU4MwBGAAAAAACayqbBQ8_kRq4rqJBGQaWSBwD9iy55I4_kRrYnuJtRp2ExAAAAAAEMAAD9iy55I4_kRrYnuJtRp2ExAAMepurXAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T02:46:56.825000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T02:46:57.231000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T02:46:59.233000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": 481778
+        },
+        {
+          "recon_status": "FAILED_PROCESSING",
+          "emitted_at": "2026-05-29T02:46:59.249000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": 481778
+        }
+      ]
+    },
+    {
+      "interaction_id": "27f93a16-7d37-3e9d-8464-741253f912c3",
+      "provider": null,
+      "terminal_recon_status": "FAILED_PROCESSING",
+      "lifecycle_steps": 4,
+      "resident_resolved": false,
+      "duration_s": 3,
+      "subject": "New Lead for Bentley Green Apartments from Jasmine Jackson - Apartment List",
+      "sender": "interests@apartmentlist.com",
+      "recipient": "mark@highmark-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGUwYWY4ZTNiLTBkNDUtNGE0Zi04MWRiLTdlNzM5MjI2ODU4MwBGAAAAAACayqbBQ8_kRq4rqJBGQaWSBwD9iy55I4_kRrYnuJtRp2ExAAAAAAEMAAD9iy55I4_kRrYnuJtRp2ExAAMenUYtAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T19:42:56.635000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T19:42:57.141000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T19:42:59.183000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": 481778
+        },
+        {
+          "recon_status": "FAILED_PROCESSING",
+          "emitted_at": "2026-05-28T19:42:59.198000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 265,
+          "building_id": 481778
+        }
+      ]
+    },
+    {
+      "interaction_id": "f514c545-22c2-5378-9a62-821c388d14b4",
+      "provider": "sendgrid",
+      "terminal_recon_status": "FAILED_REPLY",
+      "lifecycle_steps": 2,
+      "resident_resolved": true,
+      "duration_s": 128,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "OUTBOUND",
+      "channel": "email",
+      "message_id": "39ts4v7ijkt1coj6",
+      "steps": [
+        {
+          "recon_status": "REPLY_GENERATING",
+          "emitted_at": "2026-05-29T19:14:54.654000",
+          "gap_reason": null,
+          "state_id": "362wmajga6fvrb2w",
+          "org_id": 165,
+          "building_id": 784968
+        },
+        {
+          "recon_status": "FAILED_REPLY",
+          "emitted_at": "2026-05-29T19:17:02.489000",
+          "gap_reason": "Failed to create new email for building=784968, subject=Apartment Inquiry at Ivy Hollow, to_address=spain.joanna42@gmail.com, org_id=165, status_code=500, response=None",
+          "state_id": "362wmajga6fvrb2w",
+          "org_id": 165,
+          "building_id": 784968
+        }
+      ]
+    },
+    {
+      "interaction_id": "8c09ab29-55e2-5659-8fb2-71c00c351b41",
+      "provider": "sendgrid",
+      "terminal_recon_status": "FAILED_REPLY",
+      "lifecycle_steps": 2,
+      "resident_resolved": true,
+      "duration_s": 91,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "OUTBOUND",
+      "channel": "email",
+      "message_id": "39t9uatb0gc0lin8",
+      "steps": [
+        {
+          "recon_status": "REPLY_GENERATING",
+          "emitted_at": "2026-05-29T13:45:19.761000",
+          "gap_reason": null,
+          "state_id": "39pcgwpuyttcwgxw",
+          "org_id": 16,
+          "building_id": 123188
+        },
+        {
+          "recon_status": "FAILED_REPLY",
+          "emitted_at": "2026-05-29T13:46:50.264000",
+          "gap_reason": "Failed to create new email for building=123188, subject=Apartment Inquiry at Avalon W Squared, to_address=nahomyvaldez2003@gmail.com, org_id=16, status_code=500, response=None",
+          "state_id": "39pcgwpuyttcwgxw",
+          "org_id": 16,
+          "building_id": 123188
+        }
+      ]
+    },
+    {
+      "interaction_id": "ee742405-727f-57e3-94ab-fb68cc21b88b",
+      "provider": "sendgrid",
+      "terminal_recon_status": "FAILED_REPLY",
+      "lifecycle_steps": 2,
+      "resident_resolved": true,
+      "duration_s": 89,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "OUTBOUND",
+      "channel": "email",
+      "message_id": "39t9qiyn8h0mh23s",
+      "steps": [
+        {
+          "recon_status": "REPLY_GENERATING",
+          "emitted_at": "2026-05-29T13:43:59.381000",
+          "gap_reason": null,
+          "state_id": "39q3gtrk2ktnc004",
+          "org_id": 16,
+          "building_id": 6299
+        },
+        {
+          "recon_status": "FAILED_REPLY",
+          "emitted_at": "2026-05-29T13:45:28.586000",
+          "gap_reason": "Failed to create new email for building=6299, subject=Apartment Inquiry at Avalon Miramar Park Place, to_address=omarenrique774@gmail.com, org_id=16, status_code=500, response=None",
+          "state_id": "39q3gtrk2ktnc004",
+          "org_id": 16,
+          "building_id": 6299
+        }
+      ]
+    },
+    {
+      "interaction_id": "b0caed2f-a6e6-5fb9-8f0b-4cdd61385d25",
+      "provider": "sendgrid",
+      "terminal_recon_status": "PROCESSED",
+      "lifecycle_steps": 7,
+      "resident_resolved": true,
+      "duration_s": 2,
+      "subject": "Mailbox key",
+      "sender": "Rebekah Turner-Harris <rturner3734@gmail.com>",
+      "recipient": "denise <denise@concordiaproperties-resident.com>",
+      "email_type": null,
+      "channel": "email",
+      "message_id": "email-sync/20260528174405/email-20260528174405-CEg7r9jW",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T17:44:05.605000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T17:44:05.621000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T17:44:06.434000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T17:44:07.241000",
+          "gap_reason": null,
+          "state_id": "2p2owps95hrqmqzl",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T17:44:07.296000",
+          "gap_reason": null,
+          "state_id": "2p2owps95hrqmqzl",
+          "org_id": 457,
+          "building_id": 16614
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-28T17:44:07.386000",
+          "gap_reason": null,
+          "state_id": "2p2owps95hrqmqzl",
+          "org_id": 457,
+          "building_id": 16614
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T17:44:07.430000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "343199c4-25ae-5a9b-aaf4-8ed246ede506",
+      "provider": "sendgrid",
+      "terminal_recon_status": "PROCESSED",
+      "lifecycle_steps": 7,
+      "resident_resolved": true,
+      "duration_s": 2,
+      "subject": "Re: Message from Your Progress Residential Team",
+      "sender": "Joanne Calvillo <jlcal1982@gmail.com>",
+      "recipient": "Progress Residential <Riley@rentprogress-resident.com>",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "email-sync/20260529122828/email-20260529122828-CHGsw4XW",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T12:28:28.938000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T12:28:28.951000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T12:28:29.796000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T12:28:29.946000",
+          "gap_reason": null,
+          "state_id": "38j2qhcehkknmlf",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-29T12:28:29.981000",
+          "gap_reason": null,
+          "state_id": "38j2qhcehkknmlf",
+          "org_id": 958,
+          "building_id": 337337
+        },
+        {
+          "recon_status": "EVENTAPI_FILTERED",
+          "emitted_at": "2026-05-29T12:28:30.028000",
+          "gap_reason": null,
+          "state_id": "38j2qhcehkknmlf",
+          "org_id": 958,
+          "building_id": 337337
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-29T12:28:30.040000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "ac10909d-293c-5133-8b5d-78276563db4f",
+      "provider": "sendgrid",
+      "terminal_recon_status": "PROCESSED",
+      "lifecycle_steps": 6,
+      "resident_resolved": true,
+      "duration_s": 75,
+      "subject": "Re: Message from Windermere House Team",
+      "sender": "terrier.fourths.2t@icloud.com",
+      "recipient": "hello@riley-resident.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "email-sync/20260528200443/email-20260528200443-YMwSpPl6",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T20:04:43.573000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T20:05:56.310000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T20:05:57.344000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T20:05:58.075000",
+          "gap_reason": null,
+          "state_id": "37m1abuntq4vqcji",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T20:05:58.122000",
+          "gap_reason": null,
+          "state_id": "37m1abuntq4vqcji",
+          "org_id": 2696,
+          "building_id": 692595
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T20:05:58.152000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "1f078529-fc16-3b97-8332-57a1743691ff",
+      "provider": "outlook",
+      "terminal_recon_status": "QUEUED",
+      "lifecycle_steps": 2,
+      "resident_resolved": false,
+      "duration_s": 0,
+      "subject": "Re: Apartment Inquiry at Seminole North",
+      "sender": "ortizriosmargarita628@gmail.com",
+      "recipient": "ellie.a@wooten-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADM0MWJhNjhiLTc5YzgtNDdhZS04MGNkLWY0ZGEzNGQyYTRjOABGAAAAAAAjjEIsQzG7Rb-9rY9SyxZzBwDPP7bVR86xRLkDyJfkXkCuAAAAAAEMAADPP7bVR86xRLkDyJfkXkCuAABvelezAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-30T16:32:07.677000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 2618,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-30T16:32:07.894000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "ac77c47d-6879-5681-ab5b-705aef1bd33d",
+      "provider": "sendgrid",
+      "terminal_recon_status": "RECEIVED_BY_EVENTAPI",
+      "lifecycle_steps": 6,
+      "resident_resolved": true,
+      "duration_s": 172,
+      "subject": "Re: Message from Presidium Valley View Team",
+      "sender": "Amy Nyemah <ahnyemah@gmail.com>",
+      "recipient": "piper <piper@presidiumre-resident.com>",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "email-sync/20260528211058/email-20260528211058-rqBfQbwy",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T21:10:58.261000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T21:10:58.276000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T21:10:59.125000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T21:10:59.274000",
+          "gap_reason": null,
+          "state_id": "37zd68hz4tdtjj9y",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T21:10:59.332000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T21:13:50.222000",
+          "gap_reason": null,
+          "state_id": "37zd68hz4tdtjj9y",
+          "org_id": 848,
+          "building_id": 921386
+        }
+      ]
+    },
+    {
+      "interaction_id": "b55f7607-2352-5be5-b1e8-8951824fb40c",
+      "provider": "sendgrid",
+      "terminal_recon_status": "RECEIVED_BY_EVENTAPI",
+      "lifecycle_steps": 6,
+      "resident_resolved": true,
+      "duration_s": 135,
+      "subject": "June Rent",
+      "sender": "Michelle Mendez <michelle.mendez006@gmail.com>",
+      "recipient": "Teresa.Murray@bpapartments.com, brook <brook@bpapartments-resident.com>",
+      "email_type": null,
+      "channel": "email",
+      "message_id": "email-sync/20260528161346/email-20260528161346-IJg8Ngo9",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T16:13:46.387000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T16:14:54.580000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T16:14:56.028000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T16:14:56.451000",
+          "gap_reason": null,
+          "state_id": "2mhjwrrejutx56ca",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T16:14:56.558000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T16:16:01.725000",
+          "gap_reason": null,
+          "state_id": "2mhjwrrejutx56ca",
+          "org_id": 258,
+          "building_id": 62340
+        }
+      ]
+    },
+    {
+      "interaction_id": "b6538cad-426b-560d-a186-fe3d89ebd499",
+      "provider": "sendgrid",
+      "terminal_recon_status": "RECEIVED_BY_EVENTAPI",
+      "lifecycle_steps": 6,
+      "resident_resolved": true,
+      "duration_s": 134,
+      "subject": "Re: Message from Tyger Pointe Team",
+      "sender": "Richard Cornett <rabacornett@gmail.com>",
+      "recipient": "quinley <quinley@quinnresidences-resident.com>",
+      "email_type": null,
+      "channel": "email",
+      "message_id": "email-sync/20260528171701/email-20260528171701-9ISVraN7",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T17:17:01.318000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T17:17:01.331000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T17:17:03.225000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T17:17:03.430000",
+          "gap_reason": null,
+          "state_id": "30mg0gzk1xs5lzfq",
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "PROCESSED",
+          "emitted_at": "2026-05-28T17:17:03.882000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "RECEIVED_BY_EVENTAPI",
+          "emitted_at": "2026-05-28T17:19:15.335000",
+          "gap_reason": null,
+          "state_id": "30mg0gzk1xs5lzfq",
+          "org_id": 636,
+          "building_id": 161886
+        }
+      ]
+    },
+    {
+      "interaction_id": "81f869ba-738a-5836-8ab8-009395976b43",
+      "provider": "sendgrid",
+      "terminal_recon_status": "REPLIED",
+      "lifecycle_steps": 2,
+      "resident_resolved": true,
+      "duration_s": 244,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "OUTBOUND",
+      "channel": "email",
+      "message_id": "39rp8j44ej8qtct",
+      "steps": [
+        {
+          "recon_status": "REPLY_GENERATING",
+          "emitted_at": "2026-05-28T20:46:00.926000",
+          "gap_reason": null,
+          "state_id": "39rnmaf9yg6wm31v",
+          "org_id": 8,
+          "building_id": 6418
+        },
+        {
+          "recon_status": "REPLIED",
+          "emitted_at": "2026-05-28T20:50:04.031000",
+          "gap_reason": null,
+          "state_id": "39rnmaf9yg6wm31v",
+          "org_id": 8,
+          "building_id": 6418
+        }
+      ]
+    },
+    {
+      "interaction_id": "f31e605f-5033-5374-a9c0-e136f05e6eb1",
+      "provider": "sendgrid",
+      "terminal_recon_status": "REPLIED",
+      "lifecycle_steps": 2,
+      "resident_resolved": true,
+      "duration_s": 243,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "OUTBOUND",
+      "channel": "email",
+      "message_id": "39rs4z68kyqhec12",
+      "steps": [
+        {
+          "recon_status": "REPLY_GENERATING",
+          "emitted_at": "2026-05-28T21:38:59.112000",
+          "gap_reason": null,
+          "state_id": "39pxsi4ti8ry6y98",
+          "org_id": 8,
+          "building_id": 6418
+        },
+        {
+          "recon_status": "REPLIED",
+          "emitted_at": "2026-05-28T21:43:02.217000",
+          "gap_reason": null,
+          "state_id": "39pxsi4ti8ry6y98",
+          "org_id": 8,
+          "building_id": 6418
+        }
+      ]
+    },
+    {
+      "interaction_id": "85144924-1dac-5360-9454-07b325c69f74",
+      "provider": "sendgrid",
+      "terminal_recon_status": "REPLIED",
+      "lifecycle_steps": 2,
+      "resident_resolved": true,
+      "duration_s": 140,
+      "subject": null,
+      "sender": null,
+      "recipient": null,
+      "email_type": "OUTBOUND",
+      "channel": "email",
+      "message_id": "39ryittsk29ffpk4",
+      "steps": [
+        {
+          "recon_status": "REPLY_GENERATING",
+          "emitted_at": "2026-05-28T23:33:53.324000",
+          "gap_reason": null,
+          "state_id": "38a1mk0igjorh8ou",
+          "org_id": 19,
+          "building_id": 4747
+        },
+        {
+          "recon_status": "REPLIED",
+          "emitted_at": "2026-05-28T23:36:13.473000",
+          "gap_reason": null,
+          "state_id": "38a1mk0igjorh8ou",
+          "org_id": 19,
+          "building_id": 4747
+        }
+      ]
+    },
+    {
+      "interaction_id": "fba7c8ee-90d6-3f1c-a7b5-9acabd82a3c9",
+      "provider": null,
+      "terminal_recon_status": "SCANNED",
+      "lifecycle_steps": 4,
+      "resident_resolved": false,
+      "duration_s": 631,
+      "subject": "Re: Balance Update - Victoria Olajide at Pointe View at Aspen Hill",
+      "sender": "vicolajide70@icloud.com",
+      "recipient": "rose.d@pennrose-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AQMkAGM3ZDQwYjdiLTFiMTQtNDU5ZS05NDZlLTY3YWY5YzFkYmEwYQBGAAADea6z87Z6qkix0adVg-81HgcAXp0TN8iz-0ePHaDwlePU5QAAAgEMAAAAXp0TN8iz-0ePHaDwlePU5QAB6nxcwgAAAA==",
+      "steps": [
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T18:47:38.496000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T18:47:38.604000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 616,
+          "building_id": 29989
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T18:47:38.624000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 616,
+          "building_id": 29989
+        },
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T18:58:09.701000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 616,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "76c2eb08-e298-3dc7-bd0f-e2e60aad1e1a",
+      "provider": "outlook",
+      "terminal_recon_status": "SCANNED",
+      "lifecycle_steps": 2,
+      "resident_resolved": false,
+      "duration_s": 0,
+      "subject": null,
+      "sender": null,
+      "recipient": "harper@cafmanagement-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGZlOTVmZjZiLTU3ODctNDIxNi1iOGI4LTUzY2FlMjU3MGRmMQBGAAAAAAD1iBEzPxYZSLCfJpOuaPufBwCjqSo36az9T7Bz90dViKDFAAAAAAEZAACjqSo36az9T7Bz90dViKDFAADmhMd8AAA=",
+      "steps": [
+        {
+          "recon_status": "SUPPRESSED",
+          "emitted_at": "2026-05-29T02:53:17.854000",
+          "gap_reason": "no_body",
+          "state_id": null,
+          "org_id": 149,
+          "building_id": null
+        },
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T02:53:17.854000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 149,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "51bced09-f3d4-3b0a-8cd2-77764d6b3ab6",
+      "provider": "outlook",
+      "terminal_recon_status": "SCANNED",
+      "lifecycle_steps": 2,
+      "resident_resolved": false,
+      "duration_s": 0,
+      "subject": null,
+      "sender": null,
+      "recipient": "Brooke.g@waterton.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AQMkAGQyZmJmNWRhLWYzNGMtNGQzYi1hZThlLTAxZjIzNWE5YzY4MgBGAAADugnoaXUie0q_QXM1RUyQeAcAOgn7HMzIDUStNtF07_Fx3gAAAgEMAAAAOgn7HMzIDUStNtF07_Fx3gAFLXdkQQAAAA==",
+      "steps": [
+        {
+          "recon_status": "SUPPRESSED",
+          "emitted_at": "2026-05-28T14:26:26.852000",
+          "gap_reason": "no_body",
+          "state_id": null,
+          "org_id": 83,
+          "building_id": null
+        },
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T14:26:26.852000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 83,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "2071b140-dcad-3937-8653-a421b4c90dbb",
+      "provider": null,
+      "terminal_recon_status": "SENT_TO_EVENTAPI",
+      "lifecycle_steps": 7,
+      "resident_resolved": false,
+      "duration_s": 362,
+      "subject": "Registration/Guest Card for Celica Coronel",
+      "sender": "mail@SmartApartmentData.com",
+      "recipient": "Oliver.E@olympusproperty-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AQMkAGY0NmJmODZiLTY5ZjAtNGMwYi05ZTQ2LTE2YWJjYjQyYzNjNwBGAAADat1q3cxgrEKFTW8tEwXfXwcAdbt9Zx3rSUyIqMs7imiOlQAAAgEMAAAAdbt9Zx3rSUyIqMs7imiOlQACIaCGYwAAAA==",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-30T02:25:29.238000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 527,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-30T02:25:29.357000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-30T02:25:29.986000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 527,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-30T02:25:30.001000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 527,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-30T02:25:30.044000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 527,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-30T02:31:31.673000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 527,
+          "building_id": 19204
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-30T02:31:31.698000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 527,
+          "building_id": 19204
+        }
+      ]
+    },
+    {
+      "interaction_id": "7b323f8c-56fd-30fc-bf96-ce5c0e9509dc",
+      "provider": "outlook",
+      "terminal_recon_status": "SENT_TO_EVENTAPI",
+      "lifecycle_steps": 7,
+      "resident_resolved": false,
+      "duration_s": 361,
+      "subject": "Follow Up: Rental History Verification for Ryan H. Gaddy",
+      "sender": "communications@cantey.mailer.appfolio.us",
+      "recipient": "joi.b@irtliving-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADI2YmE5NmRhLTQwMWYtNDcyNC05NGZmLTdhYjhlMTcxOGZiYgBGAAAAAAAqqV0PKG4eRbkNPYuoL6hqBwD7k546q7GyRISoF04TLw3nAAAAAAEMAAD7k546q7GyRISoF04TLw3nAAFMyHzuAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T15:02:31.507000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T15:02:31.741000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T15:02:32.224000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-29T15:02:32.240000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T15:02:32.300000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T15:08:32.255000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 586,
+          "building_id": 27506
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T15:08:32.280000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 586,
+          "building_id": 27506
+        }
+      ]
+    },
+    {
+      "interaction_id": "c38fa42f-b4ae-3630-b3bf-0c491a0d2cba",
+      "provider": null,
+      "terminal_recon_status": "SENT_TO_EVENTAPI",
+      "lifecycle_steps": 7,
+      "resident_resolved": false,
+      "duration_s": 359,
+      "subject": "Export to your CRM failed \u2014 appointment for Dakota Merten at Harrison Place (May 29, 2026 at 12:00 PM EDT)",
+      "sender": "donotreply@meetelise.com",
+      "recipient": "joi.a@irtliving-leasing.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AQMkADAxMmE3ZjE4LTg0OWItNDczOC1hNzY4LTdjZTBkMzYxOWE3MQBGAAADSh6yWVrrQESx9DJAIxG04gcAf-zFXMNU80WnZYoUqob28gAAAgEMAAAAf-zFXMNU80WnZYoUqob28gABTpxJ_QAAAA==",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T10:12:16.208000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T10:12:16.375000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T10:12:16.773000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-29T10:12:16.792000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T10:12:16.833000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 586,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T10:18:15.584000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 586,
+          "building_id": 27462
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T10:18:15.608000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 586,
+          "building_id": 27462
+        }
+      ]
+    },
+    {
+      "interaction_id": "4ceb4f80-8eef-3bda-b26d-9663d81f4b76",
+      "provider": null,
+      "terminal_recon_status": "SUPPRESSED",
+      "lifecycle_steps": 6,
+      "resident_resolved": false,
+      "duration_s": 77280,
+      "subject": "EXTERNAL-Change of Email Address",
+      "sender": "sierrastocker@college.harvard.edu",
+      "recipient": "elisenyccrm@goldprop.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADBhMzYwMGZiLTU1ZjMtNDAyNC04ZWUyLWNjZWFlODQ3ODNmNABGAAAAAAB0qRXD39elR5GvK3mqsc1_BwAUDtmIC--hS5fbfISdxv_WAAAAAAEMAAAUDtmIC--hS5fbfISdxv_WAANkC6VpAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T21:29:10.101000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 20,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T21:29:10.341000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T21:29:10.663000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 20,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-28T21:29:10.677000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 20,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T21:29:10.939000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 20,
+          "building_id": null
+        },
+        {
+          "recon_status": "SUPPRESSED",
+          "emitted_at": "2026-05-29T18:57:10.291000",
+          "gap_reason": "no_body",
+          "state_id": null,
+          "org_id": 20,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "e2c99ce1-9832-3422-b183-8f398beb4bfe",
+      "provider": null,
+      "terminal_recon_status": "SUPPRESSED",
+      "lifecycle_steps": 6,
+      "resident_resolved": false,
+      "duration_s": 75960,
+      "subject": "You've received a Business Manager partner request",
+      "sender": "noreply@business.facebook.com",
+      "recipient": "rosie_c3@edwardrose.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkAGU1ZWZkNTI5LWY5OWUtNDY2NC04MWZhLWJiYmYwYjEwOGRjYwBGAAAAAACp7SNGdvTdSpWKpZKonC-OBwDcrYqS42HuS73X3nGfNAVFAAAAAAEVAADcrYqS42HuS73X3nGfNAVFAAVBiJSzAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T15:12:44.516000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 55,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T15:12:44.725000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T15:12:45.294000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 55,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-28T15:12:45.310000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 55,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T15:12:45.350000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 55,
+          "building_id": null
+        },
+        {
+          "recon_status": "SUPPRESSED",
+          "emitted_at": "2026-05-29T12:18:44.991000",
+          "gap_reason": "no_body",
+          "state_id": null,
+          "org_id": 55,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "0f37cc8c-c07c-367e-aa86-4ec630dbc741",
+      "provider": "outlook",
+      "terminal_recon_status": "SUPPRESSED",
+      "lifecycle_steps": 6,
+      "resident_resolved": false,
+      "duration_s": 72240,
+      "subject": "You've received a Business Manager partner request",
+      "sender": "noreply@business.facebook.com",
+      "recipient": "quincy.b@leasing-q10.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADhhZGU2YjM3LTVhNjgtNGZkOC05MTQzLTRlNWRlYzAwNDJiNwBGAAAAAABzpBkYShJGSaUb6ZUAt14-BwAX0o2k5QIOQofkh_tkbppAAAAAAAEMAAAX0o2k5QIOQofkh_tkbppAAAHzW7nnAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T03:55:17.412000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 364,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T03:55:17.563000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T03:55:18.117000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 364,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-29T03:55:18.132000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 364,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T03:55:18.174000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 364,
+          "building_id": null
+        },
+        {
+          "recon_status": "SUPPRESSED",
+          "emitted_at": "2026-05-29T23:59:17.249000",
+          "gap_reason": "no_body",
+          "state_id": null,
+          "org_id": 364,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "74a13d98-254f-39e6-9a5f-5337c6c50bc3",
+      "provider": "gmail",
+      "terminal_recon_status": "UNMATCHED",
+      "lifecycle_steps": 7,
+      "resident_resolved": false,
+      "duration_s": 24,
+      "subject": "[EXTERNAL] Notice To Vacate Property",
+      "sender": "david.p.duarte29@gmail.com",
+      "recipient": "MeetMillyEST1@MillCreekPlaces.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADE2YzI4NDFjLTAzM2QtNDAyNy05ZWI0LTczMzU1OTQ1Mjg1ZABGAAAAAAAGjkOXvwX8RbLgIvSOHpNHBwDHcUNsbuhIQYxvdjIF0DMtAAAAAAEMAADHcUNsbuhIQYxvdjIF0DMtAASig-CWAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T15:41:02.934000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T15:41:03.143000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-28T15:41:03.344000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 118,
+          "building_id": 17785
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-28T15:41:03.385000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 118,
+          "building_id": 17785
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T15:41:25.648000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-28T15:41:25.664000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T15:41:26.598000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "68dac3a1-236f-31f9-b1d1-73de4ede84cc",
+      "provider": null,
+      "terminal_recon_status": "UNMATCHED",
+      "lifecycle_steps": 7,
+      "resident_resolved": false,
+      "duration_s": 22,
+      "subject": "[EXTERNAL] No power in outlets",
+      "sender": "g.braverman.941@gmail.com",
+      "recipient": "MeetMillyEST1@MillCreekPlaces.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADE2YzI4NDFjLTAzM2QtNDAyNy05ZWI0LTczMzU1OTQ1Mjg1ZABGAAAAAAAGjkOXvwX8RbLgIvSOHpNHBwDHcUNsbuhIQYxvdjIF0DMtAAAAAAEMAADHcUNsbuhIQYxvdjIF0DMtAASig-D1AAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-29T22:43:02.395000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-29T22:43:02.588000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "CLASSIFIED",
+          "emitted_at": "2026-05-29T22:43:02.785000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 118,
+          "building_id": 12388
+        },
+        {
+          "recon_status": "SENT_TO_EVENTAPI",
+          "emitted_at": "2026-05-29T22:43:02.825000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 118,
+          "building_id": 12388
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T22:43:24.725000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-29T22:43:24.739000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T22:43:24.794000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 118,
+          "building_id": null
+        }
+      ]
+    },
+    {
+      "interaction_id": "a9cce8dd-1374-3ee7-aeec-0fc555a9b12d",
+      "provider": "gmail",
+      "terminal_recon_status": "UNMATCHED",
+      "lifecycle_steps": 6,
+      "resident_resolved": false,
+      "duration_s": 28170,
+      "subject": "One system that runs your entire business",
+      "sender": "irene@trustedvirtualteam.com",
+      "recipient": "GraceCA@windsorcommunities.com",
+      "email_type": "INBOUND",
+      "channel": "email",
+      "message_id": "AAMkADgyNGE1NDBiLWMxYjgtNGFjYS04Y2NhLTFhNTI3ZGIyMjgwMgBGAAAAAAAsA4IwN-4OQoaB4lqP9q-RBwCDz0Uh2C3RQIspZdZ6Jl7EAAAAAAEMAACDz0Uh2C3RQIspZdZ6Jl7EAAS3peiGAAA=",
+      "steps": [
+        {
+          "recon_status": "SCANNED",
+          "emitted_at": "2026-05-28T16:11:26.098000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": 53,
+          "building_id": null
+        },
+        {
+          "recon_status": "QUEUED",
+          "emitted_at": "2026-05-28T16:11:26.358000",
+          "gap_reason": null,
+          "state_id": null,
+          "org_id": null,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T16:11:26.710000",
+          "gap_reason": "quarantine_no_building_match",
+          "state_id": null,
+          "org_id": 53,
+          "building_id": null
+        },
+        {
+          "recon_status": "FAILED_CLASSIFY",
+          "emitted_at": "2026-05-28T16:11:26.723000",
+          "gap_reason": "classifier_returned_no_output",
+          "state_id": null,
+          "org_id": 53,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-28T16:12:06.762000",
+          "gap_reason": "resident_api_error",
+          "state_id": null,
+          "org_id": 53,
+          "building_id": null
+        },
+        {
+          "recon_status": "UNMATCHED",
+          "emitted_at": "2026-05-29T00:00:56.755000",
+          "gap_reason": "no_resident_match",
+          "state_id": null,
+          "org_id": 53,
+          "building_id": null
+        }
+      ]
+    }
+  ]
+}

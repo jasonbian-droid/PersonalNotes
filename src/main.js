@@ -159,6 +159,7 @@ const pages = [
   { title: 'Email Flow',    href: 'email-flow.html',              desc: 'Original 5-step inbound flow from SES receipt to state resolution.' },
   { title: 'Action Models', href: 'event-api-actions.html',       desc: 'All action types that flow through RequestHandler — inbound, agent, resident, AI.' },
   { title: 'Journeys',      href: 'journeys/index.html',          desc: 'Per-interaction lifecycle state graph + timeline, built live from the raw table.' },
+  { title: 'Interactions',  href: 'interactions/index.html',      desc: 'Drill into a single interaction — its ordered recon_status changes with timing.' },
   { title: 'Null %',        href: 'null-timeseries.html',         desc: 'Daily null rate per column in INBOUND_INTERACTION_EVENTS, by building and org.' },
   { title: 'Email Nulls',   href: 'null-emails/index.html',       desc: 'Full null analysis from email_null_analysis.ipynb — funnel, audit, drop-off.' },
   { title: 'Notebook',      href: 'http://localhost:8888/lab/tree/snowflake/notebooks/email_null_analysis.ipynb', desc: 'email_null_analysis.ipynb — live Snowflake queries (local only).', external: true },

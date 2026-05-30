@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interaction State Changes</title>
+  <link rel="stylesheet" href="../src/site.css" />
+  <link rel="stylesheet" href="../src/nav.css" />
+  <style>
+    .layout { display: grid; grid-template-columns: 320px 1fr; gap: 16px; align-items: start; }
+
+    .list-panel { border: 1px solid var(--border); background: var(--bg); position: sticky; top: 56px; max-height: calc(100vh - 80px); display: flex; flex-direction: column; }
+    .list-controls { padding: 10px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .list-controls input, .list-controls select { font-family: var(--font-mono); font-size: 0.74rem; padding: 6px 8px; border: 1px solid var(--border-mid); background: var(--bg); color: var(--text); width: 100%; }
+    .list-controls input:focus, .list-controls select:focus { outline: none; border-color: var(--text); }
+    .list-scroll { overflow-y: auto; }
+    .list-item { padding: 9px 11px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; }
+    .list-item:hover { background: var(--bg-subtle); }
+    .list-item.active { background: var(--bg-code); border-left: 3px solid var(--text); padding-left: 8px; }
+    .li-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 4px; }
+    .li-id { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text); }
+    .li-prov { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-faint); }
+    .li-bot { display: flex; align-items: center; gap: 6px; }
+    .li-meta { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-faint); margin-left: auto; }
+    .term-badge { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; padding: 1px 6px; border: 1px solid; border-radius: 2px; }
+    .list-count { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-faint); padding: 7px 11px; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+
+    .detail-panel { min-width: 0; }
+    .detail-head { border: 1px solid var(--border); padding: 14px 16px; margin-bottom: 14px; }
+    .dh-id { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 8px; word-break: break-all; }
+    .dh-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px 16px; }
+    .dh-field { display: flex; flex-direction: column; gap: 1px; }
+    .dh-key { font-family: var(--font-mono); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-faint); }
+    .dh-val { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-mid); word-break: break-word; }
+
+    .timeline { position: relative; padding-left: 8px; }
+    .tl-step { position: relative; padding: 0 0 0 34px; }
+    .tl-step:not(:last-child) { padding-bottom: 4px; }
+    .tl-line { position: absolute; left: 11px; top: 18px; bottom: -4px; width: 2px; background: var(--border-mid); }
+    .tl-step:last-child .tl-line { display: none; }
+    .tl-dot { position: absolute; left: 4px; top: 6px; width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--bg); box-sizing: content-box; z-index: 1; }
+    .tl-card { border: 1px solid var(--border); padding: 9px 12px; margin-bottom: 8px; }
+    .tl-row1 { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .tl-status { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; }
+    .tl-time { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-faint); }
+    .tl-delta { font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-mid); background: var(--bg-code); border: 1px solid var(--border); padding: 0 5px; border-radius: 2px; margin-left: auto; }
+    .tl-delta.slow { color: var(--amber); border-color: var(--amber); background: var(--amber-bg); }
+    .tl-annot { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .annot { font-family: var(--font-mono); font-size: 0.64rem; padding: 1px 6px; border-radius: 2px; border: 1px solid; }
+    .annot.state { color: var(--green); border-color: var(--green); background: var(--green-bg); }
+    .annot.gap { color: var(--red); border-color: var(--red); background: var(--red-bg); }
+    .annot.meta { color: var(--text-mid); border-color: var(--border); background: var(--bg-code); }
+
+    @media (max-width: 720px) {
+      .layout { grid-template-columns: 1fr; }
+      .list-panel { position: static; max-height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html">Pipeline</a>
+    <span class="nav-sep">·</span>
+    <a href="../email-flow.html">Email Flow</a>
+    <span class="nav-sep">·</span>
+    <a href="../event-api-actions.html">Action Models</a>
+    <span class="nav-sep">·</span>
+    <a href="../journeys/index.html">Journeys</a>
+    <span class="nav-sep">·</span>
+    <a href="index.html" class="active">Interactions</a>
+    <span class="nav-sep">·</span>
+    <a href="../null-timeseries.html">Null %</a>
+    <span class="nav-sep">·</span>
+    <a href="../null-emails/index.html">Email Nulls</a>
+  </nav>
+
+  <div class="page page-wide">
+    <h1>Interaction State Changes</h1>
+    <p class="page-subtitle">Per-interaction lifecycle trace · ordered recon_status changes from raw INBOUND_INTERACTION_EVENTS</p>
+
+    <div class="layout">
+      <div class="list-panel">
+        <div class="list-controls">
+          <input id="search" type="text" placeholder="search interaction_id…" />
+          <select id="filter-term"><option value="">All terminal statuses</option></select>
+        </div>
+        <div class="list-count" id="list-count"></div>
+        <div class="list-scroll" id="list"></div>
+      </div>
+
+      <div class="detail-panel" id="detail"></div>
+    </div>
+  </div>
+
+  <script>
+  const CAT = { ingest: '#1e40af', success: '#166534', warn: '#92400e', fail: '#b91c1c', reply: '#6b21a8' };
+  const STATUS_CAT = {
+    SCANNED: 'ingest', QUEUED: 'ingest', CLASSIFIED: 'ingest', SENT_TO_EVENTAPI: 'ingest', RECEIVED_BY_EVENTAPI: 'ingest',
+    REPLY_GENERATING: 'reply',
+    REPLIED: 'success', PROCESSED: 'success', EVENTAPI_PROCESSED: 'success',
+    EVENTAPI_DELAYED: 'warn', EVENTAPI_FILTERED: 'warn', SUPPRESSED: 'warn',
+    UNMATCHED: 'fail', FAILED_CLASSIFY: 'fail', FAILED_PROCESSING: 'fail', FAILED_REPLY: 'fail',
+  };
+  const catColor = s => CAT[STATUS_CAT[s] || 'ingest'] || '#888';
+
+  function fmtDur(ms) {
+    if (ms == null) return '—';
+    const s = ms / 1000;
+    if (s < 1) return Math.round(ms) + 'ms';
+    if (s < 60) return s.toFixed(1) + 's';
+    if (s < 3600) return Math.floor(s / 60) + 'm ' + Math.round(s % 60) + 's';
+    if (s < 86400) return (s / 3600).toFixed(1) + 'h';
+    return (s / 86400).toFixed(1) + 'd';
+  }
+  function fmtClock(iso) {
+    const d = new Date(iso);
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+  }
+  const shortId = id => id.slice(0, 8) + '…' + id.slice(-4);
+
+  let TRACES = [];
+  let active = null;
+
+  (async () => {
+    const db = await (await fetch('traces.json')).json();
+    TRACES = db.traces.sort((a, b) => b.lifecycle_steps - a.lifecycle_steps);
+
+    const terms = [...new Set(TRACES.map(t => t.terminal_recon_status))].sort();
+    const sel = document.getElementById('filter-term');
+    terms.forEach(t => sel.insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`));
+
+    document.getElementById('search').addEventListener('input', renderList);
+    sel.addEventListener('change', renderList);
+
+    renderList();
+    select(TRACES[0]);
+  })();
+
+  function visible() {
+    const qv = document.getElementById('search').value.trim().toLowerCase();
+    const tv = document.getElementById('filter-term').value;
+    return TRACES.filter(t =>
+      (!qv || t.interaction_id.toLowerCase().includes(qv)) &&
+      (!tv || t.terminal_recon_status === tv)
+    );
+  }
+
+  function renderList() {
+    const items = visible();
+    document.getElementById('list-count').textContent = `${items.length} interaction${items.length === 1 ? '' : 's'}`;
+    document.getElementById('list').innerHTML = items.map(t => {
+      const c = catColor(t.terminal_recon_status);
+      return `<div class="list-item ${active && active.interaction_id === t.interaction_id ? 'active' : ''}" data-id="${t.interaction_id}">
+        <div class="li-top">
+          <span class="li-id">${shortId(t.interaction_id)}</span>
+          <span class="li-prov">${t.provider ?? '—'}</span>
+        </div>
+        <div class="li-bot">
+          <span class="term-badge" style="color:${c};border-color:${c}">${t.terminal_recon_status}</span>
+          <span class="li-meta">${t.lifecycle_steps} steps · ${fmtDur(t.duration_s * 1000)}</span>
+        </div>
+      </div>`;
+    }).join('');
+    document.querySelectorAll('.list-item').forEach(el =>
+      el.addEventListener('click', () => select(TRACES.find(t => t.interaction_id === el.dataset.id)))
+    );
+  }
+
+  function select(t) {
+    if (!t) return;
+    active = t;
+    renderList();
+    renderDetail(t);
+  }
+
+  function renderDetail(t) {
+    const steps = t.steps;
+    const t0 = new Date(steps[0].emitted_at).getTime();
+    const tN = new Date(steps[steps.length - 1].emitted_at).getTime();
+
+    let prevState = null;
+    const stepHtml = steps.map((s, i) => {
+      const ts = new Date(s.emitted_at).getTime();
+      const delta = i === 0 ? null : ts - new Date(steps[i - 1].emitted_at).getTime();
+      const c = catColor(s.recon_status);
+      const annots = [];
+      if (s.state_id && s.state_id !== prevState) {
+        annots.push(`<span class="annot state">state_id → ${s.state_id}</span>`);
+        prevState = s.state_id;
+      }
+      if (s.gap_reason) annots.push(`<span class="annot gap">gap: ${s.gap_reason}</span>`);
+      if (s.building_id) annots.push(`<span class="annot meta">building ${s.building_id}</span>`);
+      const slow = delta != null && delta >= 10000;
+      return `
+        <div class="tl-step">
+          <div class="tl-line"></div>
+          <div class="tl-dot" style="background:${c}"></div>
+          <div class="tl-card">
+            <div class="tl-row1">
+              <span class="tl-status" style="color:${c}">${s.recon_status}</span>
+              <span class="tl-time">${fmtClock(s.emitted_at)}</span>
+              ${delta != null ? `<span class="tl-delta ${slow ? 'slow' : ''}">+${fmtDur(delta)}</span>` : '<span class="tl-delta">start</span>'}
+            </div>
+            ${annots.length ? `<div class="tl-annot">${annots.join('')}</div>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+
+    const fields = [
+      ['provider', t.provider],
+      ['channel', t.channel],
+      ['email_type', t.email_type],
+      ['terminal', t.terminal_recon_status],
+      ['steps', t.lifecycle_steps],
+      ['total duration', fmtDur(tN - t0)],
+      ['resident resolved', t.resident_resolved ? 'yes' : 'no'],
+      ['sender', t.sender],
+      ['recipient', t.recipient],
+      ['subject', t.subject],
+      ['message_id', t.message_id],
+    ];
+
+    document.getElementById('detail').innerHTML = `
+      <div class="detail-head">
+        <div class="dh-id">${t.interaction_id}</div>
+        <div class="dh-grid">
+          ${fields.map(([k, v]) => `<div class="dh-field"><span class="dh-key">${k}</span><span class="dh-val">${v == null || v === '' ? '—' : v}</span></div>`).join('')}
+        </div>
+      </div>
+      <div class="timeline">${stepHtml}</div>`;
+  }
+  </script>
+</body>
+</html>
