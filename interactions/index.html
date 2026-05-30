@@ -87,15 +87,15 @@
 
   <div class="page page-wide">
     <h1>Interaction State Changes</h1>
-    <p class="page-subtitle">Per-interaction lifecycle trace · ordered recon_status changes from raw INBOUND_INTERACTION_EVENTS</p>
+    <p class="page-subtitle">Per-interaction lifecycle trace · ordered recon_status changes from raw INBOUND_INTERACTION_EVENTS · case study: jamie@sares-regis fanout (78 interactions)</p>
 
     <div class="layout">
       <div class="list-panel">
         <div class="list-controls">
-          <div class="src-pill" id="src-pill"><span class="src-dot"></span><span id="src-text">cached snapshot</span></div>
+          <div class="src-pill" id="src-pill"><span class="src-dot"></span><span id="src-text">offline · click Fetch to connect</span></div>
           <div class="search-row">
             <input id="search" type="text" placeholder="search id / message_id / sender…" />
-            <button id="fetch-btn" class="fetch-btn" disabled>Fetch</button>
+            <button id="fetch-btn" class="fetch-btn">Fetch</button>
           </div>
           <span class="search-hint" id="search-hint"></span>
           <select id="filter-term"><option value="">All terminal statuses</option></select>
@@ -135,14 +135,24 @@
   const shortId = id => id.slice(0, 8) + '…' + id.slice(-4);
 
   const API = 'http://localhost:8899';
+  const DEFAULT_ID = 'e42b96bf-b967-4a0d-a98d-c01be35d7887';
   let TRACES = [];
   let active = null;
   let LIVE = false;
   let searchTimer = null;
 
   (async () => {
-    const db = await (await fetch('traces.json')).json();
-    TRACES = db.traces.sort((a, b) => b.lifecycle_steps - a.lifecycle_steps);
+    // Cached case studies + snapshot. Default to NO live connection.
+    const sources = [
+      fetch('case_studies.json').then(r => r.ok ? r.json() : { traces: [] }).catch(() => ({ traces: [] })),
+      fetch('traces.json').then(r => r.ok ? r.json() : { traces: [] }).catch(() => ({ traces: [] })),
+    ];
+    const [cases, snap] = await Promise.all(sources);
+    const merged = {};
+    [...(cases.traces || []), ...(snap.traces || [])].forEach(t => {
+      if (!merged[t.interaction_id]) merged[t.interaction_id] = t;
+    });
+    TRACES = Object.values(merged).sort((a, b) => b.lifecycle_steps - a.lifecycle_steps);
 
     const terms = [...new Set(TRACES.map(t => t.terminal_recon_status))].sort();
     const sel = document.getElementById('filter-term');
@@ -153,15 +163,19 @@
     document.getElementById('fetch-btn').addEventListener('click', doFetch);
     sel.addEventListener('change', renderList);
 
+    // Default the view to the target interaction. No backend probe on load.
+    document.getElementById('search').value = DEFAULT_ID;
     renderList();
-    select(TRACES[0]);
-    probeBackend();
+    const preset = TRACES.find(t => t.interaction_id === DEFAULT_ID);
+    if (preset) select(preset);
+    else document.getElementById('detail').innerHTML =
+      `<div class="searching">Interaction <strong>${DEFAULT_ID}</strong> is not in the cached case studies.<br>Hit <strong>Fetch</strong> to establish a backend connection and load it live.</div>`;
   })();
 
   async function probeBackend() {
     try {
       const ctrl = new AbortController();
-      const to = setTimeout(() => ctrl.abort(), 1200);
+      const to = setTimeout(() => ctrl.abort(), 1500);
       const r = await fetch(API + '/api/health', { signal: ctrl.signal });
       clearTimeout(to);
       const h = await r.json();
@@ -170,16 +184,23 @@
         const pill = document.getElementById('src-pill');
         pill.classList.add('live');
         document.getElementById('src-text').textContent = 'live · ' + h.source;
-        document.getElementById('fetch-btn').disabled = false;
         document.getElementById('search-hint').textContent = 'Fetch any interaction_id, message_id, state_id, sender or recipient';
+        return true;
       }
-    } catch (e) { /* stay cached */ }
+    } catch (e) { /* stay offline */ }
+    return false;
   }
 
-  function doFetch() {
+  async function doFetch() {
     const term = document.getElementById('search').value.trim();
     if (!term) return;
-    if (!LIVE) { document.getElementById('search-hint').textContent = 'backend offline — start the local server to fetch live'; return; }
+    const hint = document.getElementById('search-hint');
+    // Lazily establish a backend connection on demand.
+    if (!LIVE) {
+      hint.textContent = 'connecting to backend…';
+      const ok = await probeBackend();
+      if (!ok) { hint.textContent = 'backend offline — start the local server, then Fetch again'; return; }
+    }
     clearTimeout(searchTimer);
     liveSearch(term);
   }

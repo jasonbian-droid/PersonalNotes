@@ -64,6 +64,10 @@
     <a href="../null-timeseries.html">Null %</a>
     <span class="nav-sep">·</span>
     <a href="../null-emails/index.html">Email Nulls</a>
+    <span class="nav-sep">·</span>
+    <a href="../events-recon-matrix.html">Recon Matrix</a>
+    <span class="nav-sep">·</span>
+    <a href="../step2-coverage-audit.html">Email Tracking Breakdowns &amp; Monitoring</a>
   </nav>
 
   <div class="page page-wide">
@@ -230,15 +234,16 @@
 
     const wScale = d3.scaleSqrt().domain([d3.min(edges, e => e.n), d3.max(edges, e => e.n)]).range([0.8, 16]);
 
-    const svg = d3.select('#graph').attr('viewBox', `0 0 ${W} ${H}`).attr('width', '100%').attr('height', H);
+    const svg = d3.select('#graph').attr('viewBox', `0 0 ${W + 52} ${H}`).attr('width', '100%').attr('height', H);
     svg.selectAll('*').remove();
 
     const defs = svg.append('defs');
     Object.entries(CAT).forEach(([k, c]) => {
       defs.append('marker')
         .attr('id', 'arr-' + k).attr('viewBox', '0 0 10 10')
-        .attr('refX', 9).attr('refY', 5).attr('markerWidth', 7).attr('markerHeight', 7)
-        .attr('orient', 'auto-start-reverse')
+        .attr('refX', 9).attr('refY', 5).attr('markerWidth', 10).attr('markerHeight', 10)
+        .attr('markerUnits', 'userSpaceOnUse')
+        .attr('orient', 'auto')
         .append('path').attr('d', 'M0,1 L9,5 L0,9 Z').attr('fill', c);
     });
 
@@ -246,15 +251,18 @@
     svg.append('text').attr('x', M.l).attr('y', mainTop - 24).attr('class', 'band-label').text('Inbound processing pipeline');
 
     function path(s, t) {
-      const sx = s.x + s.w, sy = s.y + s.h / 2;
-      const tx = t.x, ty = t.y + t.h / 2;
-      if (tx > sx + 6) {
-        const mx = (sx + tx) / 2;
-        return { d: `M${sx},${sy} C${mx},${sy} ${mx},${ty} ${tx},${ty}`, back: false };
+      const sy = s.y + s.h / 2, ty = t.y + t.h / 2;
+      const sL = s.x, sR = s.x + s.w, tL = t.x, tR = t.x + t.w;
+      if (t.col > s.col) {
+        const mx = (sR + tL) / 2;
+        return { d: `M${sR},${sy} C${mx},${sy} ${mx},${ty} ${tL},${ty}`, back: false };
       }
-      const sxr = s.x + s.w, txr = t.x + t.w;
-      const bow = Math.max(sxr, txr) + 46;
-      return { d: `M${sxr},${sy} C${bow},${sy} ${bow},${ty} ${txr},${ty}`, back: true };
+      if (t.col < s.col) {
+        const bow = Math.max(6, Math.min(sL, tL) - 44);
+        return { d: `M${sL},${sy} C${bow},${sy} ${bow},${ty} ${tR},${ty}`, back: true };
+      }
+      const bow = Math.max(sR, tR) + 44;
+      return { d: `M${sR},${sy} C${bow},${sy} ${bow},${ty} ${tR},${ty}`, back: true };
     }
 
     const edgeG = svg.append('g');

@@ -1,0 +1,4203 @@
+{
+ "case_study": "jamie_sares-regis",
+ "traces": [
+  {
+   "interaction_id": "a015f5cf-5886-3fbb-a470-703a8d2b7da8",
+   "provider": null,
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 6,
+   "resident_resolved": false,
+   "duration_s": 8639.0,
+   "subject": "You've received a Business Manager partner request",
+   "sender": "noreply@business.facebook.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T04:20:42.927000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T04:20:43.123000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T04:20:43.710000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T04:20:43.725000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T04:20:43.760000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-29T06:44:41.763000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "b2c253f5-b548-3691-8c8e-0693654f8df9",
+   "provider": null,
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 6,
+   "resident_resolved": false,
+   "duration_s": 2640.0,
+   "subject": "You've received a Business Manager partner request",
+   "sender": "noreply@business.facebook.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T05:58:41.904000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T05:58:42.101000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T05:58:48.386000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T05:58:48.403000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T05:58:48.449000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-29T06:42:41.983000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "57745bff-283a-39c8-8a16-69bb03ee4e76",
+   "provider": null,
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 6,
+   "resident_resolved": false,
+   "duration_s": 10920.0,
+   "subject": "You've received a Business Manager partner request",
+   "sender": "noreply@business.facebook.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T03:54:41.749000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T03:54:42.022000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T03:54:42.586000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T03:54:42.602000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T03:54:42.672000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-29T06:56:41.171000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "28d286dd-2a70-3d34-9218-c05777a90f72",
+   "provider": null,
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 6,
+   "resident_resolved": false,
+   "duration_s": 3839.0,
+   "subject": "Yellow stain visible on the hotel bed requires a prompt solution help",
+   "sender": "hillhill5u2@libero.it",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T17:34:42.170000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T17:34:42.366000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-28T17:34:42.627000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-28T17:34:42.642000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-28T17:34:42.694000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-28T18:38:41.417000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "afda65df-809d-37a5-9a1d-0ce9b336bfc8",
+   "provider": null,
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 6,
+   "resident_resolved": false,
+   "duration_s": 6234.0,
+   "subject": "You've received a Business Manager partner request",
+   "sender": "noreply@business.facebook.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T04:56:48.866000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T04:56:49.104000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T04:56:49.685000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T04:56:49.700000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T04:56:49.742000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-29T06:40:42.805000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "eb24f5e8-cee7-3dc4-a8dd-040d145a7e1e",
+   "provider": null,
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 6,
+   "resident_resolved": false,
+   "duration_s": 34320.0,
+   "subject": "You've received a Business Manager partner request",
+   "sender": "noreply@business.facebook.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T13:16:41.927000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T13:16:42.159000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T13:16:42.697000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T13:16:42.716000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T13:16:42.752000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-29T22:48:41.469000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "968cc6be-9223-3061-b3ed-0ff570ae16a4",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Build a Stunning Website.",
+   "sender": "colleen@thewebai.biz",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T06:52:42.508000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T06:52:42.712000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-30T06:52:43.071000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-30T06:52:43.085000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-30T06:52:43.125000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "c00cff0b-e532-360e-9dbe-adc4a2f95d5d",
+   "provider": "gmail",
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Your Site Security Deserves Better",
+   "sender": "lily.browder@eyeqintelligence.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T18:46:43.642000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T18:46:43.898000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T18:46:44.370000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T18:46:44.389000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T18:46:44.425000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "14dccc9e-6c17-3dc7-bb05-19e3b6f0f080",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Website Work.",
+   "sender": "lauren@seoimpressivedigital.biz",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T12:00:44.905000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T12:00:45.264000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T12:00:45.558000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T12:00:45.574000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T12:00:45.611000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "b4cf1ac7-694b-3280-bbc3-5c85d187b16f",
+   "provider": "gmail",
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "JJ Property Maintenance Network Inc. \u2013 Commercial Cleaning Services",
+   "sender": "darior@jj-property.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T22:52:41.351000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T22:52:41.601000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T22:52:41.970000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T22:52:41.990000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T22:52:42.033000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "d6865250-deaa-3a77-a1b6-a7f5c74089a8",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Ethical Terminations: Navigating Employee Exits with Legal and Professional Best Practices",
+   "sender": "info@email.hrtrainonline.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T19:16:42.396000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T19:16:42.600000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T19:16:43.368000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T19:16:43.384000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T19:16:43.420000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "3f7e8cb2-91f7-331f-a51f-dede439ba80e",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Moving from Reactive Repairs to Stress-Free Stewardship",
+   "sender": "felipe@roofingproslosangeles.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T19:58:42.102000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T19:58:42.351000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-28T19:58:42.666000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-28T19:58:42.688000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-28T19:58:42.762000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "64ced441-6377-38ae-a9cc-99c5b6a2ebe5",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "The FMLA - An Employer's Guide to Compliance and Employee Abuse",
+   "sender": "info@email.hrtrainonline.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T17:02:41.457000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T17:02:41.667000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-28T17:02:43.319000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-28T17:02:43.339000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-28T17:02:43.497000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "c336f702-97b4-356e-9523-bd632527d232",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "Reliable & Professional Security Solutions from O&P Security Corp",
+   "sender": "oandpsec@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T19:10:42.674000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T19:10:42.967000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T19:10:44.180000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T19:10:44.194000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T19:10:44.627000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "c9416a90-8376-3d27-8239-6069792267e7",
+   "provider": "gmail",
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Domain WeHo: Contact submission",
+   "sender": "leasing@domainweho.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T01:32:41.819000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T01:32:42.015000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-30T01:32:42.484000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-30T01:32:42.501000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-30T01:32:42.572000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "16ae071f-a7e8-394b-a9ee-ebcd7259dc58",
+   "provider": "outlook",
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "A message from our CEO",
+   "sender": "newdeals=newsletter.capital-infusion.com@bf57x.hs-send.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T15:02:42.559000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T15:02:42.783000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T15:02:43.621000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T15:02:43.638000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T15:02:43.759000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "45b621db-9f38-360b-a9b7-4c6620c8f373",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "You've received a Business Manager partner request",
+   "sender": "noreply@business.facebook.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T04:12:42.470000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T04:12:42.681000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T04:12:43.238000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T04:12:43.254000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T04:12:43.640000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "33a609e0-998b-3fe3-9c59-3a9695c0b726",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 5,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "The Porto Weekend I\u2019d Book Fast",
+   "sender": "passport-to-paradise@mail.beehiiv.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_resident_match",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T23:22:42.050000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T23:22:42.274000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T23:22:44.023000",
+     "gap_reason": "quarantine_no_building_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "FAILED_CLASSIFY",
+     "emitted_at": "2026-05-29T23:22:44.042000",
+     "gap_reason": "classifier_returned_no_output",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T23:22:44.076000",
+     "gap_reason": "no_resident_match",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "31a69dc0-8906-36b6-b6a1-32455643cb52",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "adlety@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T15:26:41.714000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T15:26:41.939000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T15:26:42.036000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T15:26:42.055000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "0cf745d2-96e1-3df7-87a5-13c3875ca878",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "New Zillow Group Rentals Contact: Domain Weho",
+   "sender": "rentalclientservices@zillowrentals.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T12:30:43.363000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T12:30:43.622000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T12:30:44.009000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T12:30:44.033000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "45634210-1aad-3052-98b1-c80f7b6a14c8",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "dschrader@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T19:18:41.292000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T19:18:41.692000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T19:18:41.788000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T19:18:41.809000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "6f353aea-5f45-3ba5-993b-8f13b0d13ad5",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "New Lead for Domain West Hollywood from Marina Hovnanyan - Apartment List",
+   "sender": "interests@apartmentlist.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T05:52:41.754000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T05:52:41.952000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T05:52:43.739000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T05:52:43.766000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "d808a442-12e6-3161-810f-9daf0f3599e3",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "annapn85@yahoo.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T21:00:44.480000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T21:00:44.697000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T21:00:44.801000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T21:00:44.825000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "7f01ed5d-9e54-3021-8444-e523f47939b0",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "dschrader@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T16:12:41.742000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T16:12:41.938000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T16:12:42.041000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T16:12:42.067000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "8b004319-1e88-3e00-a87a-863aafe3c575",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "sueshiao@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T00:22:41.776000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T00:22:41.973000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T00:22:42.064000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T00:22:42.086000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "8e468f42-a97b-300d-8149-d70b6319ef4a",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "New Lead for Sharon Green from David Yosso - Apartment List",
+   "sender": "interests@apartmentlist.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T08:32:41.574000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T08:32:41.769000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T08:32:43.576000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T08:32:43.625000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "8a07b334-95ce-335c-a117-292063ca71a5",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "annapn85@yahoo.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T20:22:41.143000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T20:22:41.381000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T20:22:41.501000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T20:22:41.524000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "52334b50-e0e7-3dfc-907c-e2c1d9e40e43",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "alyssalaguilar7@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T16:22:41.594000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T16:22:41.795000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T16:22:41.906000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T16:22:41.930000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "9cd74174-d19a-3bcf-949f-5f8d4eb92efc",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Hedda Marie Clari\u00f1o would like more information about Sharon Green",
+   "sender": "no-reply@g5searchmarketing.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T21:28:41.125000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T21:28:41.325000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T21:28:41.610000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T21:28:41.637000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "50f5c4d4-d211-3647-a83a-d177533383b0",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "zjysdhr@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T19:16:41.905000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T19:16:42.119000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T19:16:42.211000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T19:16:42.237000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "41263bd5-2fd0-34c9-aaf5-4dd720eefe0a",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "annapn85@yahoo.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T21:28:41.126000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T21:28:41.349000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T21:28:41.502000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T21:28:41.526000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "fdb2792b-dc02-3d1d-bf67-c5602a5be0c2",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "thepritzlaffs@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T00:18:41.902000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T00:18:42.151000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T00:18:42.251000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T00:18:42.277000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "19d3d7a0-d7ab-3685-a257-a9769128c0ba",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "New Zillow Group Rentals Contact: Sharon Green",
+   "sender": "rentalclientservices@zillowrentals.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T05:02:42.442000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T05:02:42.661000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T05:02:43.125000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T05:02:43.146000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "620f8d64-066f-3dcc-9b7d-36b770ff3259",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "whyte.ryan01@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T16:40:42.749000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T16:40:42.988000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T16:40:43.092000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T16:40:43.117000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "0f91d8b6-562a-3af1-af95-1f462db5e219",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 3.0,
+   "subject": "New Lead for Domain West Hollywood from Eliza Strong - Apartment List",
+   "sender": "interests@apartmentlist.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T19:40:42.984000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T19:40:43.185000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T19:40:45.054000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T19:40:45.085000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "b7df64c3-e42d-3b22-8ca8-d9a4705fa760",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "madrigalcassidy8@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T00:28:40.775000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T00:28:40.989000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T00:28:41.084000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T00:28:41.105000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "a80cb424-1322-3901-9f64-069f48574cf4",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "bkaplan91@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T19:04:41.615000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T19:04:41.837000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T19:04:41.948000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T19:04:41.969000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "edcde8c1-b0c2-3bda-ac1a-ea37987759d2",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "heddaclarino@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T23:24:41.543000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T23:24:41.754000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T23:24:41.891000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T23:24:41.915000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "c5fbc192-1657-3d40-a7eb-e62d9a5765e4",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "alyssalaguilar7@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T16:32:41.998000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T16:32:42.207000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T16:32:42.324000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T16:32:42.348000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "48d08b04-4d47-3881-be14-3fa55acdba00",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "dschrader@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T21:06:40.885000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T21:06:41.089000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T21:06:41.211000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T21:06:41.241000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "cd4aeda1-64e5-3dec-892c-558989214cd6",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "thepritzlaffs@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T21:00:44.669000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T21:00:44.869000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T21:00:44.967000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T21:00:44.992000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "6c6370ba-7d8d-3d8b-b8ed-0bf621f149dd",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "bkaplan91@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T03:10:42.558000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T03:10:42.760000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T03:10:42.864000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T03:10:42.888000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "e00f4e99-5820-34a9-8cde-22791cf989e6",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Khayati Goyal would like more information about Sharon Green",
+   "sender": "no-reply@g5searchmarketing.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T14:28:41.582000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T14:28:41.793000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T14:28:42.139000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T14:28:42.160000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "2ea3b15f-32d1-3f6c-881c-0f839f567c4c",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "holly.kulka@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T19:28:41.473000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T19:28:41.673000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T19:28:41.771000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T19:28:41.793000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "c98404e5-f986-301e-85e1-81c6df4cf00f",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "kaelaphetmisay@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T17:16:41.835000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T17:16:42.105000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T17:16:42.213000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T17:16:42.236000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "01a60986-4a9d-3f24-8da7-40d9f1485b99",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "New Lead for Provence at Valencia from Kyle N - Apartment List",
+   "sender": "interests@apartmentlist.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T06:40:43.254000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T06:40:43.450000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T06:40:45.489000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T06:40:45.513000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "2c446753-a209-3592-9bdb-f3ac58641e6f",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "dieyebintou28@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T02:48:42.009000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T02:48:42.298000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T02:48:42.391000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T02:48:42.420000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "f84741ae-d22c-3614-9b23-7e57774ddb78",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "dschrader@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T16:56:41.086000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T16:56:41.289000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T16:56:41.387000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T16:56:41.415000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "4ed97adc-b7f5-3737-a735-08cb67e04195",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "Hot Lead for Provence at Valencia from patrick weber - Apartment List",
+   "sender": "interests@apartmentlist.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T17:28:41.820000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T17:28:42.019000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T17:28:43.325000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T17:28:43.348000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "acd1b699-eb84-30ab-899f-f6c342267cc4",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "kaelaphetmisay@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T16:52:41.449000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T16:52:41.684000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T16:52:41.796000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T16:52:41.818000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "d0505028-44b8-3c35-b836-24d5dcd73c39",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "dieyebintou28@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T02:44:41.471000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T02:44:41.681000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T02:44:41.775000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T02:44:41.801000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "c7e024a3-8ab6-3097-8f4a-3f07207b841d",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "angelbecerril74@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T22:12:41.222000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T22:12:41.434000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T22:12:41.534000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T22:12:41.560000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "ca810cfd-5d38-3865-aff5-2f4715df51f9",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "alyssalaguilar7@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T17:10:42.945000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T17:10:43.145000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T17:10:43.240000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T17:10:43.261000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "8883c87d-7cc4-3a76-b08b-e88dfc0b9994",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "New Zillow Group Rentals Contact: Domain Weho",
+   "sender": "rentalclientservices@zillowrentals.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T06:14:41.331000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T06:14:41.525000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T06:14:41.922000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T06:14:41.947000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "c8a3bffe-1184-367e-a0af-67dfc051d960",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "New Zillow Group Rentals Contact: Domain Weho",
+   "sender": "rentalclientservices@zillowrentals.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T22:08:42.042000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T22:08:42.244000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T22:08:42.641000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T22:08:42.665000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "e1103420-ef7e-346f-a11e-dfc39865ffce",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "New Zillow Group Rentals Contact: Domain Weho",
+   "sender": "rentalclientservices@zillowrentals.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T21:40:42.949000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T21:40:43.146000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T21:40:43.534000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T21:40:43.559000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "b0d1903c-1e61-38c7-a58a-bcffbdbb33bd",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "New Zillow Group Rentals Contact: Sharon Green",
+   "sender": "rentalclientservices@zillowrentals.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T07:56:42.145000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T07:56:42.341000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T07:56:42.780000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T07:56:42.813000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "90260aef-a065-38f5-9778-7a3445e4bed1",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "angelbecerril74@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T21:38:41.491000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T21:38:41.697000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T21:38:41.812000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T21:38:41.833000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "23e2e2ec-16d3-3549-b756-3458d14ef5be",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "dieyebintou28@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T02:40:43.612000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T02:40:43.813000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T02:40:43.906000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T02:40:43.928000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "0f2acee9-a52f-39ba-885f-68b8e788fa25",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "dschrader@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T21:02:42.262000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T21:02:42.567000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T21:02:42.671000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T21:02:42.696000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "dc027050-8d46-3f6b-918a-43e36abfa9ef",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.478,
+   "subject": "Undeliverable: Apartment Inquiry at Domain WeHo",
+   "sender": "MicrosoftExchange329e71ec88ae4615bbc36ab6ce41109e@sares-regis.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": null,
+   "building_id": null,
+   "reached_eventapi": null,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T21:48:41.500000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T21:48:41.787000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T21:48:41.953000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T21:48:41.978000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "b7938913-6c42-3a1b-80f2-e5451f59745d",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "New Lead for Domain West Hollywood from Gabriel Gibaldi - Apartment List",
+   "sender": "interests@apartmentlist.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T18:02:41.596000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T18:02:41.800000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T18:02:43.780000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T18:02:43.808000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "9e55fd3d-2cc1-3b27-bebb-9355a4f993eb",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Sharon Green",
+   "sender": "jt@hurdlerproductions.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "12496",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T23:48:41.344000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T23:48:41.552000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T23:48:41.648000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T23:48:41.707000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "12496"
+    }
+   ]
+  },
+  {
+   "interaction_id": "f154bb8f-f5c8-37ee-b0a1-66b8f938582f",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Domain Google Lead Form Extension Inquiry",
+   "sender": "noreply@dyverse.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T02:22:41.502000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T02:22:41.699000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T02:22:41.872000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T02:22:41.895000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "81944450-8a15-38ed-9d15-bd5cee8fdb40",
+   "provider": "outlook",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "melissac28@myyahoo.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T19:00:44.509000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T19:00:44.720000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T19:00:44.812000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T19:00:44.838000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "9d5483a3-43dd-38f0-b060-ccb16f506589",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Provence at Valencia",
+   "sender": "dieyebintou28@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "69638",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T07:22:41.327000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T07:22:41.534000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-29T07:22:41.630000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-29T07:22:41.654000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "69638"
+    }
+   ]
+  },
+  {
+   "interaction_id": "e5a4fb29-d5b7-354b-be72-40bd24417453",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "kaelaphetmisay@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T17:08:41.091000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T17:08:41.296000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T17:08:41.395000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T17:08:41.418000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "8ddcc407-d9fb-3f0f-8efa-f66bb4899df7",
+   "provider": "gmail",
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Re: Apartment Inquiry at Domain WeHo",
+   "sender": "kaelaphetmisay@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T17:22:40.801000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-28T17:22:40.999000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-28T17:22:41.089000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-28T17:22:41.112000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "c9c59751-94c2-305a-be88-59baf2b1fbc6",
+   "provider": null,
+   "terminal_recon_status": "SENT_TO_EVENTAPI",
+   "lifecycle_steps": 4,
+   "resident_resolved": false,
+   "duration_s": 2.0,
+   "subject": "New Lead for Domain West Hollywood from Sammi Chang - Apartment List",
+   "sender": "interests@apartmentlist.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": "11101",
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T00:58:42.176000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-30T00:58:42.385000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "CLASSIFIED",
+     "emitted_at": "2026-05-30T00:58:44.450000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    },
+    {
+     "recon_status": "SENT_TO_EVENTAPI",
+     "emitted_at": "2026-05-30T00:58:44.478000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": "11101"
+    }
+   ]
+  },
+  {
+   "interaction_id": "31ab2143-914f-37ab-960c-4b4b091a51cc",
+   "provider": "gmail",
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 3,
+   "resident_resolved": false,
+   "duration_s": 1.0,
+   "subject": "Fwd: A Tentative Iran Deal",
+   "sender": "francisfarisa8@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "quarantine_thread_match_failure",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T19:04:41.815000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T19:04:42.037000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T19:04:42.318000",
+     "gap_reason": "quarantine_thread_match_failure",
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "d76ac5b9-10d7-3148-b699-de7563684774",
+   "provider": null,
+   "terminal_recon_status": "UNMATCHED",
+   "lifecycle_steps": 3,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "Fwd: \ud83e\udeac\ud83d\udca5\u062d\u0645\u0648 (HAmo)\u0627\u0644\u0645\u0635\u0631\u064a\ud83e\uddff\ud83e\udd0d and others posted 4 videos",
+   "sender": "francisfarisa8@gmail.com",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "quarantine_thread_match_failure",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-29T23:44:41.570000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "QUEUED",
+     "emitted_at": "2026-05-29T23:44:41.776000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    },
+    {
+     "recon_status": "UNMATCHED",
+     "emitted_at": "2026-05-29T23:44:41.976000",
+     "gap_reason": "quarantine_thread_match_failure",
+     "state_id": null,
+     "org_id": null,
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "14a4ab58-c29c-31ee-8cde-b7a30b4e214c",
+   "provider": "outlook",
+   "terminal_recon_status": "SCANNED",
+   "lifecycle_steps": 2,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "",
+   "sender": "",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "7450c247-198c-3dd6-808b-b57a23077f1b",
+   "provider": "outlook",
+   "terminal_recon_status": "SCANNED",
+   "lifecycle_steps": 2,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "",
+   "sender": "",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "a3976583-c062-3f36-bbd1-1d0f6369442a",
+   "provider": "outlook",
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 2,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "",
+   "sender": "",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "f6fb924c-330b-37c5-b2ee-7b76aaf95afd",
+   "provider": "outlook",
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 2,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "",
+   "sender": "",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-28T18:40:43.491000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-28T18:40:43.491000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "200fd93f-68e5-3553-995a-147b9b70de1e",
+   "provider": "outlook",
+   "terminal_recon_status": "SCANNED",
+   "lifecycle_steps": 2,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "",
+   "sender": "",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": null,
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "eeeab1b7-ff0b-3602-b2ac-e654beb1c82c",
+   "provider": "outlook",
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 2,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "",
+   "sender": "",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  },
+  {
+   "interaction_id": "38e59682-4ba2-3595-a3e4-71326f1b5b21",
+   "provider": "outlook",
+   "terminal_recon_status": "SUPPRESSED",
+   "lifecycle_steps": 2,
+   "resident_resolved": false,
+   "duration_s": 0.0,
+   "subject": "",
+   "sender": "",
+   "recipient": "jamie@sares-regis.com",
+   "email_type": null,
+   "channel": "email",
+   "message_id": null,
+   "org_id": "140",
+   "building_id": null,
+   "reached_eventapi": false,
+   "terminal_gap": "no_body",
+   "case_study": "jamie_sares-regis",
+   "steps": [
+    {
+     "recon_status": "SUPPRESSED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": "no_body",
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    },
+    {
+     "recon_status": "SCANNED",
+     "emitted_at": "2026-05-30T11:12:42.081000",
+     "gap_reason": null,
+     "state_id": null,
+     "org_id": "140",
+     "building_id": null
+    }
+   ]
+  }
+ ]
+}
